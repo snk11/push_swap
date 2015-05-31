@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:49:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 10:54:27 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 00:02:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int arc,char **arv)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_lst	*e;
-	t_numb	*a;
+	int		i;
+	char	*str;
 
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
+	if ((str = ft_strnew(ft_strlen(s) + 1)))
 	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
+		i = 0;
+		while (s && s[i] && f)
+		{
+			str[i] = f(i, s[i]);
+			i++;
+		}
+		return (str);
 	}
-	return (0);
+	return (NULL);
 }

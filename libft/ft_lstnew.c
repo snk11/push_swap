@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   function.c                                         :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:45:35 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/12 20:06:19 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 02:14:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "libft.h"
 
-void		lst_add(t_lst **toplist, t_lst *t_lst1)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	if (toplist && t_lst1)
-	{
-		t_lst1->next = *toplist;
-		*toplist = t_lst1;
-	}
-}
+	t_list		*curlst;
 
-t_lst		*create_lst(void *content)
-{
-	t_lst	*curlst;
-
-	if (!(curlst = (t_lst*)malloc(sizeof(t_lst))))
+	curlst = (t_list*)malloc(sizeof(t_list));
+	if (curlst == NULL)
 		return (NULL);
 	if (content == NULL)
 	{
 		curlst->content = NULL;
+		curlst->content_size = 0;
 	}
 	else
 	{
-		if (!(curlst->content =(t_lst*) malloc(sizeof(content))))
+		curlst->content = malloc(sizeof(content));
+		if (curlst->content == NULL)
 			return (NULL);
-		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
+		curlst->content = ft_memmove(curlst->content, content, content_size);
+		curlst->content_size = content_size;
 	}
 	curlst->next = NULL;
 	return (curlst);

@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:49:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 18:34:48 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/11 02:09:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int arc,char **arv)
+char	*ft_strchr(const char *s, int c)
 {
-	t_lst	*e;
-	t_numb	*a;
+	int		i;
 
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
+	i = 0;
+	if (c == 0)
+		return ((char*)&s[ft_strlen(s)]);
+	while (s[i])
 	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
+		if (s[i] == (char)c)
+			return ((char*)&s[i]);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

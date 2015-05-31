@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:49:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 22:28:45 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/12 00:13:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int arc,char **arv)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_lst	*e;
-	t_numb	*a;
-
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
-	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
-	}
-	return (0);
+	if (n == 0)
+		return (0);
+	if (!(*s1 && *s2 && (unsigned char)*s1 == (unsigned char)*s2))
+		return ((unsigned char)*s1 - (unsigned char)*s2);
+	return (ft_strncmp(s1 + 1, s2 + 1, n - 1));
 }

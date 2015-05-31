@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:49:18 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/13 05:39:12 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 00:37:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int		main(int arc,char **arv)
+void	ft_lstdel(t_list **alst, void (*del)(void*, size_t))
 {
-	t_lst	*e;
-	t_numb	*a;
+	t_list		*curlst;
+	t_list		*nextlst;
 
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
+	if (alst && del)
 	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
+		curlst = *alst;
+		while (curlst && del)
+		{
+			nextlst = curlst->next;
+			del(curlst->content, curlst->content_size);
+			free(curlst);
+			curlst = nextlst;
+		}
+		*alst = NULL;
 	}
-	return (0);
 }
