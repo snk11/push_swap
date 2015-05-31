@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:09:17 by syusof           ###   ########.fr       */
+/*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
+/*   Updated: 2015/05/31 18:32:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int		main(int arc,char **arv)
+# include <stdlib.h>
+
+typedef struct			s_lst
 {
-	t_lst	*e;
+	void				*content;
+	struct s_lst		*next;
+}						t_lst;
 
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
-	{
-		lst_add(&e, create_lst(ft_atoi(arv[arc])));
-		arc--;
-	}
-	return (0);
-}
+typedef struct			s_numb
+{
+	int					val;
+}						t_numb;
+
+
+#endif
