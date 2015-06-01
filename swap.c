@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/01 13:22:35 by syusof           ###   ########.fr       */
+/*   Created: 2015/06/01 13:08:21 by syusof            #+#    #+#             */
+/*   Updated: 2015/06/01 14:00:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+# include "push_swap.h"
 
-
-#include <stdio.h>
-
-int		main(int arc,char **arv)
+void	swap(t_lst **lsta)
 {
-	t_lst	*e;
-	t_numb	*a;
+//	int	tmp;
 
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
+//	tmp = ((*lsta)->content)->val;
+//	((*lsta)->content)->val = ((*lsta)->next)->val
+
+
+	t_lst	*lstmp;
+
+	lstmp = NULL;
+	if (lsta)
 	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
+		lstmp = (*lsta)->next;
+		(*lsta)->next->next = (*lsta);
+		(*lsta)->next = (*lsta)->next->next;
+		(*lsta)= lstmp;
 	}
-	printf("%d",((t_numb*)e->content)->val);
-	return (0);
 }

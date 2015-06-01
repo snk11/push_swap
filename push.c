@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/01 13:22:35 by syusof           ###   ########.fr       */
+/*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
+/*   Updated: 2015/06/01 13:54:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-#include <stdio.h>
-
-int		main(int arc,char **arv)
+void	push(t_lst **lstb, t_lst *lsta)
 {
-	t_lst	*e;
-	t_numb	*a;
-
-	a = NULL;
-	e = NULL;
-	if (arc < 2)
-		write(1, "Error\n", 6);
-	while (arc > 1)
+	t_lst	*lstmp;
+	
+	if (lstb)
 	{
-		a = (t_numb*)malloc(sizeof(t_numb));
-		a->val = ft_atoi(arv[arc - 1]);
-		lst_add(&e, create_lst(a));
-		arc--;
+		lst_add(lstb,lsta);
+		lstmp = lsta;
+		lsta = lsta->next;
+		free(lstmp);
 	}
-	printf("%d",((t_numb*)e->content)->val);
-	return (0);
+	lstmp = NULL;
 }
