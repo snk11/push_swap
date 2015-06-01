@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/01 14:00:53 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/01 16:03:23 by syusof           ###   ########.fr       */
+/*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
+/*   Updated: 2015/06/01 16:20:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(t_lst **lsta)
+void	reverse(t_lst **lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp2;
 	
 	lstmp = (*lsta);
-	lstmp2 = (*lsta)->next;
+	lstmp2 = lstmp->next;
 	while ((*lsta)->next != NULL)
 		(*lsta) = (*lsta)->next;
 
