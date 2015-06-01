@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/01 19:50:46 by syusof           ###   ########.fr       */
+/*   Created: 2015/06/01 19:51:00 by syusof            #+#    #+#             */
+/*   Updated: 2015/06/01 20:26:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse(t_lst **lsta)
+void		ft_sort(t_lst **lsta)
 {
-	t_lst	*lstmp;
-	t_lst	*lstmp2;
-	
-	lstmp = (*lsta);
-	lstmp2 = lstmp->next;
-	while ((*lsta)->next != NULL)
-		(*lsta) = (*lsta)->next;
-	(*lsta)->next = lstmp;
-	lstmp->next = NULL;
-	(*lsta) = lstmp2;
+	if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+		swap(&lsta);
 }

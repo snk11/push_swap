@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/31 19:17:09 by syusof            #+#    #+#              #
-#    Updated: 2015/05/31 19:39:24 by syusof           ###   ########.fr        #
+#    Updated: 2015/06/01 19:49:20 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ $(NAME):
 	make -C libft/ re
 	gcc $(FLAGS) $(SRCS)
 	gcc $(FLAGS) $(MAIN)
-	gcc -o $(NAME) $(OFILES) -L libft/ -lft
+	gcc -o $(NAME) $(OFILES) $(OMAIN) -L libft/ -lft
 
 clean:
 	rm -f $(OFILES)
