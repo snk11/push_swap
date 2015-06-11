@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 19:51:00 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/02 16:15:33 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/11 19:05:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,29 @@ void		ft_sort(t_lst **lsta)
 
 	lstmp = *lsta;
 	nbelem = ft_comptelem(*lsta);
+
 	while (index < nbelem)
 	{
-		if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
-			swap(&lsta);
-
-		while (lstmp->next > lstmp)
+		if (((t_numb*)((*lsta)->next)->content)->val)
+		{
+			if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+				swap(&lsta);
+		}
+		while (((t_numb*)(lstmp->next)->content)->val > ((t_numb*)lstmp->content)->val)
 		{
 			lstmp = lstmp->next;
 			index++;
 		}
-		
 
 		if (lstb == NULL)
 		{
+
+			while (lstmp->next > lstmp)
+			{
+				lstmp = lstmp->next;
+				index++;
+			}
+		
 
 			while ((index + 1) != 0)
 			{
