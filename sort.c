@@ -6,12 +6,15 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 19:51:00 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/12 18:37:28 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/12 21:28:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+
+#include <stdio.h>
 int		ft_comptelem(t_lst *lsta)
 {
 	int		nb;
@@ -20,9 +23,10 @@ int		ft_comptelem(t_lst *lsta)
 	if (lsta)
 	{
 		nb = 1;
-		while (lsta->next != NULL)
+		while (lsta)
 		{
 			nb++;
+			printf("%d",nb);
 			lsta = lsta->next;
 		}
 	}
@@ -45,7 +49,7 @@ void		ft_sort(t_lst **lsta)
 	lstb = NULL;
 
 	lstmp = *lsta;
-	nbelem = ft_comptelem(*lsta);
+//	nbelem = ft_comptelem(lstmp);
 
 /*
 		if (((t_numb*)((*lsta)->next)->content)->val)

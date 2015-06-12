@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/05/31 19:45:35 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/12 21:47:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_lst		*create_lst(void *content)
 	}
 	else
 	{
-		if (!(curlst->content =(t_lst*) malloc(sizeof(content))))
+		if (!(curlst->content = malloc(sizeof(content))))
 			return (NULL);
 		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
 	}
