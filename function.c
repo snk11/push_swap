@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/12 21:47:35 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/14 01:23:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void		lst_add(t_lst **toplist, t_lst *t_lst1)
 {
-	if (toplist && t_lst1)
+//	if(!t_lst1)
+//		return;
+	if (*toplist == NULL)
+		*toplist = t_lst1;
+//	if (toplist && t_lst1)
+	else
 	{
 		t_lst1->next = *toplist;
 		*toplist = t_lst1;

@@ -6,26 +6,29 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/13 18:49:33 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/14 01:23:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+
+
+#include <stdio.h>
 void	push(t_lst **lstb, t_lst **lsta)
 {
-	t_lst	*lstmp;
+//	t_lst	*lstmp;
 
-	if (lstb)
+	if (lstb && lsta && (*lsta)->next)
 	{
-		ft_putchar('a');
+	printf("%d\n",((t_numb*)(*lsta)->content)->val);
 		lst_add(lstb,*lsta);
-		ft_putchar('b');
-		lstmp = *lsta;
-		ft_putchar('c');
+//		lstmp = *lsta;
 		*lsta = (*lsta)->next;
-		ft_putchar('d');
+//	printf("%d\n",((t_numb*)(*lsta)->content)->val);
+//		lstmp->next = NULL;
 //		free(lstmp);
 	}
-	lstmp = NULL;
+//		lstmp = NULL;
 }
