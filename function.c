@@ -6,12 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/14 01:23:54 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/14 19:33:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+#include <stdio.h>
 void		lst_add(t_lst **toplist, t_lst *t_lst1)
 {
 //	if(!t_lst1)
@@ -24,6 +25,8 @@ void		lst_add(t_lst **toplist, t_lst *t_lst1)
 		t_lst1->next = *toplist;
 		*toplist = t_lst1;
 	}
+//	printf("%d\n",((t_numb*)((*toplist))->content)->val);
+//	printf("%d\n",((t_numb*)((t_lst1)->next)->content)->val);
 }
 
 t_lst		*create_lst(void *content)

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:08:21 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/13 14:53:46 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/14 19:15:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,20 @@ void	swap(t_lst **lsta)
 	{
 		lstmp = (*lsta)->next;
 		(*lsta)->next = (*lsta)->next->next;
-		lstmp->next = (*lsta);
-		*lsta = lstmp;
+		lst_add(lsta, lstmp);
+		lstmp = NULL;
+		ft_putstr("sw");
 	}
+
+/*
+	if (*lsta)
+	{
+		if ((*lsta)->next)
+		{
+			lstmp = (*lsta);
+			(*lsta) = (*lsta)->next;
+			(*lsta)->next = lstmp;
+		}
+	}
+*/
 }
