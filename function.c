@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/15 00:05:26 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/15 18:59:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,20 @@ void		lst_add(t_lst **toplist, t_lst *t_lst1)
 
 	t_lst		*lstmp;
 
-	lstmp = NULL;
+//	lstmp = NULL;
+		lstmp = create_lst(t_lst1->content);
 //	if(!t_lst1)
 //		return;
 	if (*toplist == NULL)
 	{
-		lstmp = create_lst(t_lst1->content);
+//		lstmp = create_lst(t_lst1->content);
 		*toplist = lstmp;
 	}
 //	if (toplist && t_lst1)
 	else
 	{
-		t_lst1->next = *toplist;
-		*toplist = t_lst1;
+		lstmp->next = *toplist;
+		*toplist = lstmp;
 	}
 //	printf("%d\n",((t_numb*)((*toplist))->content)->val);
 //	printf("%d\n",((t_numb*)((t_lst1)->next)->content)->val);

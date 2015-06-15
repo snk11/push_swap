@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 19:51:00 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/15 00:06:17 by syusof           ###   ########.fr       */
+/*   Updated: 2015/06/15 21:12:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,21 +78,34 @@ void		ft_sort(t_lst **lsta)
 */
 
 
-
-
-	while (index < nbelem - 1)
-	{
-		
-		nbelemc = ft_comptelem(*lsta);
-		printf("------------------\n");
-		if ((*lsta)->next)
+				if ((*lsta)->next)
 		{
 			if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
 				swap(lsta);
 		}
 
+
+	while (index < nbelem - 1)
+	{
+		index = 0;
 		lstmp = *lsta;
+		nbelemc = ft_comptelem(*lsta);
+		printf("------------------\n");
+
+
+	printf("lsta: %d\n",((t_numb*)(lstmp)->content)->val);
+		if ((lstmp)->next)
+		{
+				while ((lstmp->next)->next)
+				{
+					printf("lsta: %d\n",((t_numb*)(lstmp->next)->content)->val);
+					lstmp = lstmp->next;
+				}
+				printf("lsta: %d\n",((t_numb*)(lstmp->next)->content)->val);
+		}
 //		printf("%d\n",((t_numb*)(*lsta)->content)->val);
+
+		lstmp = *lsta;
 		if  (lstmp->next)
 		{
 			printf("ff\n");
@@ -102,9 +115,13 @@ void		ft_sort(t_lst **lsta)
 				index++;
 				if ((lstmp->next)->next)
 					lstmp = lstmp->next;
-				printf("index:%d\n",index);
+				printf("lstmp:%d\n",((t_numb*)lstmp->content)->val);
+				if (lstb)
+					printf("lstb:%d\n",((t_numb*)lstb->content)->val);
 			}
 		}
+
+
 		if (((t_numb*)lstmp->content)->val > ((t_numb*)(lstmp->next)->content)->val || lstb != NULL)
 		{
 			printf("A\n");
@@ -117,7 +134,7 @@ void		ft_sort(t_lst **lsta)
 //					lstb = create_lst(((t_numb*)(*lsta)->content));
 
 					push(&lstb, lsta);
-	printf("lstb: %d\n",((t_numb*)lstb->content)->val);
+//	printf("lstb: %d\n",((t_numb*)lstb->content)->val);
 					index--;
 					index2++;
 					printf("pb\n");
@@ -128,6 +145,12 @@ void		ft_sort(t_lst **lsta)
 			}
 			else
 			{
+
+				if ((lstmp)->next)
+				{
+					if (((t_numb*)(lstmp)->content)->val > ((t_numb*)((lstmp)->next)->content)->val)
+						swap(&lstmp);
+				}
 				while ((index2) > 0)
 				{
 					push(lsta, &lstb);
@@ -139,7 +162,7 @@ void		ft_sort(t_lst **lsta)
 	//					free(lstb);
 //						lstb = NULL;
 //					}
-					index = 0;
+//					index = 0;
 				}
 				lstmp = *lsta;
 				nbelemc = ft_comptelem(*lsta);
@@ -152,7 +175,9 @@ void		ft_sort(t_lst **lsta)
 						index++;
 						if ((lstmp->next)->next)
 							lstmp = lstmp->next;
-						printf("index:%d\n",index);
+						printf("index1:%d\n",index);
+//	printf("lsta: %d\n",((t_numb*)lstmp->content)->val);
+//	printf("lsta: %d\n",((t_numb*)(lstmp->next)->content)->val);
 					}
 					if (index < nbelem - 1)
 					{
@@ -161,6 +186,12 @@ void		ft_sort(t_lst **lsta)
 					}
 				}
 			}
+		}
+
+				if ((*lsta)->next)
+		{
+			if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+				swap(lsta);
 		}
 	}
 }
