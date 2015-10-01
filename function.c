@@ -6,20 +6,20 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/16 00:28:54 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/01 14:42:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
 #include <stdio.h>
-void		lst_add(t_lst **toplist, t_lst *t_lst1)
+void		lst_add(t_lst **toplist, t_lst **t_lst1)
 {
 
 	t_lst		*lstmp;
 
 //	lstmp = NULL;
-		lstmp = create_lst(t_lst1->content);
+		lstmp = create_lst((*t_lst1)->content);
 //	if(!t_lst1)
 //		return;
 	if (*toplist == NULL)
@@ -33,6 +33,7 @@ void		lst_add(t_lst **toplist, t_lst *t_lst1)
 		lstmp->next = *toplist;
 		*toplist = lstmp;
 	}
+		*t_lst1 = (*t_lst1)->next;
 //	printf("%d\n",((t_numb*)((*toplist))->content)->val);
 //	printf("%d\n",((t_numb*)((t_lst1)->next)->content)->val);
 }

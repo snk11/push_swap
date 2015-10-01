@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/16 00:11:14 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/01 15:35:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -45,6 +45,8 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	return index;
 }
 
+
+
 void		ft_sort(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -61,6 +63,8 @@ void		ft_sort(t_lst **lsta)
 	lstmp = NULL;
 	lstmp2 = NULL;
 
+
+	int bug = 0;
 	int		a;
 	int		b;
 
@@ -79,6 +83,10 @@ void		ft_sort(t_lst **lsta)
 	while (index < nbelem - 1)
 	{
 		index = 0;
+		bug++;
+
+//		if (bug == 6)
+//			break;
 		lstmp = *lsta;
 		nbelemc = ft_comptelem(*lsta);
 		printf("------------------\n");
@@ -103,7 +111,7 @@ void		ft_sort(t_lst **lsta)
 					index2++;
 					printf("pb\n");
 				}
-				printf("out");
+				printf("out\n");
 			}
 			else
 			{
@@ -116,6 +124,7 @@ void		ft_sort(t_lst **lsta)
 				}
 				lstmp = *lsta;
 				nbelemc = ft_comptelem(*lsta);
+/*
 				if  (lstmp->next)
 				{
 					index = get_index(&lstmp,nbelemc);
@@ -126,6 +135,7 @@ void		ft_sort(t_lst **lsta)
 					lstb = NULL;
 					printf("N\n");
 				}
+*/
 			}
 			if ((*lsta)->next)
 			{

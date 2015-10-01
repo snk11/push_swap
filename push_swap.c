@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/06/15 20:01:15 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/01 14:28:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 int		main(int arc,char **arv)
 {
 	t_lst	*lsta;
+	t_lst	*lstmp;
 	t_numb	*e;
 
 	lsta = NULL;
+	lstmp = NULL;
 	e = NULL;
 
 //	lsta = create_lst(NULL);
@@ -36,7 +38,8 @@ int		main(int arc,char **arv)
 		if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 			return (0);
 		e->val = ft_atoi(arv[arc - 1]);
-		lst_add(&lsta, create_lst(e));
+		lstmp = create_lst(e);
+		lst_add(&lsta, &lstmp);
 		arc--;
 	}
 //	swap(&lsta);
