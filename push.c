@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/01 15:33:59 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/02 13:57:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ void	push(t_lst **lstb, t_lst **lsta)
 				*lsta = (*lsta)->next;
 			}
 			else
-			{
-				if ((*lsta)->next == NULL)
-				{
-					lst_add(lstb,lsta);
-					*lsta = NULL;
-				}
-				else
-					lst_add(lstb,lsta);
-			}
-//		lst_add(lstb,*lsta);
-	//		lstmp = *lsta;
-	//		if ((*lsta)->next == NULL)
-	//			*lsta = NULL;
-	//		else
-//				*lsta = (*lsta)->next;
-	//	printf("%d\n",((t_numb*)(*lsta)->content)->val);
-	//		lstmp->next = NULL;
-	//		free(lstmp);
-	//		lstmp = NULL;
+				lst_add(lstb,lsta);
 		}
 }

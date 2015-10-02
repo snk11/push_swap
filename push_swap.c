@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/01 14:28:46 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/02 13:37:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ int		main(int arc,char **arv)
 	lstmp = NULL;
 	e = NULL;
 
-//	lsta = create_lst(NULL);
-//	if (!(lsta = (t_lst*)malloc(sizeof(t_lst))))
-//		return (0);
 	if (arc < 2)
 	{
 		write(1, "Error\n", 6);
@@ -42,12 +39,6 @@ int		main(int arc,char **arv)
 		lst_add(&lsta, &lstmp);
 		arc--;
 	}
-//	swap(&lsta);
 	ft_sort(&lsta);
-//		printf("%d",((t_numb*)lsta->content)->val);
-//	printf("%d",((t_numb*)(lsta->next)->content)->val);
-//	printf("%d",((t_numb*)((lsta->next)->next)->content)->val);
-
-//	printf("%d",((t_numb*)(lsta->next)->content)->val);
 	return (0);
 }
