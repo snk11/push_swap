@@ -6,12 +6,15 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:08:21 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/02 14:15:22 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/08 15:47:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+
+
+# include <stdio.h>
 void	swap(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -21,8 +24,7 @@ void	swap(t_lst **lsta)
 	{
 		lstmp = (*lsta)->next;
 		(*lsta)->next = (*lsta)->next->next;
-		lst_add(lsta, &lstmp);
-		lstmp = NULL;
+		lst_add_del(lsta, &lstmp);
 		ft_putstr("sw\n");
 	}
 }
