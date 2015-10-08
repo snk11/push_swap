@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2015/10/02 14:41:00 by syusof           ###   ########.fr       */
+/*   Updated: 2015/10/08 14:28:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -84,9 +84,6 @@ void		ft_sort(t_lst **lsta)
 	{
 		index = 0;
 		bug++;
-
-//		if (bug == 6)
-//			break;
 		lstmp = *lsta;
 		nbelemc = ft_comptelem(*lsta);
 		printf("------------------\n");
@@ -124,18 +121,6 @@ void		ft_sort(t_lst **lsta)
 				}
 				lstmp = *lsta;
 				nbelemc = ft_comptelem(*lsta);
-/*
-				if  (lstmp->next)
-				{
-					index = get_index(&lstmp,nbelemc);
-					printf("gg\n");
-				}
-				if (index < nbelem - 1)
-				{
-					lstb = NULL;
-					printf("N\n");
-				}
-*/
 			}
 			if ((*lsta)->next)
 			{
