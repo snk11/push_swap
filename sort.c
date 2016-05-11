@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/05/11 21:37:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/11 21:56:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -46,7 +46,6 @@ int		get_index(t_lst **lstmp, int nbelemc)
 }
 
 
-/*
 void		ft_sort(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -142,8 +141,8 @@ void		ft_sort(t_lst **lsta)
 
 	}
 }
-*/
 
+/*
 int croissant(int a, int b)
 {
 		return (a <= b);
@@ -201,3 +200,4 @@ t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int))
 	}
 	return (lstbegi);
 }
+*/
