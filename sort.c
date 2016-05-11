@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2015/11/13 23:42:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/05/11 21:37:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -46,7 +46,7 @@ int		get_index(t_lst **lstmp, int nbelemc)
 }
 
 
-
+/*
 void		ft_sort(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -142,5 +142,62 @@ void		ft_sort(t_lst **lsta)
 
 	}
 }
+*/
+
+int croissant(int a, int b)
+{
+		return (a <= b);
+}
 
 
+t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int))
+{
+	t_lst *lstmp1;
+	t_lst *lstmp2;
+	t_lst *lstbegi;
+	int		ind;
+
+	lstbegi = lst;
+	lstmp1 = NULL;
+	lstmp2 = NULL;
+	ind = 1;
+	if (lst == NULL)
+		ind = 0;
+	while (ind != 0)
+	{
+		ind = 0;
+		lst = lstbegi;
+		lstmp1 = lst;
+		if (lstbegi->next)
+		{
+			if ((cmp)(((t_numb*)lstbegi->content)->val,(((t_numb*)(lstbegi->next)->content))->val) == 0)
+			{
+				lstmp2 = (lstbegi->next)->next;
+				lstmp1 = lstbegi->next;
+				(lstbegi->next)->next = lstbegi;
+				lstbegi->next = lstmp2;
+				lstbegi = lstmp1;
+				ind = 1;
+			}
+			lst = lstbegi;
+			lst = lst->next;
+		}
+		while(lst->next != NULL)
+		{
+			if ((cmp)(((t_numb*)lst->content)->val,(((t_numb*)(lst->next)->content))->val) == 0)
+			{
+				lstmp1->next = lst->next;
+				lstmp2 = (lst->next)->next;
+				(lst->next)->next = lst;
+				lst->next = lstmp2;
+				ind = 1;
+			}
+			lst = lstmp1->next;
+			lstmp1 = lst;
+			if (lst->next)
+				lst = lst->next;
+		}
+
+	}
+	return (lstbegi);
+}
