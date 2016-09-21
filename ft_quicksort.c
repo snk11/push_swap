@@ -6,13 +6,27 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 09:29:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 11:36:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
 
 
+int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
+{
+	int index;
+
+	index = -1;
+	while (((t_numb*)(*lstmp)->content)->val <= ((t_numb*)(lsta2)->content)->val && (index < nbelemc - 1) && lstmp)
+	{
+		index++;
+//		if (((*lstmp)->next)->next)
+			(*lstmp) = (*lstmp)->next;
+//		printf("lstmp:%d\n",((t_numb*)(*lstmp)->content)->val);
+	}
+	return index;
+}
 
 
 #include <stdio.h>
@@ -23,7 +37,10 @@ void		ft_quicksort(t_lst **lsta)
 	t_lst	*lsta2;
 	int		index;
 	int		index2;
+	int		index3;
+	int		index4;
 	int		nbelem;
+	int		nbelem3;
 	int		nbelemc;
 	t_lst	*lstb;
 	t_numb	*e;
@@ -65,58 +82,66 @@ void		ft_quicksort(t_lst **lsta)
 		cnt1++;
 	}
 
-	if ((*lsta)->next)
+	nbelem3 = ft_comptelem(lsta2);
+	index3 = 0;
+	while(index3 < nbelem3 - 1)
 	{
-		if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
-			swap(lsta);
-	}
-
-	while (index < nbelem - 1)
-	{
-		index = 0;
-		bug++;
-		lstmp = *lsta;
-		nbelemc = ft_comptelem(*lsta);
-		lstmp = *lsta;
-		if  (lstmp->next)
+//		while (index < nbelem - 1)
 		{
-			index = get_index(&lstmp,nbelemc);
-		}
-		if (((t_numb*)lstmp->content)->val > ((t_numb*)(lstmp->next)->content)->val || index2 > 0)
-		{
-			if (lstb == NULL)
+			index = 0;
+			bug++;
+			lstmp = *lsta;
+			nbelemc = ft_comptelem(*lsta);
+			lstmp = *lsta;
+			index = index3;
+			if  (lstmp)
 			{
-				while (index > 0)
-				{
-					push(&lstb, lsta);
-					index--;
-					index2++;
-				}
+				index4 = get_indexquick(&lstmp,nbelemc,lsta2);
 			}
-			else
+			if (((t_numb*)lsta2->content)->val < ((t_numb*)(lstmp)->content)->val || index2 > 0)
 			{
-				while ((index2) > 0)
+				if (lstb == NULL)
 				{
+					while (index > 0)
+					{
+						push(&lstb, lsta);
+						index--;
+						index2++;
+					}
+					while (index4 > -1)
+					{
+						rotate(&lstb);
+						index4--;
+					}
 					push(lsta, &lstb);
-					index2--;
-				}
-				lstmp = *lsta;
-				nbelemc = ft_comptelem(*lsta);
-			}
-			if ((*lsta)->next)
-			{
-				if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
 					swap(lsta);
+				}
+				else
+				{
+					while ((index2) > 0)
+					{
+						push(lsta, &lstb);
+						index2--;
+					}
+//					lstmp = *lsta;
+//					nbelemc = ft_comptelem(*lsta);
+				}
+//				if ((*lsta)->next)
+//				{
+//					if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+//						swap(lsta);
+//				}
 			}
+//			lstmp = *lsta;
+//			if ((lstmp)->next)
+//			{
+//				while ((lstmp->next)->next)
+//				{
+//					lstmp = lstmp->next;
+//				}
+//			}
 		}
-		lstmp = *lsta;
-		if ((lstmp)->next)
-		{
-			while ((lstmp->next)->next)
-			{
-				lstmp = lstmp->next;
-			}
-		}
-
+		lsta2 = lsta2;
+		index3++;
 	}
 }

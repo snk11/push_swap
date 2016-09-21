@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 08:12:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 11:37:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -118,13 +118,13 @@ void		ft_sort(t_lst **lsta)
 			}
 		}
 		lstmp = *lsta;
-		if ((lstmp)->next)
-		{
-			while ((lstmp->next)->next)
-			{
-				lstmp = lstmp->next;
-			}
-		}
+//		if ((lstmp)->next)
+//		{
+//			while ((lstmp->next)->next)
+//			{
+//				lstmp = lstmp->next;
+//			}
+//		}
 
 	}
 }
