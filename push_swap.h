@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 11:10:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 15:08:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
 int		ft_comptelem(t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
 int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2);
+t_lst	*ft_reverse_lst(t_lst *lstmp);
 
 #endif

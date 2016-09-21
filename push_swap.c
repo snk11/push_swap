@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 11:38:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 14:38:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		main(int arc,char **arv)
 		lst_add(&lsta, &lstmp);
 		arc--;
 	}
-	ft_sort(&lsta);
-//	ft_quicksort(&lsta);
+//	ft_sort(&lsta);
+	ft_quicksort(&lsta);
 	//lsta = sort_list(lsta,croissant);
 	while (lsta)
 	{
