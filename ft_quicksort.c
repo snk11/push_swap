@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 19:39:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 20:03:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,8 +21,8 @@ int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
 
 	ind1 = 0;
 	index = -1;
-		printf("lstmp = %d\n",((t_numb*)(*lstmp)->content)->val);
-		printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
+//		printf("lstmp = %d\n",((t_numb*)(*lstmp)->content)->val);
+//		printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 	while (*lstmp && ind1 == 0 && index < nbelemc - 1)
 	{
 		if(((t_numb*)(*lstmp)->content)->val <= ((t_numb*)(lsta2)->content)->val)
@@ -35,7 +35,7 @@ int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
 			ind1 = 1;
 			index++;
 		}
-		printf("inde = %d\n",index);
+//		printf("inde = %d\n",index);
 	}
 	if (*lstmp == NULL || index == nbelemc - 1)
 		return -1;
@@ -83,12 +83,14 @@ void		ft_quicksort(t_lst **lsta)
 	nbelema = ft_comptelem(*lsta);
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
-//	while (ind1 == 1 || lsta2)
+	while (ind1 == 1 || lsta2)
 	{
 		if (ind1 == 1)
+		{
 			lsta2 = ft_reverse_lst(*lsta);
+			index3 = 0;
+		}
 		ind1 = 0;
-		index3 = 0;
 //		while(index3 < nbelemc - 1)
 //		while (ind1 == 0 && lsta2)
 		{
@@ -118,14 +120,15 @@ void		ft_quicksort(t_lst **lsta)
 								push(&lstb, lsta);
 								index--;
 							}
-							lstmp2 = lstb;
-							while (lstmp2)
-							{
-								printf("lstmp2 = %d\n",((t_numb*)lstmp2->content)->val);
-								lstmp2 = lstmp2->next;
-							}
+
+//							lstmp2 = lstb;
+//							while (lstmp2)
+//							{
+//								printf("lstmp2 = %d\n",((t_numb*)lstmp2->content)->val);
+//								lstmp2 = lstmp2->next;
+//							}
 //							while (nbelema - 1 - nbelema - 1 - index3 - index4 > 0)
-							while (nbelema - (index4 + 1 + 1) > 0)
+							while ((nbelema - index3) - (index4 + 1 + 1) > 0)
 							{
 								rotate(&lstb);
 								index4++;
@@ -133,7 +136,7 @@ void		ft_quicksort(t_lst **lsta)
 							push(lsta,&lstb);
 							swap(lsta);
 							nbelem2 = ft_comptelem(lstb);
-							printf("nbelem2 = %d\n",nbelem2);
+//							printf("nbelem2 = %d\n",nbelem2);
 							while(nbelem2 > 0)
 							{
 								push(lsta, &lstb);
