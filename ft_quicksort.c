@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 11:36:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 11:45:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -123,25 +123,10 @@ void		ft_quicksort(t_lst **lsta)
 						push(lsta, &lstb);
 						index2--;
 					}
-//					lstmp = *lsta;
-//					nbelemc = ft_comptelem(*lsta);
 				}
-//				if ((*lsta)->next)
-//				{
-//					if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
-//						swap(lsta);
-//				}
 			}
-//			lstmp = *lsta;
-//			if ((lstmp)->next)
-//			{
-//				while ((lstmp->next)->next)
-//				{
-//					lstmp = lstmp->next;
-//				}
-//			}
 		}
-		lsta2 = lsta2;
+		lsta2 = lsta2->next;
 		index3++;
 	}
 }
