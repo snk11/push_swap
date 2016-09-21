@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 17:56:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/21 19:39:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -57,6 +57,7 @@ void		ft_quicksort(t_lst **lsta)
 	int		nbelem2;
 	int		nbelem3;
 	int		nbelemc;
+	int		nbelema;
 	t_lst	*lstb;
 	t_numb	*e;
 
@@ -79,11 +80,13 @@ void		ft_quicksort(t_lst **lsta)
 
 	lsta2 = ft_reverse_lst(*lsta);
 
+	nbelema = ft_comptelem(*lsta);
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
-//	while (ind1 == 1)
+//	while (ind1 == 1 || lsta2)
 	{
-		lsta2 = ft_reverse_lst(*lsta);
+		if (ind1 == 1)
+			lsta2 = ft_reverse_lst(*lsta);
 		ind1 = 0;
 		index3 = 0;
 //		while(index3 < nbelemc - 1)
@@ -115,10 +118,17 @@ void		ft_quicksort(t_lst **lsta)
 								push(&lstb, lsta);
 								index--;
 							}
-							while (index4 > 1)
+							lstmp2 = lstb;
+							while (lstmp2)
+							{
+								printf("lstmp2 = %d\n",((t_numb*)lstmp2->content)->val);
+								lstmp2 = lstmp2->next;
+							}
+//							while (nbelema - 1 - nbelema - 1 - index3 - index4 > 0)
+							while (nbelema - (index4 + 1 + 1) > 0)
 							{
 								rotate(&lstb);
-								index4--;
+								index4++;
 							}
 							push(lsta,&lstb);
 							swap(lsta);
@@ -144,7 +154,7 @@ void		ft_quicksort(t_lst **lsta)
 				}
 			}
 			lsta2 = lsta2->next;
-//			index3++;
+			index3++;
 		}
 	}
 }
