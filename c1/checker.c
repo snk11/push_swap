@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
+/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 15:03:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/02/20 11:23:36 by syusof           ###   ########.fr       */
+/*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
+/*   Updated: 2016/10/11 15:57:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-char	*ft_strnew(size_t size)
+
+#include <stdio.h>
+int main()
 {
-	char		*str;
-	size_t		i;
-
-	if ((str = (char*)malloc(sizeof(char) * size)))
+	char	*line;
+	while (get_next_line(0, &line) > 0)
 	{
-		i = 0;
-		while (i <= size)
-		{
-			str[i] = 0;
-			i++;
-		}
-		return (str);
+		printf("ret\n");
 	}
-	return (NULL);
 }

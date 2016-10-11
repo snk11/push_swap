@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 15:08:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/11 15:29:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,28 @@
 
 # include "libft/libft.h"
 
+# define BUFF_SIZE 8192
+
+typedef struct		s_env
+{
+	int		fd;
+	int		ret;
+	char	buf[BUFF_SIZE + 1];
+	int		index;
+}					t_env;
+
 typedef struct			s_lst
 {
 	void				*content;
 	struct s_lst		*next;
 }						t_lst;
+
+typedef struct			s_lst2
+{
+	void				*content;
+	struct s_lst2		*nextl;
+	struct s_lst		*nextr;
+}						t_lst2;
 
 typedef struct			s_numb
 {
@@ -43,5 +60,6 @@ int		ft_comptelem(t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
 int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2);
 t_lst	*ft_reverse_lst(t_lst *lstmp);
+int						get_next_line(int const fd, char **line);
 
 #endif
