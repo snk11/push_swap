@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 13:39:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 14:57:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,42 +45,42 @@ int main(int ac,char **av)
 	}
 	while (get_next_line(0, &line) > 0)
 	{
-		if(ft_strcmp(line,"pa"))
+		if(ft_strcmp(line,"pa") == 0)
 		{
 			if(lstb)
 				push(&lsta,&lstb);
 		}
-		else if(ft_strcmp(line,"rra"))
+		else if(ft_strcmp(line,"rra") == 0)
 		{
 			if(lsta)
 				reverse(&lsta);
 		}
-		else if(ft_strcmp(line,"ra"))
+		else if(ft_strcmp(line,"ra") == 0)
 		{
 			if(lsta)
 				rotate(&lsta);
 		}
-		else if(ft_strcmp(line,"sa"))
+		else if(ft_strcmp(line,"sa") == 0)
 		{
 			if(lsta)
 				swap(&lsta);
 		}
-		else if(ft_strcmp(line,"rrb"))
+		else if(ft_strcmp(line,"rrb") == 0)
 		{
 			if(lstb)
 				reverse(&lstb);
 		}
-		else if(ft_strcmp(line,"rb"))
+		else if(ft_strcmp(line,"rb") == 0)
 		{
 			if(lstb)
 				rotate(&lstb);
 		}
-		else if(ft_strcmp(line,"sb"))
+		else if(ft_strcmp(line,"sb") == 0)
 		{
 			if(lstb)
 				swap(&lstb);
 		}
-		else if(ft_strcmp(line,"pb"))
+		else if(ft_strcmp(line,"pb") == 0)
 		{
 			if(lsta)
 				push(&lstb,&lsta);
@@ -90,14 +90,14 @@ int main(int ac,char **av)
 	r1 = 0;
 	while(lstmp && lstmp->next && r1 == 0)
 	{
-		if(!(((t_numb*)(lstmp->content))->val <= ((t_numb*)((lstmp->next)->content))->val))
+		if(((t_numb*)(lstmp->content))->val > ((t_numb*)((lstmp->next)->content))->val)
 		{
-			write(1,"KO",2);
+			write(1,"KO\n",3);
 			r1 = 1;
 		}
 		lstmp = lstmp->next;
 	}
-	if (r1 == 1)
-		write(1,"OK",2);
+	if (r1 == 0)
+		write(1,"OK\n",3);
 
 }
