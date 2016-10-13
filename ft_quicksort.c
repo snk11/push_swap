@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 20:03:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 14:07:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,8 +21,6 @@ int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
 
 	ind1 = 0;
 	index = -1;
-//		printf("lstmp = %d\n",((t_numb*)(*lstmp)->content)->val);
-//		printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 	while (*lstmp && ind1 == 0 && index < nbelemc - 1)
 	{
 		if(((t_numb*)(*lstmp)->content)->val <= ((t_numb*)(lsta2)->content)->val)
@@ -35,7 +33,6 @@ int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
 			ind1 = 1;
 			index++;
 		}
-//		printf("inde = %d\n",index);
 	}
 	if (*lstmp == NULL || index == nbelemc - 1)
 		return -1;
@@ -83,6 +80,12 @@ void		ft_quicksort(t_lst **lsta)
 	nbelema = ft_comptelem(*lsta);
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
+	if(*lsta && (*lsta)->next && (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val))
+	{
+		swap(lsta);
+		write(1,"sa\n",3);
+	}
+
 	while (ind1 == 1 || lsta2)
 	{
 		if (ind1 == 1)
@@ -91,11 +94,7 @@ void		ft_quicksort(t_lst **lsta)
 			index3 = 0;
 		}
 		ind1 = 0;
-//		while(index3 < nbelemc - 1)
-//		while (ind1 == 0 && lsta2)
 		{
-//			lsta2 = ft_reverse_lst(*lsta);
-	//		while (index < nbelem - 1)
 			{
 				bug++;
 				lstmp = *lsta;
@@ -105,54 +104,43 @@ void		ft_quicksort(t_lst **lsta)
 				if  (lstmp)
 				{
 					index4 = get_indexquick(&lstmp,nbelemc,lsta2);
-					printf("index4 = %d\n",index4);
 				}
 				if (index4 > -1)
 				{
 					ind1 = 1;
 					if (((t_numb*)lsta2->content)->val < ((t_numb*)(lstmp)->content)->val)
 					{
-//						if (lstb == NULL)
 						if (index != 1)
 						{
 							while (index > 0)
 							{
 								push(&lstb, lsta);
+								write(1,"pb\n",3);
 								index--;
 							}
-
-//							lstmp2 = lstb;
-//							while (lstmp2)
-//							{
-//								printf("lstmp2 = %d\n",((t_numb*)lstmp2->content)->val);
-//								lstmp2 = lstmp2->next;
-//							}
-//							while (nbelema - 1 - nbelema - 1 - index3 - index4 > 0)
 							while ((nbelema - index3) - (index4 + 1 + 1) > 0)
 							{
 								rotate(&lstb);
+								write(1,"rb\n",3);
 								index4++;
 							}
 							push(lsta,&lstb);
+								write(1,"pa\n",3);
 							swap(lsta);
+							write(1,"sa\n",3);
 							nbelem2 = ft_comptelem(lstb);
-//							printf("nbelem2 = %d\n",nbelem2);
 							while(nbelem2 > 0)
 							{
 								push(lsta, &lstb);
+								write(1,"pa\n",3);
 								nbelem2--;
 							}
 						}
 						else
+						{
 							swap(lsta);
-//						else
-//						{
-//							while ((index2) > 0)
-//							{
-//								push(lsta, &lstb);
-//								index2--;
-//							}
-//						}
+							write(1,"sa\n",3);
+						}
 					}
 				}
 			}
