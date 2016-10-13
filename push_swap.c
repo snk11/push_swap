@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 14:38:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 12:28:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		main(int arc,char **arv)
 
 	if (arc < 2)
 	{
-		write(1, "Error\n", 6);
+		write(2, "Error\n", 6);
 		return (0);
 	}
 	while (arc > 1)

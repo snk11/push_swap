@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 14:00:53 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 12:08:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 12:21:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	rotate(t_lst **lsta)
 	
 	lstmp = NULL;
 	lstbegi = NULL;
-	if (*lsta)
+	if (*lsta && (*lsta)->next)
 	{
 		lstmp = (*lsta);
 		lstbegi = (*lsta)->next;

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 12:08:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 12:22:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	reverse(t_lst **lsta)
 
 	lstmp2 = NULL;
 	lstmp = NULL;
-	if (*lsta)
+	if (*lsta && (*lsta)->next)
 	{
 		lstmp = *lsta;
 		while ((*lsta)->next)
