@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 14:07:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 15:53:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -44,6 +44,8 @@ void		ft_quicksort(t_lst **lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp2;
+	t_lst	*lstmp3;
+	t_lst	*lstmp4;
 	t_lst	*lsta2;
 	int		ind1;
 	int		index;
@@ -55,6 +57,9 @@ void		ft_quicksort(t_lst **lsta)
 	int		nbelem3;
 	int		nbelemc;
 	int		nbelema;
+	int		r1;
+	int		cnt1;
+	int		cnt2;
 	t_lst	*lstb;
 	t_numb	*e;
 
@@ -63,9 +68,13 @@ void		ft_quicksort(t_lst **lsta)
 	index2 = 0;
 	lstmp = NULL;
 	lstmp2 = NULL;
+	lstmp3 = NULL;
+	lstmp4 = NULL;
 	lsta2 = NULL;
 	e = NULL;
-
+	r1 = 0;
+	cnt1 = 0;
+	cnt2 = 0;
 
 	int bug = 0;
 	int		a;
@@ -75,17 +84,39 @@ void		ft_quicksort(t_lst **lsta)
 
 	lstb = NULL;
 
-	lsta2 = ft_reverse_lst(*lsta);
 
-	nbelema = ft_comptelem(*lsta);
-	nbelemc = ft_comptelem(lsta2);
-	ind1 = 1;
 	if(*lsta && (*lsta)->next && (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val))
 	{
 		swap(lsta);
 		write(1,"sa\n",3);
 	}
+	lstmp = ft_copylst(*lsta);
+	cnt1 = ft_balance(&lstmp,reverse);
+	lstmp4 = ft_copylst(*lsta);
+	cnt2 = ft_balance(&lstmp4,rotate);
+	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
+	{
+		*lsta = lstmp;
+		while(cnt1 > 0)
+		{
+			write(1,"rra\n",4);
+			cnt1--;
+		}
+	}
+	else if (cnt2 > 0 && cnt1 > cnt2)
+	{
+		*lsta = lstmp4;
+		while(cnt2 > 0)
+		{
+			write(1,"ra\n",4);
+			cnt2--;
+		}
+	}
 
+	lsta2 = ft_reverse_lst(*lsta);
+	nbelema = ft_comptelem(*lsta);
+	nbelemc = ft_comptelem(lsta2);
+	ind1 = 1;
 	while (ind1 == 1 || lsta2)
 	{
 		if (ind1 == 1)
