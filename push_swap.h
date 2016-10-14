@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 15:20:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 16:46:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ void		lst_add2(t_lst **toplist, t_lst *t_lst1);
 void		lst_add_down2(t_lst **toplist, t_lst *t_lst1);
 t_lst	*ft_copylst(t_lst *lstmp);
 int	ft_balance(t_lst **lstmp,void (*f)(t_lst**));
+int		ft_checkdouble(t_lst *lsta,int d);
 
 #endif

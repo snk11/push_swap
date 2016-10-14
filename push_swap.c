@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 13:43:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 16:47:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ int		main(int ac,char **av)
 			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 				return (0);
 			e->val = ft_atoi(av[ac - 1]);
+			if (ft_checkdouble(lsta,e->val) == 0)
+			{
+				write(2, "Error\n", 6);
+				return (0);
+			}
 			lstmp = create_lst(e);
 			lst_add(&lsta, &lstmp);
 		}
