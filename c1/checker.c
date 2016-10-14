@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 13:46:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 13:56:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,19 +93,22 @@ int main(int ac,char **av)
 			if(lsta)
 				push(&lstb,&lsta);
 		}
+		else
+		{
+			write(1,"KO\n",3);
+			return (0);
+		}
 	}
 	lstmp = lsta;
-	r1 = 0;
-	while(lstmp && lstmp->next && r1 == 0)
+	while(lstmp && lstmp->next)
 	{
 		if(((t_numb*)(lstmp->content))->val > ((t_numb*)((lstmp->next)->content))->val)
 		{
 			write(1,"KO\n",3);
-			r1 = 1;
+			return (0);
 		}
 		lstmp = lstmp->next;
 	}
-	if (r1 == 0)
-		write(1,"OK\n",3);
-
+	write(1,"OK\n",3);
+	return (1);
 }
