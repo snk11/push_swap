@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 14:19:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 13:43:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 
-int		main(int arc,char **arv)
+int		main(int ac,char **av)
 {
 	t_lst	*lsta;
 	t_lst	*lstmp;
@@ -25,19 +25,27 @@ int		main(int arc,char **arv)
 	lstmp = NULL;
 	e = NULL;
 
-	if (arc < 2)
+	if (ac <= 2)
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	while (arc > 1)
+	while (ac >= 2)
 	{
-		if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+		if(ft_checkint(av[ac - 1]) == 0)
+		{
+			write(2, "Error\n", 6);
 			return (0);
-		e->val = ft_atoi(arv[arc - 1]);
-		lstmp = create_lst(e);
-		lst_add(&lsta, &lstmp);
-		arc--;
+		}
+		else
+		{
+			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+				return (0);
+			e->val = ft_atoi(av[ac - 1]);
+			lstmp = create_lst(e);
+			lst_add(&lsta, &lstmp);
+		}
+		ac--;
 	}
 //	ft_sort(&lsta);
 	ft_quicksort(&lsta);
