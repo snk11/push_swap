@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 14:57:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 13:46:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,26 @@ int main(int ac,char **av)
 	e = NULL;
 	r1 = 0;
 
-	if (ac < 2)
+	if (ac <= 2)
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	while (ac > 1)
+	while (ac >= 2)
 	{
-		if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+		if(ft_checkint(av[ac - 1]) == 0)
+		{
+			write(2, "Error\n", 6);
 			return (0);
-		e->val = ft_atoi(av[ac - 1]);
-		lstmp = create_lst(e);
-		lst_add(&lsta, &lstmp);
+		}
+		else
+		{
+			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+				return (0);
+			e->val = ft_atoi(av[ac - 1]);
+			lstmp = create_lst(e);
+			lst_add(&lsta, &lstmp);
+		}
 		ac--;
 	}
 	while (get_next_line(0, &line) > 0)
