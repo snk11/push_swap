@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 14:05:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/17 15:46:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -49,6 +49,7 @@ void		ft_quicksort(t_lst **lsta)
 	t_lst	*lstmp5;
 	t_lst	*lsta2;
 	int		ind1;
+	int		ind2;
 	int		index;
 	int		index2;
 	int		index3;
@@ -95,37 +96,10 @@ void		ft_quicksort(t_lst **lsta)
 	nbelema = ft_comptelem(*lsta);
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
+	ind2 = 0;
 	while (ind1 == 1 || lsta2)
 	{
-
-		if(*lsta && (*lsta)->next && (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val))
-		{
-			swap(lsta);
-			write(1,"sa\n",3);
-		}
-		lstmp = ft_copylst(*lsta);
-		cnt1 = ft_balance(&lstmp,reverse);
-		lstmp4 = ft_copylst(*lsta);
-		cnt2 = ft_balance(&lstmp4,rotate);
-		if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
-		{
-			*lsta = lstmp;
-			while(cnt1 > 0)
-			{
-				write(1,"rra\n",4);
-				cnt1--;
-			}
-		}
-		else if (cnt2 > 0 && cnt1 > cnt2)
-		{
-			*lsta = lstmp4;
-			while(cnt2 > 0)
-			{
-				write(1,"ra\n",4);
-				cnt2--;
-			}
-		}
-
+		ft_slide_a(lsta);
 
 
 		if (ind1 == 1)
@@ -145,91 +119,85 @@ void		ft_quicksort(t_lst **lsta)
 				{
 					index4 = get_indexquick(&lstmp,nbelemc,lsta2);
 				}
-				if (index4 > -1)
-				{
-					ind1 = 1;
-					if (((t_numb*)lsta2->content)->val < ((t_numb*)(lstmp)->content)->val)
+					if (index4 > -1)
 					{
-						if (index != 1)
+						ind1 = 1;
+						//						if (((t_numb*)lsta2->content)->val < ((t_numb*)(lstmp)->content)->val)
 						{
-							while (index > 0)
+							if (index != 1)
 							{
+								while (index > 0)
+								{
+									push(&lstb, lsta);
+									write(1,"pb\n",3);
+									index--;
+								}
+								if (((nbelema - index3) / 2) < (index4 + 1 + 1))
+								{
+									index5 = index4;
+									cnt3 = 0;
+									while ((nbelema - index3) - (index4 + 1 + 1) > 0)
+									{
+										rotate(&lstb);
+										write(1,"rb\n",3);
+										index4++;
+										cnt3++;
+									}
+									index4 = index5;
+								}
+								else if (((nbelema - index3) / 2) >= (index4 + 1 + 1))
+								{
+									index5 = index4;
+									cnt3 = 0;
+									while (index4 + 1 > 0)
+									{
+										reverse(&lstb);
+										write(1,"rrb\n",4);
+										index4--;
+										cnt3++;
+									}
+									index4 = index5;
+								}
+								push(lsta,&lstb);
+								write(1,"pa\n",3);
+								swap(lsta);
+								write(1,"sa\n",3);
 								push(&lstb, lsta);
 								write(1,"pb\n",3);
-								index--;
-							}
-							ft_printlst(lstb);
-							printf("nbelema = %d, index3 = %d, index4 =%d\n",nbelema,index3,index4);
-							if (((nbelema - index3) / 2) < (index4 + 1 + 1))
-							{
-								index5 = index4;
-								cnt3 = 0;
-								while ((nbelema - index3) - (index4 + 1 + 1) > 0)
+								nbelem2 = ft_comptelem(lstb);
+								if (((nbelema - index3) / 2) < (index4 + 1 + 1))
 								{
-									rotate(&lstb);
-									write(1,"rb\n",3);
-									index4++;
-									cnt3++;
+									while (cnt3 > 0)
+									{
+										reverse(&lstb);
+										write(1,"rrb\n",4);
+										cnt3--;
+									}
 								}
-								index4 = index5;
-							}
-							else if (((nbelema - index3) / 2) >= (index4 + 1 + 1))
-							{
-								index5 = index4;
-								cnt3 = 0;
-								while (index4 + 1 > 0)
+								if (((nbelema - index3) / 2) >= (index4 + 1 + 1))
 								{
-									reverse(&lstb);
-									write(1,"rrb\n",4);
-									index4--;
-									cnt3++;
+									while (cnt3 > 0)
+									{
+										rotate(&lstb);
+										write(1,"rb\n",4);
+										cnt3--;
+									}
 								}
-								index4 = index5;
-							}
-							ft_printlst(lstb);
-							push(lsta,&lstb);
-							write(1,"pa\n",3);
-							swap(lsta);
-							write(1,"sa\n",3);
-							push(&lstb, lsta);
-							write(1,"pb\n",3);
-							ft_printlst(*lsta);
-							ft_printlst(lstb);
-							nbelem2 = ft_comptelem(lstb);
-							if (((nbelema - index3) / 2) < (index4 + 1 + 1))
-							{
-								while (cnt3 > 0)
+								while(nbelem2 > 0)
 								{
-									reverse(&lstb);
-									write(1,"rrb\n",4);
-									cnt3--;
+									push(lsta, &lstb);
+									write(1,"pa\n",3);
+									nbelem2--;
 								}
 							}
-							if (((nbelema - index3) / 2) >= (index4 + 1 + 1))
+							else
 							{
-								while (cnt3 > 0)
-								{
-									rotate(&lstb);
-									write(1,"rb\n",4);
-									cnt3--;
-								}
+								swap(lsta);
+								write(1,"sa\n",3);
 							}
-							while(nbelem2 > 0)
-							{
-								push(lsta, &lstb);
-								write(1,"pa\n",3);
-								nbelem2--;
-							}
-						}
-						else
-						{
-							swap(lsta);
-							write(1,"sa\n",3);
 						}
 					}
-				}
 			}
-							ft_printlst(*lsta);
 			lsta2 = lsta2->next;
 			index3++;
 		}
