@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/21 11:37:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:23:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,7 +35,7 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	int index;
 
 	index = 0;
-	while (((t_numb*)(*lstmp)->content)->val <= ((t_numb*)((*lstmp)->next)->content)->val && (index < nbelemc - 1))
+	while (((*lstmp)->val <= ((*lstmp)->next)->val) && (index < nbelemc - 1))
 	{
 		index++;
 		if (((*lstmp)->next)->next)
@@ -75,7 +75,7 @@ void		ft_sort(t_lst **lsta)
 
 	if ((*lsta)->next)
 	{
-		if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+		if ((*lsta)->val > ((*lsta)->next)->val)
 			swap(lsta);
 	}
 
@@ -90,7 +90,7 @@ void		ft_sort(t_lst **lsta)
 		{
 			index = get_index(&lstmp,nbelemc);
 		}
-		if (((t_numb*)lstmp->content)->val > ((t_numb*)(lstmp->next)->content)->val || index2 > 0)
+		if (lstmp->val > (lstmp->next)->val || index2 > 0)
 		{
 			if (lstb == NULL)
 			{
@@ -113,7 +113,7 @@ void		ft_sort(t_lst **lsta)
 			}
 			if ((*lsta)->next)
 			{
-				if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
+				if ((*lsta)->val > ((*lsta)->next)->val)
 					swap(lsta);
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 15:25:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:26:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int		main(int ac,char **av)
 {
 	t_lst	*lsta;
 	t_lst	*lstmp;
+	int		val;
 	t_numb	*e;
 
 	lsta = NULL;
 	lstmp = NULL;
 	e = NULL;
+	val = 0;
 
 	if (ac <= 2)
 	{
@@ -41,14 +43,19 @@ int		main(int ac,char **av)
 		{
 			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 				return (0);
-			e->val = ft_atoi(av[ac - 1]);
-			if (ft_checkdouble(lsta,e->val) == 0)
+			val = ft_atoi(av[ac - 1]);
+			if (ft_checkdouble(lsta,val) == 0)
 			{
 				write(2, "Error\n", 6);
 				return (0);
 			}
-			lstmp = create_lst(e);
+			lstmp = create_lst(val);
 			lst_add(&lsta, &lstmp);
+//			if (e)
+//			{
+//				free(e);
+//				e = NULL;
+//			}
 		}
 		ac--;
 	}
@@ -62,5 +69,12 @@ int		main(int ac,char **av)
 //		printf("%d\n",((t_numb*)lsta->content)->val);
 //		lsta = lsta->next;
 //	}
+
+	/*
+	while(42)
+	{
+
+	}
+	*/
 	return (0);
 }

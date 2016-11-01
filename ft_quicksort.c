@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 08:26:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 15:46:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:13:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -23,7 +23,7 @@ int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2)
 	index = -1;
 	while (*lstmp && ind1 == 0 && index < nbelemc - 1)
 	{
-		if(((t_numb*)(*lstmp)->content)->val <= ((t_numb*)(lsta2)->content)->val)
+		if((*lstmp)->val <= (lsta2)->val)
 		{
 			index++;
 			(*lstmp) = (*lstmp)->next;

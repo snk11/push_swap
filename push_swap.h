@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 14:35:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:11:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct		s_env
 
 typedef struct			s_lst
 {
-	void				*content;
+	int					val;
 	struct s_lst		*next;
 }						t_lst;
 
@@ -47,7 +47,7 @@ typedef struct			s_numb
 
 void		lst_add(t_lst **toplist, t_lst **t_lst1);
 //void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
-t_lst		*create_lst(void *content);
+t_lst		*create_lst(int val);
 void	push(t_lst **lstb, t_lst **lsta);
 void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);

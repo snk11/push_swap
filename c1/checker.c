@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 17:30:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:26:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(int ac,char **av)
 	t_lst	*lstmp;
 	t_numb	*e;
 	int		r1;
+	int		val;
 
 	lsta = NULL;
 	lstb = NULL;
@@ -44,15 +45,15 @@ int main(int ac,char **av)
 		}
 		else
 		{
-			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+//			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 				return (0);
-			e->val = ft_atoi(av[ac - 1]);
+			val = ft_atoi(av[ac - 1]);
 			if (ft_checkdouble(lsta,e->val) == 0)
 			{
 				write(2, "Error\n", 6);
 				return (0);
 			}
-			lstmp = create_lst(e);
+			lstmp = create_lst(val);
 			lst_add(&lsta, &lstmp);
 		}
 		ac--;
@@ -108,7 +109,7 @@ int main(int ac,char **av)
 	lstmp = lsta;
 	while(lstmp && lstmp->next)
 	{
-		if(((t_numb*)(lstmp->content))->val > ((t_numb*)((lstmp->next)->content))->val)
+		if(lstmp->val > (lstmp->next)->val)
 		{
 			write(1,"KO\n",3);
 			return (0);

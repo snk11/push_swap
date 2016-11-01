@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 13:36:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/17 13:40:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 03:17:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_printlst(t_lst *lsta)
 
 	while (lsta)
 	{
-		printf("%d ",((t_numb*)lsta->content)->val);
+		printf("%d ",lsta->val);
 		lsta = lsta->next;
 	}
 	printf("\n");
