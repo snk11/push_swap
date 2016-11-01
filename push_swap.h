@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 03:11:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 06:35:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,16 @@ void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);
 void		ft_sort(t_lst **lsta);
 void		ft_quicksort(t_lst **lsta);
+void		ft_quicksort2(t_lst **lsta);
 void	swap(t_lst **lsta);
 int croissant(int a, int b);
 t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
-int		ft_comptelem(t_lst *lsta);
+//int		ft_comptelem(t_lst *lsta);
+int		ft_comptelem(t_lst *lstmp6,t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
 int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2);
 t_lst	*ft_reverse_lst(t_lst *lstmp);
+t_lst	*ft_reverse_lst2(t_lst *lstmp6,t_lst *lstmp);
 int						get_next_line(int const fd, char **line);
 int		ft_checkint(char *s);
 void		lst_add2(t_lst **toplist, t_lst *t_lst1);
@@ -69,7 +72,8 @@ int	ft_balance(t_lst **lstmp,void (*f)(t_lst**));
 int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
-void	ft_slide_a(t_lst **lsta);
+//void	ft_slide_a(t_lst **lsta);
+void	ft_slide_a(t_lst *lstmp6,t_lst **lsta);
 void	ft_slide_b(t_lst **lsta);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 03:23:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 06:04:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
 
-int		ft_comptelem(t_lst *lsta)
+int		ft_comptelem(t_lst *lstmp6,t_lst *lsta)
 {
 	int		nb;
 
@@ -45,7 +45,7 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	return index;
 }
 
-
+/*
 void		ft_sort(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -128,6 +128,7 @@ void		ft_sort(t_lst **lsta)
 
 	}
 }
+*/
 
 /*
 int croissant(int a, int b)

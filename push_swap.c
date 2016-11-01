@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 03:26:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/01 07:00:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 int		main(int ac,char **av)
 {
 	t_lst	*lsta;
+	t_lst	*lst1;
 	t_lst	*lstmp;
 	int		val;
 	t_numb	*e;
 
 	lsta = NULL;
+	lst1 = NULL;
 	lstmp = NULL;
 	e = NULL;
 	val = 0;
@@ -41,8 +43,8 @@ int		main(int ac,char **av)
 		}
 		else
 		{
-			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
-				return (0);
+//			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+//				return (0);
 			val = ft_atoi(av[ac - 1]);
 			if (ft_checkdouble(lsta,val) == 0)
 			{
@@ -50,7 +52,9 @@ int		main(int ac,char **av)
 				return (0);
 			}
 			lstmp = create_lst(val);
-			lst_add(&lsta, &lstmp);
+			lst_add2(&lsta, lstmp);
+			free(lstmp);
+			lstmp = NULL;
 //			if (e)
 //			{
 //				free(e);
@@ -63,18 +67,16 @@ int		main(int ac,char **av)
 	ft_quicksort(&lsta);
 	//lsta = sort_list(lsta,croissant);
 
-	ft_printlst(lsta);
+//	ft_printlst(lsta);
 //	while (lsta)
 //	{
 //		printf("%d\n",((t_numb*)lsta->content)->val);
 //		lsta = lsta->next;
 //	}
 
-	/*
 	while(42)
 	{
 
 	}
-	*/
 	return (0);
 }
