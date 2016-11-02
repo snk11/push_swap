@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:50:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 16:55:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	reverse2(int **tab)
 	int nbelem;
 	int w;
 	int		i;
-
-	nbelem = ft_countelemtab(*tab);
+	nbelem = 0;
+//	nbelem = ft_countelemtab(*tab);
 	w = *tab[nbelem - 1];
 	i = 0;
 	while(i < nbelem - 1)
