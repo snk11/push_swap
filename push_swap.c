@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 14:56:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 17:45:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int		main(int ac,char **av)
 	}
 	tab1 = (int*)malloc(sizeof(int)*nbelem);
 	ft_filltab(lsta,&tab1);
+//	printf("tab[1]= %d\n",tab1[1]);
 //	ft_sort(&lsta);
 	ft_quicksort2(tab1);
 			//free(lsta);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 16:51:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 17:05:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 # include <stdlib.h>
 
 # include "libft/libft.h"
+
+
+
+
+#include <stdio.h>
 
 # define BUFF_SIZE 8192
 

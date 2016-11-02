@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 16:46:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 18:01:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,10 @@ void		ft_quicksort2(int *tab1)
 	int n;
 
 	lstb = NULL;
-	tab1 = NULL;
+	nbelema = 0;
 
 	nbelema = ft_countelemtab(tab1);
+//	printf("nbelem = %d,tab[0] = %d\n",nbelema,tab1[0]);
 //	lsta2 = ft_reverse_lst(lsta);
 	tab2 = (int*)malloc(sizeof(int)*nbelema);
 	ft_fillreversetab(&tab2,tab1);

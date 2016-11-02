@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 15:02:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:06:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 17:52:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ int		ft_countelemtab(int *tab1)
 	int cnt;
 
 	cnt = 0;
-	while(tab1)
+	while(tab1[cnt])
 	{
 		cnt++;
-		tab1++;
 	}
 	return (cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:35:25 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:30:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 17:31:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_filltab(t_lst *lst1, int **tab)
 	i = 0;
 	while(lst1)
 	{
-		*tab[i] = lst1->val;
+		(*tab)[i] = lst1->val;
+		i++;
 		lst1 = lst1->next;
 	}
 }

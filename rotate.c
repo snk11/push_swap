@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 14:00:53 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 16:55:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 17:37:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ void	rotate2(int **tab)
 
 	nbelem = 0;
 //	nbelem = ft_countelemtab(*tab);
-	w = *tab[0];
+	w = (*tab)[0];
 	i = nbelem;
 	while(i > 0)
 	{
-		*tab[i - 1] = *tab[i];
+		(*tab)[i - 1] = (*tab)[i];
 		i--;
 	}
-	*tab[nbelem-1] = w;
+	(*tab)[nbelem-1] = w;
 }
 
 void	rotate(t_lst **lsta)
