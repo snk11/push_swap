@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 06:12:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 14:12:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-void	ft_slide_a(t_lst *lstmp6,t_lst **lsta)
+void	ft_slide_a(t_lst **lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp4;
@@ -23,12 +23,11 @@ void	ft_slide_a(t_lst *lstmp6,t_lst **lsta)
 	lstmp4 = NULL;
 	cnt1 = 0;
 	cnt2 = 0;
-//	if(*lsta && (*lsta)->next && ((*lsta)->val > ((*lsta)->next)->val))
+	if(*lsta && (*lsta)->next && ((*lsta)->val > ((*lsta)->next)->val))
 	{
-//		swap(lsta);
-//		write(1,"sa\n",3);
+		swap(lsta);
+		write(1,"sa\n",3);
 	}
-	/*
 	lstmp = ft_copylst(*lsta);
 	cnt1 = ft_balance(&lstmp,reverse);
 	lstmp4 = ft_copylst(*lsta);
@@ -51,8 +50,6 @@ void	ft_slide_a(t_lst *lstmp6,t_lst **lsta)
 			cnt2--;
 		}
 	}
-	*/
-
 }
 
 void	ft_slide_b(t_lst **lsta)

@@ -6,13 +6,13 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 06:04:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 14:09:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
 
-int		ft_comptelem(t_lst *lstmp6,t_lst *lsta)
+int		ft_comptelem(t_lst *lsta)
 {
 	int		nb;
 

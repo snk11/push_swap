@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 06:35:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 14:10:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	swap(t_lst **lsta);
 int croissant(int a, int b);
 t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
 //int		ft_comptelem(t_lst *lsta);
-int		ft_comptelem(t_lst *lstmp6,t_lst *lsta);
+int		ft_comptelem(t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
 int		get_indexquick(t_lst **lstmp, int nbelemc, t_lst *lsta2);
 t_lst	*ft_reverse_lst(t_lst *lstmp);
@@ -73,7 +73,7 @@ int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
 //void	ft_slide_a(t_lst **lsta);
-void	ft_slide_a(t_lst *lstmp6,t_lst **lsta);
+void	ft_slide_a(t_lst **lsta);
 void	ft_slide_b(t_lst **lsta);
 
 #endif
