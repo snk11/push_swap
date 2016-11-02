@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 14:13:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 14:56:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,15 @@ int		main(int ac,char **av)
 	t_lst	*lstmp;
 	int		val;
 	t_numb	*e;
+	int		nbelem;
+	int		*tab1;
 
 	lsta = NULL;
 	lst1 = NULL;
 	lstmp = NULL;
 	e = NULL;
 	val = 0;
+	nbelem = 0;
 
 	if (ac <= 2)
 	{
@@ -55,6 +58,7 @@ int		main(int ac,char **av)
 			lst_add2(&lsta, lstmp);
 			free(lstmp);
 			lstmp = NULL;
+			nbelem++;
 //			if (e)
 //			{
 //				free(e);
@@ -63,22 +67,24 @@ int		main(int ac,char **av)
 		}
 		ac--;
 	}
+	tab1 = (int*)malloc(sizeof(int)*nbelem);
+	ft_filltab(lsta,&tab1);
 //	ft_sort(&lsta);
-	ft_quicksort(&lsta);
+	ft_quicksort2(tab1);
+			//free(lsta);
+			//lsta = NULL;
 	//lsta = sort_list(lsta,croissant);
 
-	ft_printlst(lsta);
+//	ft_printlst(lsta);
 //	while (lsta)
 //	{
 //		printf("%d\n",((t_numb*)lsta->content)->val);
 //		lsta = lsta->next;
 //	}
 
-	/*
 	while(42)
 	{
 
 	}
-	*/
 	return (0);
 }
