@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:17:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 16:18:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,6 @@ void		ft_quicksort2(int *tab1)
 //	lsta2 = ft_reverse_lst(lsta);
 	tab2 = (int*)malloc(sizeof(int)*nbelema);
 	ft_fillreversetab(&tab2,tab1);
-	free(tab2);
-	tab2 = NULL;
 //	nbelema = ft_comptelem(lsta);
 //	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
@@ -109,11 +107,11 @@ void		ft_quicksort2(int *tab1)
 //	tab2 = (int*)malloc(sizeof(int)*2);
 //	free(tab2);
 //	tab2 = NULL;
-/*
-	while (ind1 == 1 || lsta2)
+//	while (ind1 == 1 || lsta2)
+	while (ind1 == 1 || ft_comptelem(*tab2) > 0)
 	{
-		ft_slide_a(lsta);
-
+//		ft_slide_a(lsta);
+		ft_slide_a(&tab1);
 
 		if (ind1 == 1)
 		{

@@ -6,11 +6,28 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 14:00:53 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 12:21:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 15:56:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	rotate2(int **tab)
+{
+	int nbelem;
+	int w;
+	int		i;
+
+	nbelem = ft_countelemtab(*tab);
+	w = *tab[0];
+	i = nbelem;
+	while(i > 0)
+	{
+		*tab[i - 1] = *tab[i];
+		i--;
+	}
+	*tab[nbelem-1] = w;
+}
 
 void	rotate(t_lst **lsta)
 {

@@ -6,15 +6,35 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 15:06:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 03:15:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 16:17:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
+int	ft_balance3(int **tab,void (*f)(int **))
+{
+	int		nbelem;
+	int		r1;
+	int		cnt1;
 
-#include <stdio.h>
+	cnt1 = 0;
+	nbelem = ft_countelemtab(*tab);
+	while(r1 == 0)
+	{
+		r1 = 1;
+
+		if(nbelem > 1 && *tab[0] > *tab[nbelem-1])
+		{
+			f(tab);
+			r1 = 0;
+			cnt1++;
+		}
+	}
+	return (cnt1);
+}
+
 int	ft_balance(t_lst **lstmp2,void (*f)(t_lst**))
 {
 	int r1;

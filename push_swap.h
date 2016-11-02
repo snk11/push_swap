@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:16:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 16:17:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,9 @@ void		ft_quicksort2(int *tab1);
 void	ft_filltab(t_lst *lst1, int **tab);
 int		ft_countelemtab(int *tab1);
 void	ft_fillreversetab(int **tab2,int *tab1);
+void	ft_copytab(int **tab2,int *tab1);
+void	reverse2(int **tab);
+void	swap2(int **tab1);
+int	ft_balance3(int **tab,void (*f)(int **));
 
 #endif

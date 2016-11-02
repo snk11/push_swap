@@ -6,12 +6,28 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/13 12:22:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 15:50:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	reverse2(int **tab)
+{
+	int nbelem;
+	int w;
+	int		i;
+
+	nbelem = ft_countelemtab(*tab);
+	w = *tab[nbelem - 1];
+	i = 0;
+	while(i < nbelem - 1)
+	{
+		*tab[i + 1] = *tab[i];
+		i++;
+	}
+	*tab[i] = w;
+}
 void	reverse(t_lst **lsta)
 {
 	t_lst	*lstmp;

@@ -6,12 +6,63 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 14:12:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/02 16:07:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+void	ft_slide_a2(int **tab1)
+{
+	t_lst	*lstmp;
+	t_lst	*lstmp4;
+	int		cnt1;
+	int		cnt2;
+	int		i;
+	int		*tabtmp1;
+	int		*tabtmp2;
+	int		nbelem;
+
+	lstmp = NULL;
+	lstmp4 = NULL;
+	tabtmp1 = NULL;
+	tabtmp2 = NULL;
+	cnt1 = 0;
+	cnt2 = 0;
+	nbelem = ft_countelemtab(*tab1);
+//	if(*lsta && (*lsta)->next && ((*lsta)->val > ((*lsta)->next)->val))
+	i = 0;
+	if (tab1[0] && tab1[1] && tab1[0] > tab1[1])
+	{
+		swap2(&tab1);
+		write(1,"sa\n",3);
+	}
+	lstmp = ft_copylst(*lsta);
+	tabtmp1 = (int*)malloc(sizeof(int) * nbelem);
+	ft_copytab(&tabtmp1,*tab1);
+	cnt1 = ft_balance(&lstmp,reverse);
+	cnt1 = ft_balance3(&tabtmp1,reverse2);
+	lstmp4 = ft_copylst(*lsta);
+	cnt2 = ft_balance(&lstmp4,rotate);
+	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
+	{
+		*lsta = lstmp;
+		while(cnt1 > 0)
+		{
+			write(1,"rra\n",4);
+			cnt1--;
+		}
+	}
+	else if (cnt2 > 0 && cnt1 > cnt2)
+	{
+		*lsta = lstmp4;
+		while(cnt2 > 0)
+		{
+			write(1,"ra\n",4);
+			cnt2--;
+		}
+	}
+}
 void	ft_slide_a(t_lst **lsta)
 {
 	t_lst	*lstmp;

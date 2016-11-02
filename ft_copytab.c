@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copylst.c                                       :+:      :+:    :+:   */
+/*   ft_copytab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/14 14:38:21 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 15:35:12 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/02 15:31:32 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/02 15:36:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_lst	*ft_copylst(t_lst *lstmp)
+void	ft_copytab(int **tab2,int *tab1)
 {
-	t_numb *e;
-	t_lst *lsta2;
-	t_lst *lstmp2;
-	int  val;
+	int nbelem1;
+	int	i;
 
-	val = 0;
-	lstmp2 = NULL;
-	lsta2 = NULL;
-	while(lstmp)
+	i = 0;
+	nbelem1 = ft_countelemtab(tab1);
+	while(nbelem1 > i)
 	{
-		e = (t_numb*)malloc(sizeof(t_numb));
-		val = (lstmp)->val;
-		lstmp2 = create_lst(val);
-		lst_add_down2(&lsta2, lstmp2);
-		lstmp = lstmp->next;
+		*tab2[i] = tab1[i];
+		nbelem1--;
+		i++;
 	}
-	return lsta2;
 }
