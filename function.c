@@ -6,30 +6,34 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 17:59:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 19:13:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
 #include <stdio.h>
-void		lst_add(t_lst **toplist, t_lst **t_lst1)
+void		lst_add(t_lst **toplist, t_lst **lst1)
 {
 
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((*t_lst1)->content);
+//	lstmp = create_lst((*lst1)->content);
 	if (*toplist == NULL)
 	{
+		lstmp = *lst1;
+		*lst1 = (*lst1)->next;
 		*toplist = lstmp;
+		(*toplist)->next = NULL;
 	}
 	else
 	{
+		lstmp = *lst1;
+		*lst1 = (*lst1)->next;
 		lstmp->next = *toplist;
 		*toplist = lstmp;
 	}
-		*t_lst1 = (*t_lst1)->next;
 }
 
 void		lst_add2(t_lst **toplist, t_lst *t_lst1)
