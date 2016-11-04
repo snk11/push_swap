@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:02:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:19:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -100,10 +100,8 @@ t_lst		*ft_quicksort(t_lst *lsta)
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
 	ind2 = 0;
-	ft_freelst(&lstmp6);
-	return (lsta2);
+//	ft_freelst(&lsta);
 //	ft_freelst(&lstmp6);
-	/*
 	while (ind1 == 1 || lsta2)
 	{
 		
@@ -112,16 +110,16 @@ t_lst		*ft_quicksort(t_lst *lsta)
 
 		if (ind1 == 1)
 		{
-			lsta2 = ft_reverse_lst(*lsta);
+			lsta2 = ft_reverse_lst(lstmp6);
 			index3 = 0;
 		}
 		ind1 = 0;
 		{
 			{
 				bug++;
-				lstmp = *lsta;
+				lstmp = lstmp6;
 				nbelemc = ft_comptelem(lsta2);
-				lstmp = *lsta;
+				lstmp = lstmp6;
 				index = nbelemc - 1;
 				if  (lstmp)
 				{
@@ -136,7 +134,7 @@ t_lst		*ft_quicksort(t_lst *lsta)
 							{
 								while (index > 0)
 								{
-									push(&lstb, lsta);
+									push(&lstb, &lstmp6);
 									write(1,"pb\n",3);
 									index--;
 								}
@@ -166,11 +164,11 @@ t_lst		*ft_quicksort(t_lst *lsta)
 									}
 									index4 = index5;
 								}
-								push(lsta,&lstb);
+								push(&lstmp6,&lstb);
 								write(1,"pa\n",3);
-								swap(lsta);
+								swap(&lstmp6);
 								write(1,"sa\n",3);
-								push(&lstb, lsta);
+								push(&lstb, &lstmp6);
 								write(1,"pb\n",3);
 								nbelem2 = ft_comptelem(lstb);
 								if (((nbelema - index3) / 2) < (index4 + 1 + 1))
@@ -193,14 +191,14 @@ t_lst		*ft_quicksort(t_lst *lsta)
 								}
 								while(nbelem2 > 0)
 								{
-									push(lsta, &lstb);
+									push(&lstmp6, &lstb);
 									write(1,"pa\n",3);
 									nbelem2--;
 								}
 							}
 							else
 							{
-								swap(lsta);
+								swap(&lstmp6);
 								write(1,"sa\n",3);
 							}
 						}
@@ -210,5 +208,6 @@ t_lst		*ft_quicksort(t_lst *lsta)
 			index3++;
 		}
 	}
-*/
+	free(lsta2);
+	return (lstmp6);
 }
