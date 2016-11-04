@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:43:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:53:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -102,7 +102,7 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	ind2 = 0;
 	ft_freelst(&lsta2);
 //	ft_freelst(&lstmp6);
-//	swap(&lstmp6);
+	swap(&lstmp6);
 	/*
 	while (ind1 == 1 || lsta2)
 	{
@@ -210,35 +210,10 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 			index3++;
 		}
 	}
-	free(lsta2);
 	*/
 	t_lst *lstmp6begi;
 
 	lstmp6begi = lstmp6;
-	/*
-	while (lstmp6)
-	{
-	t_lst		*lstmp;
-	t_lst		*lstmp2;
-
-	lstmp = NULL;
-	lstmp2 = NULL;
-	lstmp2 = *lst1;
-	lstmp = create_lst((lstmp6)->content);
-	if (*lst1 == NULL)
-	{
-//		ft_freelst(toplist);
-		*toplist = lstmp;
-	}
-	else
-	{
-		while(lstmp2 && lstmp2->next)
-			lstmp2 = lstmp2->next;
-		lstmp2->next = lstmp;
-	}
-	lstmp6 = lstmp6->next;
-	}
-	*/
 
 	while(lstmp6)
 	{
