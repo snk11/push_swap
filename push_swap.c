@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:12:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:44:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@
 int		main(int ac,char **av)
 {
 	t_lst	**lsta;
+	t_lst	**lst1;
 	t_lst	*lstmp;
 	t_numb	*e;
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
+	lst1 = (t_lst**)malloc(sizeof(t_lst*));
 	*lsta = NULL;
+	*lst1 = NULL;
 	lstmp = NULL;
 	e = NULL;
 
@@ -59,7 +62,9 @@ int		main(int ac,char **av)
 	}
 //	ft_sort(&lsta);
 	
-	lstmp = ft_quicksort(*lsta);
+	ft_quicksort(lst1,*lsta);
+	ft_freelst(lsta);
+	ft_freelst(lst1);
 	//lsta = sort_list(lsta,croissant);
 
 //	ft_printlst(lstmp);

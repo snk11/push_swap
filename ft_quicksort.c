@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:19:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:43:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -40,7 +40,7 @@ int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 }
 
 
-t_lst		*ft_quicksort(t_lst *lsta)
+void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp2;
@@ -100,8 +100,10 @@ t_lst		*ft_quicksort(t_lst *lsta)
 	nbelemc = ft_comptelem(lsta2);
 	ind1 = 1;
 	ind2 = 0;
-//	ft_freelst(&lsta);
+	ft_freelst(&lsta2);
 //	ft_freelst(&lstmp6);
+//	swap(&lstmp6);
+	/*
 	while (ind1 == 1 || lsta2)
 	{
 		
@@ -209,5 +211,39 @@ t_lst		*ft_quicksort(t_lst *lsta)
 		}
 	}
 	free(lsta2);
-	return (lstmp6);
+	*/
+	t_lst *lstmp6begi;
+
+	lstmp6begi = lstmp6;
+	/*
+	while (lstmp6)
+	{
+	t_lst		*lstmp;
+	t_lst		*lstmp2;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	lstmp2 = *lst1;
+	lstmp = create_lst((lstmp6)->content);
+	if (*lst1 == NULL)
+	{
+//		ft_freelst(toplist);
+		*toplist = lstmp;
+	}
+	else
+	{
+		while(lstmp2 && lstmp2->next)
+			lstmp2 = lstmp2->next;
+		lstmp2->next = lstmp;
+	}
+	lstmp6 = lstmp6->next;
+	}
+	*/
+
+	while(lstmp6)
+	{
+		lst_add_down2(lst1,lstmp6);
+		lstmp6 = lstmp6->next;
+	}
+	ft_freelst(&lstmp6begi);
 }
