@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 22:48:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 23:47:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -49,7 +49,6 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	t_lst	*lstmp5;
 	t_lst	*lstmp6;
 	t_lst	*lstmp7;
-	t_lst	**lstmp8;
 	t_lst	*lsta2;
 	int		ind1;
 	int		ind2;
@@ -82,7 +81,6 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	lstmp5 = NULL;
 	lstmp6 = NULL;
 	lstmp7 = NULL;
-	lstmp8 = NULL;
 	lsta2 = NULL;
 	e = NULL;
 	r1 = 0;
@@ -103,21 +101,20 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	lstmp6 = ft_copylst(lsta);
 	nbelema = ft_comptelem(lsta);
 	nbelemc = ft_comptelem(lsta2);
-	ft_freelst(&lsta2);
+//	ft_freelst(&lsta2);
 	ind1 = 1;
 	ind2 = 0;
-	lstmp8 = (t_lst**)malloc(sizeof(t_lst*));
 //	ft_freelst(&lstmp6);
 //	ft_freelst(&lsta2);
 	while (ind1 == 1 || lsta2)
 	{
 		
-		ft_slide_a(lstmp8,lstmp6);
+//		ft_slide_a(&lstmp6);
 if(lsta2)
 	printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 		if (ind1 == 1)
 		{
-			lsta2 = ft_reverse_lst(*lstmp8);
+			lsta2 = ft_reverse_lst(lstmp6);
 			index3 = 0;
 		}
 		ind1 = 0;
@@ -128,9 +125,9 @@ if(lsta2)
 				nbelemc = ft_comptelem(lsta2);
 //				lstmp = lstmp6;
 				index = nbelemc - 1;
-				if  (lstmp8)
+				if  (lstmp6)
 				{
-					index4 = get_indexquick(*lstmp8,nbelemc,lsta2);
+					index4 = get_indexquick(lstmp6,nbelemc,lsta2);
 				}
 				printf("index4 = %d\n",index4);
 					if (index4 > -1)
@@ -142,7 +139,7 @@ if(lsta2)
 							{
 								while (index > 0)
 								{
-									push(&lstb, lstmp8);
+									push(&lstb, &lstmp6);
 									write(1,"pb\n",3);
 									index--;
 								}
@@ -172,11 +169,11 @@ if(lsta2)
 									}
 									index4 = index5;
 								}
-								push(lstmp8,&lstb);
+								push(&lstmp6,&lstb);
 								write(1,"pa\n",3);
-								swap(lstmp8);
+								swap(&lstmp6);
 								write(1,"sa\n",3);
-								push(&lstb, lstmp8);
+								push(&lstb, &lstmp6);
 								write(1,"pb\n",3);
 								nbelem2 = ft_comptelem(lstb);
 								if (((nbelema - index3) / 2) < (index4 + 1 + 1))
@@ -199,14 +196,14 @@ if(lsta2)
 								}
 								while(nbelem2 > 0)
 								{
-									push(lstmp8, &lstb);
+									push(&lstmp6, &lstb);
 									write(1,"pa\n",3);
 									nbelem2--;
 								}
 							}
 							else
 							{
-								swap(lstmp8);
+								swap(&lstmp6);
 								write(1,"sa\n",3);
 							}
 						}
@@ -218,22 +215,19 @@ if(lsta2)
 			lstmp7->content = NULL;
 			free(lstmp7);
 			lstmp7 = NULL;
-			ft_freelst(&lsta2);
+//			ft_freelst(&lsta2);
 			index3++;
 		}
 	}
 //	ft_printlst(lstmp6);
-	ft_freelst(&lstmp6);
 	t_lst *lstmp6begi;
 
-	lstmp6begi = *lstmp8;
+	lstmp6begi = lstmp6;
 
-	while(*lstmp8)
+	while(lstmp6)
 	{
-		lst_add_down2(lst1,*lstmp8);
-		*lstmp8 = (*lstmp8)->next;
+		lst_add_down2(lst1,lstmp6);
+		lstmp6 = lstmp6->next;
 	}
 	ft_freelst(&lstmp6begi);
-	free(lstmp8);
-	lstmp8 = NULL;
 }

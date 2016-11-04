@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 22:21:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 23:34:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_balance(t_lst **lstmp,void (*f)(t_lst**));
 int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
-void	ft_slide_a(t_lst **lst1,t_lst *lsta);
+void	ft_slide_a(t_lst **lst1);
 void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
 
