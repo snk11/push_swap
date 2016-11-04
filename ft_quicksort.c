@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 20:27:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 22:03:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -101,17 +101,17 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	lstmp6 = ft_copylst(lsta);
 	nbelema = ft_comptelem(lsta);
 	nbelemc = ft_comptelem(lsta2);
+	ft_freelst(&lsta2);
 	ind1 = 1;
 	ind2 = 0;
-	swap(&lstmp6);
-	ft_freelst(&lstmp6);
-	ft_freelst(&lsta2);
-/*
+//	ft_freelst(&lstmp6);
+//	ft_freelst(&lsta2);
 	while (ind1 == 1 || lsta2)
 	{
 		
 //		ft_slide_a(&lstmp6);
-
+if(lsta2)
+	printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 		if (ind1 == 1)
 		{
 			lsta2 = ft_reverse_lst(lstmp6);
@@ -121,14 +121,15 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 		{
 			{
 				bug++;
-				lstmp = lstmp6;
+//				lstmp = lstmp6;
 				nbelemc = ft_comptelem(lsta2);
-				lstmp = lstmp6;
+//				lstmp = lstmp6;
 				index = nbelemc - 1;
-				if  (lstmp)
+				if  (lstmp6)
 				{
-					index4 = get_indexquick(lstmp,nbelemc,lsta2);
+					index4 = get_indexquick(lstmp6,nbelemc,lsta2);
 				}
+				printf("index4 = %d\n",index4);
 					if (index4 > -1)
 					{
 						ind1 = 1;
@@ -208,14 +209,17 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 						}
 					}
 			}
-//			lstmp7 = lsta2;
+			lstmp7 = lsta2;
 			lsta2 = lsta2->next;
+			free(lstmp7->content);
+			lstmp7->content = NULL;
+			free(lstmp7);
+			lstmp7 = NULL;
+			ft_freelst(&lsta2);
 			index3++;
 		}
 	}
-	ft_printlst(lstmp6);
-	*/
-	/*
+//	ft_printlst(lstmp6);
 	t_lst *lstmp6begi;
 
 	lstmp6begi = lstmp6;
@@ -226,5 +230,4 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 		lstmp6 = lstmp6->next;
 	}
 	ft_freelst(&lstmp6begi);
-	*/
 }
