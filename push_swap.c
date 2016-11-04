@@ -6,9 +6,10 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 17:45:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:12:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -17,20 +18,14 @@
 
 int		main(int ac,char **av)
 {
-	t_lst	*lsta;
-	t_lst	*lst1;
+	t_lst	**lsta;
 	t_lst	*lstmp;
-	int		val;
 	t_numb	*e;
-	int		nbelem;
-	int		*tab1;
 
-	lsta = NULL;
-	lst1 = NULL;
+	lsta = (t_lst**)malloc(sizeof(t_lst*));
+	*lsta = NULL;
 	lstmp = NULL;
 	e = NULL;
-	val = 0;
-	nbelem = 0;
 
 	if (ac <= 2)
 	{
@@ -46,37 +41,28 @@ int		main(int ac,char **av)
 		}
 		else
 		{
-//			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
-//				return (0);
-			val = ft_atoi(av[ac - 1]);
-			if (ft_checkdouble(lsta,val) == 0)
+			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+				return (0);
+			e->val = ft_atoi(av[ac - 1]);
+			if (ft_checkdouble(*lsta,e->val) == 0)
 			{
 				write(2, "Error\n", 6);
 				return (0);
 			}
-			lstmp = create_lst(val);
-			lst_add2(&lsta, lstmp);
-			free(lstmp);
-			lstmp = NULL;
-			nbelem++;
-//			if (e)
-//			{
-//				free(e);
-//				e = NULL;
-//			}
+			lstmp = create_lst(e);
+			free(e);
+			e = NULL;
+			lst_add2(lsta, lstmp);
+			ft_freelst(&lstmp);
 		}
 		ac--;
 	}
-	tab1 = (int*)malloc(sizeof(int)*nbelem);
-	ft_filltab(lsta,&tab1);
-//	printf("tab[1]= %d\n",tab1[1]);
 //	ft_sort(&lsta);
-	ft_quicksort2(tab1);
-			//free(lsta);
-			//lsta = NULL;
+	
+	lstmp = ft_quicksort(*lsta);
 	//lsta = sort_list(lsta,croissant);
 
-//	ft_printlst(lsta);
+//	ft_printlst(lstmp);
 //	while (lsta)
 //	{
 //		printf("%d\n",((t_numb*)lsta->content)->val);
@@ -85,7 +71,7 @@ int		main(int ac,char **av)
 
 	while(42)
 	{
-
 	}
+
 	return (0);
 }

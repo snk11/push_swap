@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/01 03:12:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 17:59:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void		lst_add(t_lst **toplist, t_lst **t_lst1)
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((*t_lst1)->val);
+	lstmp = create_lst((*t_lst1)->content);
 	if (*toplist == NULL)
 	{
 		*toplist = lstmp;
@@ -38,9 +38,10 @@ void		lst_add2(t_lst **toplist, t_lst *t_lst1)
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((t_lst1)->val);
+	lstmp = create_lst((t_lst1)->content);
 	if (*toplist == NULL)
 	{
+//		ft_freelst(toplist);
 		*toplist = lstmp;
 	}
 	else
@@ -59,9 +60,10 @@ void		lst_add_down2(t_lst **toplist, t_lst *t_lst1)
 	lstmp = NULL;
 	lstmp2 = NULL;
 	lstmp2 = *toplist;
-	lstmp = create_lst((t_lst1)->val);
+	lstmp = create_lst((t_lst1)->content);
 	if (*toplist == NULL)
 	{
+//		ft_freelst(toplist);
 		*toplist = lstmp;
 	}
 	else
@@ -91,24 +93,24 @@ void		lst_add_del(t_lst **toplist, t_lst **t_lst1)
 		*t_lst1 = NULL;
 }
 */
-t_lst		*create_lst(int val)
+t_lst		*create_lst(void *content)
 {
 	t_lst	*curlst;
 
 	curlst = NULL;
 	if (!(curlst = (t_lst*)malloc(sizeof(t_lst))))
 		return (NULL);
-//	if (content == NULL)
-//	{
-//		curlst->content = NULL;
-//	}
-//	else
-//	{
+	if (content == NULL)
+	{
+		curlst->content = NULL;
+	}
+	else
+	{
 //		if (!(curlst->content = malloc(sizeof(content))))
 //			return (NULL);
 //		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
-//	}
-	curlst->val = val;
+		curlst->content = ft_memmove2(content);
+	}
 	curlst->next = NULL;
 	return (curlst);
 }

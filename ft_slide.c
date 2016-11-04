@@ -6,64 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 11:22:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:03:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-
-void	ft_slide_a2(int **tab1)
-{
-	int		cnt1;
-	int		cnt2;
-	int		i;
-	int		*tabtmp1;
-	int		*tabtmp2;
-	int		nbelem;
-
-	tabtmp1 = NULL;
-	tabtmp2 = NULL;
-	cnt1 = 0;
-	cnt2 = 0;
-	nbelem = ft_countelemtab(*tab1);
-	i = 0;
-//	printf("tab1[0] = %d,tab1[1] = %d\n",(*tab1)[0],(*tab1)[1]);
-	if ((*tab1)[0] && (*tab1)[1] && (*tab1)[0] > (*tab1)[1])
-	{
-		swap2(tab1);
-		write(1,"sa\n",3);
-	}
-	tabtmp1 = (int*)malloc(sizeof(int) * nbelem);
-	ft_copytab(&tabtmp1,*tab1);
-	cnt1 = ft_balance3(&tabtmp1,reverse2);
-//	printf("cnt1 = %d\n",cnt1);
-	tabtmp2 = (int*)malloc(sizeof(int) * nbelem);
-	ft_copytab(&tabtmp2,*tab1);
-	cnt2 = ft_balance3(&tabtmp2,rotate2);
-//	printf("cnt2 = %d\n",cnt2);
-	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
-	{
-		ft_copytab(tab1,tabtmp1);
-		while(cnt1 > 0)
-		{
-			write(1,"rra\n",4);
-			cnt1--;
-		}
-	}
-	else if (cnt2 > 0 && cnt1 > cnt2)
-	{
-		ft_copytab(tab1,tabtmp2);
-		while(cnt2 > 0)
-		{
-			write(1,"ra\n",3);
-			cnt2--;
-		}
-	}
-	free(tabtmp1);
-	tabtmp1 = NULL;
-	free(tabtmp2);
-	tabtmp2 = NULL;
-}
 
 void	ft_slide_a(t_lst **lsta)
 {
@@ -76,7 +23,7 @@ void	ft_slide_a(t_lst **lsta)
 	lstmp4 = NULL;
 	cnt1 = 0;
 	cnt2 = 0;
-	if(*lsta && (*lsta)->next && ((*lsta)->val > ((*lsta)->next)->val))
+	if(*lsta && (*lsta)->next && (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val))
 	{
 		swap(lsta);
 		write(1,"sa\n",3);
@@ -103,6 +50,7 @@ void	ft_slide_a(t_lst **lsta)
 			cnt2--;
 		}
 	}
+
 }
 
 void	ft_slide_b(t_lst **lsta)
@@ -116,7 +64,7 @@ void	ft_slide_b(t_lst **lsta)
 	lstmp4 = NULL;
 	cnt1 = 0;
 	cnt2 = 0;
-	if(*lsta && (*lsta)->next && ((*lsta)->val < ((*lsta)->next)->val))
+	if(*lsta && (*lsta)->next && (((t_numb*)(*lsta)->content)->val < ((t_numb*)((*lsta)->next)->content)->val))
 	{
 		swap(lsta);
 		write(1,"sb\n",3);

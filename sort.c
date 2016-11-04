@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/15 21:14:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 14:09:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 18:05:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -35,7 +35,7 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	int index;
 
 	index = 0;
-	while (((*lstmp)->val <= ((*lstmp)->next)->val) && (index < nbelemc - 1))
+	while (((t_numb*)(*lstmp)->content)->val <= ((t_numb*)((*lstmp)->next)->content)->val && (index < nbelemc - 1))
 	{
 		index++;
 		if (((*lstmp)->next)->next)
@@ -45,7 +45,7 @@ int		get_index(t_lst **lstmp, int nbelemc)
 	return index;
 }
 
-/*
+
 void		ft_sort(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -75,7 +75,7 @@ void		ft_sort(t_lst **lsta)
 
 	if ((*lsta)->next)
 	{
-		if ((*lsta)->val > ((*lsta)->next)->val)
+		if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
 			swap(lsta);
 	}
 
@@ -90,7 +90,7 @@ void		ft_sort(t_lst **lsta)
 		{
 			index = get_index(&lstmp,nbelemc);
 		}
-		if (lstmp->val > (lstmp->next)->val || index2 > 0)
+		if (((t_numb*)lstmp->content)->val > ((t_numb*)(lstmp->next)->content)->val || index2 > 0)
 		{
 			if (lstb == NULL)
 			{
@@ -113,7 +113,7 @@ void		ft_sort(t_lst **lsta)
 			}
 			if ((*lsta)->next)
 			{
-				if ((*lsta)->val > ((*lsta)->next)->val)
+				if (((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
 					swap(lsta);
 			}
 		}
@@ -128,7 +128,6 @@ void		ft_sort(t_lst **lsta)
 
 	}
 }
-*/
 
 /*
 int croissant(int a, int b)
