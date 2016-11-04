@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 15:06:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/02 16:17:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/04 11:23:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_balance3(int **tab,void (*f)(int **))
 	{
 		r1 = 1;
 
-		if(nbelem > 1 && *tab[0] > *tab[nbelem-1])
+		if(nbelem > 1 && (*tab)[0] > (*tab)[nbelem-1])
 		{
 			f(tab);
 			r1 = 0;
