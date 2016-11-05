@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 13:28:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 14:04:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -114,8 +114,6 @@ void	ft_quicksort(t_lst ***lsta)
 	while (ind1 == 1 || lsta2)
 	{
 		ft_slide_a(&lsta);
-if(lsta2)
-	printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 		if (ind1 == 1)
 		{
 			ft_freelst(&lsta2);
@@ -134,7 +132,6 @@ if(lsta2)
 				{
 					index4 = get_indexquick(**lsta,nbelemc,lsta2);
 				}
-				printf("index4 = %d\n",index4);
 					if (index4 > -1)
 					{
 						ind1 = 1;

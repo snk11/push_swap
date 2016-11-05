@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 13:15:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 14:05:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,10 @@ int		main(int ac,char **av)
 //		printf("%d\n",((t_numb*)lsta->content)->val);
 //		lsta = lsta->next;
 //	}
+/*
 	while(42)
 	{
 	}
+	*/
 	return (0);
 }
