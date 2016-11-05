@@ -6,13 +6,30 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 19:13:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:17:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
 #include <stdio.h>
+
+void		ft_p1(t_lst ***lst1)
+{
+	ft_p2(&lst1);
+}
+
+void		ft_p2(t_lst ****lst1)
+{
+	if(***lst1)
+	{
+		((t_numb*)(***lst1)->content)->val = 6;
+	}
+}
+
+
+
+
 void		lst_add(t_lst **toplist, t_lst **lst1)
 {
 
@@ -36,7 +53,76 @@ void		lst_add(t_lst **toplist, t_lst **lst1)
 	}
 }
 
-void		lst_add2(t_lst **toplist, t_lst *t_lst1)
+void		lst_add3(t_lst **toplist, t_lst *****lst1)
+{
+
+	t_lst		*lstmp;
+
+	lstmp = NULL;
+//	lstmp = create_lst((*lst1)->content);
+	if (*toplist == NULL)
+	{
+		lstmp = ****lst1;
+		****lst1 = (****lst1)->next;
+		*toplist = lstmp;
+		(*toplist)->next = NULL;
+	}
+	else
+	{
+		lstmp = ****lst1;
+		****lst1 = (****lst1)->next;
+		lstmp->next = *toplist;
+		*toplist = lstmp;
+	}
+}
+
+void		lst_add4(t_lst *****toplist, t_lst **lst1)
+{
+
+	t_lst		*lstmp;
+
+	lstmp = NULL;
+//	lstmp = create_lst((*lst1)->content);
+	if (*toplist == NULL)
+	{
+		lstmp = *lst1;
+		*lst1 = (*lst1)->next;
+		****toplist = lstmp;
+		(****toplist)->next = NULL;
+	}
+	else
+	{
+		lstmp = *lst1;
+		*lst1 = (*lst1)->next;
+		lstmp->next = ****toplist;
+		****toplist = lstmp;
+	}
+}
+
+void		lst_add6(t_lst *****toplist, t_lst ***lst1)
+{
+
+	t_lst		*lstmp;
+
+	lstmp = NULL;
+//	lstmp = create_lst((*lst1)->content);
+	if (*toplist == NULL)
+	{
+		lstmp = **lst1;
+		**lst1 = (**lst1)->next;
+		****toplist = lstmp;
+		(****toplist)->next = NULL;
+	}
+	else
+	{
+		lstmp = **lst1;
+		**lst1 = (**lst1)->next;
+		lstmp->next = ****toplist;
+		****toplist = lstmp;
+	}
+}
+
+void		lst_add5(t_lst **toplist, t_lst *t_lst1)
 {
 
 	t_lst		*lstmp;
@@ -52,6 +138,24 @@ void		lst_add2(t_lst **toplist, t_lst *t_lst1)
 	{
 		lstmp->next = *toplist;
 		*toplist = lstmp;
+	}
+}
+void		lst_add2(t_lst ***toplist, t_lst *t_lst1)
+{
+
+	t_lst		*lstmp;
+
+	lstmp = NULL;
+	lstmp = create_lst((t_lst1)->content);
+	if (**toplist == NULL)
+	{
+//		ft_freelst(toplist);
+		**toplist = lstmp;
+	}
+	else
+	{
+		lstmp->next = **toplist;
+		**toplist = lstmp;
 	}
 }
 

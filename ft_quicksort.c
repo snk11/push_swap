@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 11:33:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:03:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -40,15 +40,18 @@ int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 }
 
 
-void	ft_quicksort(t_lst **lst1,t_lst *lsta)
+void	ft_quicksort(t_lst ***lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp2;
 	t_lst	*lstmp3;
 	t_lst	*lstmp4;
 	t_lst	*lstmp5;
-	t_lst	*lstmp6;
+//	t_lst	*lstmp6;
 	t_lst	*lstmp7;
+//	t_lst	**lstmp8;
+	t_lst	*lstmp9;
+	t_lst	*lstmp12;
 	t_lst	*lsta2;
 	int		ind1;
 	int		ind2;
@@ -69,7 +72,7 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	t_lst	*lstb;
 	t_numb	*e;
 
-
+//	lstmp8 = (t_lst**)malloc(sizeof(t_lst*));
 	index = 0;
 	index2 = 0;
 	index4 = 0;
@@ -79,8 +82,9 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	lstmp3 = NULL;
 	lstmp4 = NULL;
 	lstmp5 = NULL;
-	lstmp6 = NULL;
+//	lstmp6 = NULL;
 	lstmp7 = NULL;
+	lstmp9 = NULL;
 	lsta2 = NULL;
 	e = NULL;
 	r1 = 0;
@@ -95,11 +99,12 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 	int n;
 
 	lstb = NULL;
+//	*lstmp8 = NULL;
 
 
-	lsta2 = ft_reverse_lst(lsta);
-	lstmp6 = ft_copylst(lsta);
-	nbelema = ft_comptelem(lsta);
+	lsta2 = ft_reverse_lst(**lsta);
+//	lstmp6 = ft_copylst(**lsta);
+	nbelema = ft_comptelem(**lsta);
 	nbelemc = ft_comptelem(lsta2);
 //	ft_freelst(&lsta2);
 	ind1 = 1;
@@ -108,14 +113,15 @@ void	ft_quicksort(t_lst **lst1,t_lst *lsta)
 //	ft_freelst(&lsta2);
 	while (ind1 == 1 || lsta2)
 	{
-		
-//		ft_slide_a(&lstmp6);
+//		lstmp9 = lstmp6;
+//		lstmp6 = ft_slide_a(lstmp8,lstmp6);
+//		ft_freelst(&lstmp9);
 if(lsta2)
 	printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 		if (ind1 == 1)
 		{
 			ft_freelst(&lsta2);
-			lsta2 = ft_reverse_lst(lstmp6);
+			lsta2 = ft_reverse_lst(**lsta);
 			index3 = 0;
 		}
 		ind1 = 0;
@@ -126,9 +132,9 @@ if(lsta2)
 				nbelemc = ft_comptelem(lsta2);
 //				lstmp = lstmp6;
 				index = nbelemc - 1;
-				if  (lstmp6)
+				if  (**lsta)
 				{
-					index4 = get_indexquick(lstmp6,nbelemc,lsta2);
+					index4 = get_indexquick(**lsta,nbelemc,lsta2);
 				}
 				printf("index4 = %d\n",index4);
 					if (index4 > -1)
@@ -140,7 +146,7 @@ if(lsta2)
 							{
 								while (index > 0)
 								{
-									push(&lstb, &lstmp6);
+									push1(&lstb, &lsta);
 									write(1,"pb\n",3);
 									index--;
 								}
@@ -170,11 +176,11 @@ if(lsta2)
 									}
 									index4 = index5;
 								}
-								push(&lstmp6,&lstb);
+								push2(&lsta,&lstb);
 								write(1,"pa\n",3);
-								swap(&lstmp6);
+								swap1(&lsta);
 								write(1,"sa\n",3);
-								push(&lstb, &lstmp6);
+								push1(&lstb, &lsta);
 								write(1,"pb\n",3);
 								nbelem2 = ft_comptelem(lstb);
 								if (((nbelema - index3) / 2) < (index4 + 1 + 1))
@@ -197,14 +203,14 @@ if(lsta2)
 								}
 								while(nbelem2 > 0)
 								{
-									push(&lstmp6, &lstb);
+									push2(&lsta, &lstb);
 									write(1,"pa\n",3);
 									nbelem2--;
 								}
 							}
 							else
 							{
-								swap(&lstmp6);
+								swap1(&lsta);
 								write(1,"sa\n",3);
 							}
 						}
@@ -221,6 +227,9 @@ if(lsta2)
 		}
 	}
 //	ft_printlst(lstmp6);
+	if(lsta2)
+		ft_freelst(&lsta2);
+	/*
 	t_lst *lstmp6begi;
 
 	lstmp6begi = lstmp6;
@@ -231,4 +240,6 @@ if(lsta2)
 		lstmp6 = lstmp6->next;
 	}
 	ft_freelst(&lstmp6begi);
+	free(lstmp8);
+	*/
 }

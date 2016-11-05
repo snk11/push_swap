@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 15:02:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:03:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:08:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -24,7 +24,7 @@ t_lst	*ft_reverse_lst(t_lst *lstmp)
 		e = (t_numb*)malloc(sizeof(t_numb));
 		e->val = ((t_numb*)(lstmp)->content)->val;
 		lstmp2 = create_lst(e);
-		lst_add2(&lsta2, lstmp2);
+		lst_add5(&lsta2, lstmp2);
 		lstmp = lstmp->next;
 		free(e);
 		e = NULL;
