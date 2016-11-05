@@ -6,26 +6,11 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 14:54:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 15:17:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-
-#include <stdio.h>
-
-void		ft_p1(t_lst ***lst1)
-{
-	ft_p2(&lst1);
-}
-
-void		ft_p2(t_lst ****lst1)
-{
-	if(***lst1)
-	{
-		((t_numb*)(***lst1)->content)->val = 6;
-	}
-}
 
 int		ft_comptelem(t_lst *lsta)
 {
@@ -204,6 +189,26 @@ void		lst_add8(t_lst ***toplist, t_lst ****lst1)
 		**toplist = lstmp;
 	}
 }
+
+void		lst_add9(t_lst ****toplist, t_lst *t_lst1)
+{
+
+	t_lst		*lstmp;
+
+	lstmp = NULL;
+	lstmp = create_lst((t_lst1)->content);
+	if (***toplist == NULL)
+	{
+//		ft_freelst(toplist);
+		***toplist = lstmp;
+	}
+	else
+	{
+		lstmp->next = ***toplist;
+		***toplist = lstmp;
+	}
+}
+
 void		lst_add2(t_lst ***toplist, t_lst *t_lst1)
 {
 

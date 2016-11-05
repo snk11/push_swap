@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 14:34:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 15:16:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+int			ft_p1(t_lst ***lsta,int ac,char **av);
 void	rotate1(t_lst ***lsta);
 void	rotate3(t_lst *****lsta);
 void	reverse1(t_lst ***lsta);
@@ -52,6 +53,7 @@ void	reverse3(t_lst *****lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add9(t_lst ****toplist, t_lst *lst1);
 void		lst_add8(t_lst ***toplist, t_lst ****lst1);
 void		lst_add7(t_lst ****toplist, t_lst ***lst1);
 void		lst_add5(t_lst **toplist, t_lst *t_lst1);
@@ -63,8 +65,6 @@ void	push3(t_lst ***lstb, t_lst **lsta);
 void	push2(t_lst ****lstb, t_lst **lsta);
 void	push1(t_lst **lstb, t_lst ****lsta);
 void		lst_add3(t_lst **toplist, t_lst *****lst1);
-void		ft_p1(t_lst ***lst1);
-void		ft_p2(t_lst ****lst1);
 void		lst_add(t_lst **toplist, t_lst **t_lst1);
 //void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*create_lst(void *content);
