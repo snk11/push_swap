@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 15:33:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 15:35:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,6 @@ void	ft_quicksort(t_lst ***lsta)
 	lsta2 = NULL;
 	lstb = NULL;
 	cnt3 = 0;
-
-	int		a;
-	int		b;
-
-	int n;
-
-	lstb = NULL;
-
-
 	lsta2 = ft_reverse_lst(**lsta);
 	nbelema = ft_comptelem(**lsta);
 	nbelemc = ft_comptelem(lsta2);
