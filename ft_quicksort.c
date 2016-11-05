@@ -6,14 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 14:04:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 15:25:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
-
-
-#include <stdio.h>
 int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 {
 	int index;
@@ -42,16 +40,7 @@ int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 
 void	ft_quicksort(t_lst ***lsta)
 {
-	t_lst	*lstmp;
-	t_lst	*lstmp2;
-	t_lst	*lstmp3;
-	t_lst	*lstmp4;
-	t_lst	*lstmp5;
-//	t_lst	*lstmp6;
 	t_lst	*lstmp7;
-//	t_lst	**lstmp8;
-	t_lst	*lstmp9;
-	t_lst	*lstmp12;
 	t_lst	*lsta2;
 	int		ind1;
 	int		ind2;
@@ -72,19 +61,11 @@ void	ft_quicksort(t_lst ***lsta)
 	t_lst	*lstb;
 	t_numb	*e;
 
-//	lstmp8 = (t_lst**)malloc(sizeof(t_lst*));
 	index = 0;
 	index2 = 0;
 	index4 = 0;
 	index5 = 0;
-	lstmp = NULL;
-	lstmp2 = NULL;
-	lstmp3 = NULL;
-	lstmp4 = NULL;
-	lstmp5 = NULL;
-//	lstmp6 = NULL;
 	lstmp7 = NULL;
-	lstmp9 = NULL;
 	lsta2 = NULL;
 	e = NULL;
 	r1 = 0;
@@ -92,25 +73,19 @@ void	ft_quicksort(t_lst ***lsta)
 	cnt2 = 0;
 	cnt3 = 0;
 
-	int bug = 0;
 	int		a;
 	int		b;
 
 	int n;
 
 	lstb = NULL;
-//	*lstmp8 = NULL;
 
 
 	lsta2 = ft_reverse_lst(**lsta);
-//	lstmp6 = ft_copylst(**lsta);
 	nbelema = ft_comptelem(**lsta);
 	nbelemc = ft_comptelem(lsta2);
-//	ft_freelst(&lsta2);
 	ind1 = 1;
 	ind2 = 0;
-//	ft_freelst(&lstmp6);
-//	ft_freelst(&lsta2);
 	while (ind1 == 1 || lsta2)
 	{
 		ft_slide_a(&lsta);
@@ -123,10 +98,7 @@ void	ft_quicksort(t_lst ***lsta)
 		ind1 = 0;
 		{
 			{
-				bug++;
-//				lstmp = lstmp6;
 				nbelemc = ft_comptelem(lsta2);
-//				lstmp = lstmp6;
 				index = nbelemc - 1;
 				if  (**lsta)
 				{
@@ -135,7 +107,6 @@ void	ft_quicksort(t_lst ***lsta)
 					if (index4 > -1)
 					{
 						ind1 = 1;
-						//						if (((t_numb*)lsta2->content)->val < ((t_numb*)(lstmp)->content)->val)
 						{
 							if (index != 1)
 							{
@@ -217,24 +188,9 @@ void	ft_quicksort(t_lst ***lsta)
 			lstmp7->content = NULL;
 			free(lstmp7);
 			lstmp7 = NULL;
-//			ft_freelst(&lsta2);
 			index3++;
 		}
 	}
-//	ft_printlst(lstmp6);
 	if(lsta2)
 		ft_freelst(&lsta2);
-	/*
-	t_lst *lstmp6begi;
-
-	lstmp6begi = lstmp6;
-
-	while(lstmp6)
-	{
-		lst_add_down2(lst1,lstmp6);
-		lstmp6 = lstmp6->next;
-	}
-	ft_freelst(&lstmp6begi);
-	free(lstmp8);
-	*/
 }
