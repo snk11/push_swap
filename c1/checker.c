@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 18:11:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 14:41:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 int main(int ac,char **av)
 {
 	char	*line;
-	t_lst	*lsta;
+	t_lst	**lsta;
 	t_lst	*lstb;
 	t_lst	*lstmp;
 	t_numb	*e;
 	int		r1;
 
-	lsta = NULL;
+	lsta = (t_lst**)malloc(sizeof(t_lst*));
+	*lsta = NULL;
 	lstb = NULL;
 	lstmp = NULL;
 	line = NULL;
@@ -47,13 +48,16 @@ int main(int ac,char **av)
 			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 				return (0);
 			e->val = ft_atoi(av[ac - 1]);
-			if (ft_checkdouble(lsta,e->val) == 0)
+			if (ft_checkdouble(*lsta,e->val) == 0)
 			{
 				write(2, "Error\n", 6);
 				return (0);
 			}
 			lstmp = create_lst(e);
-			lst_add(&lsta, &lstmp);
+			free(e);
+			e = NULL;
+			lst_add2(&lsta, lstmp);
+			ft_freelst(&lstmp);
 		}
 		ac--;
 	}
@@ -62,22 +66,22 @@ int main(int ac,char **av)
 		if(ft_strcmp(line,"pa") == 0)
 		{
 			if(lstb)
-				push(&lsta,&lstb);
+				push3(&lsta,&lstb);
 		}
 		else if(ft_strcmp(line,"rra") == 0)
 		{
-			if(lsta)
-				reverse(&lsta);
+			if(*lsta)
+				reverse1(&lsta);
 		}
 		else if(ft_strcmp(line,"ra") == 0)
 		{
-			if(lsta)
-				rotate(&lsta);
+			if(*lsta)
+				rotate1(&lsta);
 		}
 		else if(ft_strcmp(line,"sa") == 0)
 		{
-			if(lsta)
-				swap(&lsta);
+			if(*lsta)
+				swap4(&lsta);
 		}
 		else if(ft_strcmp(line,"rrb") == 0)
 		{
@@ -96,8 +100,8 @@ int main(int ac,char **av)
 		}
 		else if(ft_strcmp(line,"pb") == 0)
 		{
-			if(lsta)
-				push(&lstb,&lsta);
+			if(*lsta)
+				push4(&lstb,&lsta);
 		}
 		else
 		{
@@ -105,7 +109,7 @@ int main(int ac,char **av)
 			return (0);
 		}
 	}
-	lstmp = lsta;
+	lstmp = *lsta;
 	while(lstmp && lstmp->next)
 	{
 		if(((t_numb*)(lstmp->content))->val > ((t_numb*)((lstmp->next)->content))->val)

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 13:49:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 14:24:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,3 +96,27 @@ void	reverse3(t_lst *****lsta)
 		}
 	}
 }
+/*
+void	reverse4(t_lst ****lsta)
+{
+	t_lst	*lstmp;
+	t_lst	*lstmp2;
+
+	lstmp2 = NULL;
+	lstmp = NULL;
+	if (***lsta && (***lsta)->next)
+	{
+		lstmp = ***lsta;
+		while ((***lsta)->next)
+		{
+			lstmp2 = ***lsta;
+			(***lsta) = (***lsta)->next;
+		}
+		if (lstmp2)
+		{
+			lstmp2->next = NULL;
+			(***lsta)->next = lstmp;
+		}
+	}
+}
+*/
