@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 14:35:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 14:54:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,24 @@ void		ft_p2(t_lst ****lst1)
 		((t_numb*)(***lst1)->content)->val = 6;
 	}
 }
+
+int		ft_comptelem(t_lst *lsta)
+{
+	int		nb;
+
+	nb = 0;
+	if (lsta)
+	{
+		nb = 1;
+		while (lsta)
+		{
+			nb++;
+			lsta = lsta->next;
+		}
+	}
+	return (nb - 1);
+}
+
 
 
 
