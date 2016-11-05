@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 15:06:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 12:24:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:52:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 
 #include <stdio.h>
-int	ft_balance(t_lst **lstmp2,void (*f)(t_lst**))
+int	ft_balance(t_lst **lstmp2,void (*f)(t_lst***))
 {
 	int r1;
 	int	cnt1;
@@ -30,14 +30,14 @@ int	ft_balance(t_lst **lstmp2,void (*f)(t_lst**))
 			lstmp = lstmp->next;
 		if(*lstmp2 && lstmp && *lstmp2 != lstmp && (((t_numb*)(*lstmp2)->content)->val > ((t_numb*)(lstmp)->content)->val))
 		{
-			f(lstmp2);
+			f(&lstmp2);
 			r1 = 0;
 			cnt1++;
 		}
 	}
 	return cnt1;
 }
-
+/*
 int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**))
 {
 	int r1;
@@ -60,3 +60,4 @@ int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**))
 	}
 	return cnt1;
 }
+*/

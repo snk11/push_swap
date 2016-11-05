@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 12:29:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:51:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
-t_lst	*ft_slide_a(t_lst **lstmp8,t_lst *lsta)
+void	ft_slide_a(t_lst ****lsta)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp4;
@@ -21,46 +21,45 @@ t_lst	*ft_slide_a(t_lst **lstmp8,t_lst *lsta)
 	int		cnt2;
 
 //	lstmp5 = (t_lst**)malloc(sizeof(t_lst*));
-	*lstmp8 = NULL;
 	lstmp = NULL;
 	lstmp4 = NULL;
 	cnt1 = 0;
 	cnt2 = 0;
-	if(lsta && (lsta)->next && (((t_numb*)(lsta)->content)->val > ((t_numb*)((lsta)->next)->content)->val))
+	if(***lsta && (***lsta)->next && (((t_numb*)(***lsta)->content)->val > ((t_numb*)((***lsta)->next)->content)->val))
 	{
-		swap(&lsta);
+		swap3(&lsta);
 		write(1,"sa\n",3);
 	}
-	lstmp = ft_copylst(lsta);
-	*lstmp8 = lstmp;
-//	cnt1 = ft_balance(&lstmp,reverse);
-	/*
-	lstmp4 = ft_copylst(lsta);
-	cnt2 = ft_balance(&lstmp4,rotate);
+	lstmp = ft_copylst(***lsta);
+	cnt1 = ft_balance(&lstmp,reverse1);
+	lstmp4 = ft_copylst(***lsta);
+	cnt2 = ft_balance(&lstmp4,rotate1);
+		ft_freelst(&lstmp);
+		ft_freelst(&lstmp4);
 	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
 	{
-		*lstmp8 = lstmp;
-		ft_freelst(&lstmp4);
+//		ft_balance3(&lsta,reverse3);
+//		***lsta = lstmp;
 		while(cnt1 > 0)
 		{
+			reverse3(&lsta);
 			write(1,"rra\n",4);
 			cnt1--;
 		}
 	}
 	else if (cnt2 > 0 && cnt1 > cnt2)
 	{
-		*lstmp8 = lstmp4;
-		ft_freelst(&lstmp);
+//		ft_balance3(&lsta,rotate3);
+//		***lsta = lstmp4;
 		while(cnt2 > 0)
 		{
+			rotate3(&lsta);
 			write(1,"ra\n",4);
 			cnt2--;
 		}
 	}
-	*/
-	return (*lstmp8);
 }
-
+/*
 void	ft_slide_b(t_lst **lsta)
 {
 	t_lst	*lstmp;
@@ -101,3 +100,4 @@ void	ft_slide_b(t_lst **lsta)
 	}
 
 }
+*/

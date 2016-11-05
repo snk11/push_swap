@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 13:17:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 13:52:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+void	rotate1(t_lst ***lsta);
+void	rotate3(t_lst *****lsta);
+void	reverse1(t_lst ***lsta);
+void	reverse3(t_lst *****lsta);
+void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
 void		lst_add5(t_lst **toplist, t_lst *t_lst1);
 void		lst_add4(t_lst *****toplist, t_lst **lst1);
@@ -74,12 +79,12 @@ int						get_next_line(int const fd, char **line);
 int		ft_checkint(char *s);
 void		lst_add_down2(t_lst **toplist, t_lst *t_lst1);
 t_lst	*ft_copylst(t_lst *lstmp);
-int	ft_balance(t_lst **lstmp,void (*f)(t_lst**));
-int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
+int	ft_balance(t_lst **lstmp2,void (*f)(t_lst***));
+//int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
-t_lst	*ft_slide_a(t_lst **lstmp8,t_lst *lsta);
-void	ft_slide_b(t_lst **lsta);
+void	ft_slide_a(t_lst ****lsta);
+//void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
 
 #endif
