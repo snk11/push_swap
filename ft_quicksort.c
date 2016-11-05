@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/04 23:47:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/05 11:33:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -114,6 +114,7 @@ if(lsta2)
 	printf("lsta2 = %d\n",((t_numb*)(lsta2)->content)->val);
 		if (ind1 == 1)
 		{
+			ft_freelst(&lsta2);
 			lsta2 = ft_reverse_lst(lstmp6);
 			index3 = 0;
 		}
