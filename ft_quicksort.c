@@ -6,11 +6,51 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 15:35:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 19:54:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+int			get_indextopush(t_lst *lsta)
+{
+	int		index;
+	int		ref;
+	t_lst	*lstabegi;
+
+	lstabegi = lsta;
+	while(lsta && lsta->next)
+	{
+		lsta = lsta->next;
+	}
+	ref = ((t_numb*)lsta->content)->val;
+	lsta = lstabegi;
+	index = 0;
+	while(lsta && lsta->next)
+	{
+		if(((t_numb*)lsta->content)->val < ref)
+			return (index);
+		lsta = lsta->next;
+		index++;
+	}
+	return (-1);
+}
+
+
+void	ft_quicksort(t_lst ***lsta)
+{
+	int		index;
+
+	while(**lsta)
+	{
+		index = get_indextopush(**lsta);
+		if(index >= 0)
+		{
+		}
+	}
+}
+
 
 int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 {
@@ -38,6 +78,9 @@ int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2)
 }
 
 
+
+
+/*
 void	ft_quicksort(t_lst ***lsta)
 {
 	t_lst	*lstmp7;
@@ -174,3 +217,4 @@ void	ft_quicksort(t_lst ***lsta)
 	if(lsta2)
 		ft_freelst(&lsta2);
 }
+*/

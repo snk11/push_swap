@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:54:35 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 16:50:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 19:33:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,20 @@
 
 
 #include <stdio.h>
+
 void	ft_mergesort(t_lst ***lsta)
+{
+
+}
+
+
+
+
+
+
+
+/*
+void	ft_mergesort1(t_lst ***lsta)
 {
 	int		nbelema;
 	int		i;
@@ -227,3 +240,4 @@ void	ft_mergesort(t_lst ***lsta)
 		write(1,"pa\n",3);
 	}
 }
+*/

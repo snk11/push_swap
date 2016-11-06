@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 19:12:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 19:56:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void		ft_insertionsort(t_lst ***lsta)
 		}
 		push1(&lstb,&lsta);
 		write(1,"pb\n",3);
+		/*
 		if (index < nbelema / 2)
 		{
 			while(i > 1)
@@ -85,6 +86,7 @@ void		ft_insertionsort(t_lst ***lsta)
 				i--;
 			}
 		}
+		*/
 	}
 	while(lstb)
 	{
