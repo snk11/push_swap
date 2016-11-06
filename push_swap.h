@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 15:47:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 16:22:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ void	ft_slide_a(t_lst ****lsta);
 void	ft_freelst(t_lst **lst1);
 void	ft_mergesort(t_lst ***lsta);
 void	ft_bublesort(t_lst ***lstb);
+void	ft_bublesort1_uns(t_lst **lstb);
+void		ft_insertionsort(t_lst ***lsta);
 void	ft_printlst(t_lst *lst1);
 
 #endif
