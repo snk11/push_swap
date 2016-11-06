@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 20:35:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 20:48:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,60 +56,72 @@ void	ft_quicksort(t_lst ***lsta)
 	int		index;
 	int		nbelema;
 	int		i;
+	int		ind1;
 	t_lst	*lstb;
 
 	lstb = NULL;
-	while(**lsta)
+	ind1 = 0;
+	ft_slide_a(&lsta);
+	if (ft_checksort(**lsta) == 0)
 	{
-		nbelema = ft_comptelem(**lsta);
-		index = get_indextopush(**lsta);
-//		if(index >= 0)
+		while(**lsta && ind1 == 0)
 		{
-			i = 0;
-			if (index < nbelema / 2)
+			ft_slide_a(&lsta);
+			nbelema = ft_comptelem(**lsta);
+			if(nbelema > 1)
 			{
-				while( i < index)
+				index = get_indextopush(**lsta);
+				//		if(index >= 0)
 				{
-					rotate4(&lsta);
-					write(1,"ra\n",3);
-					i++;
+					i = 0;
+					if (index < nbelema / 2)
+					{
+						while( i < index)
+						{
+							rotate4(&lsta);
+							write(1,"ra\n",3);
+							i++;
+						}
+					}
+					else
+					{
+						while( i <= nbelema  - (index + 1))
+						{
+							reverse4(&lsta);
+							write(1,"rra\n",4);
+							i++;
+						}
+					}
+					push1(&lstb,&lsta);
+					write(1,"pb\n",3);
+					if (index < nbelema / 2)
+					{
+						while(i >= 1)
+						{
+							reverse4(&lsta);
+							write(1,"rra\n",4);
+							i--;
+						}
+					}
+					else
+					{
+						while(i > 1)
+						{
+							rotate4(&lsta);
+							write(1,"ra\n",3);
+							i--;
+						}
+					}
 				}
 			}
 			else
-			{
-				while( i <= nbelema  - (index + 1))
-				{
-					reverse4(&lsta);
-					write(1,"rra\n",4);
-					i++;
-				}
-			}
-			push1(&lstb,&lsta);
-			write(1,"pb\n",3);
-			if (index < nbelema / 2)
-			{
-				while(i >= 1)
-				{
-					reverse4(&lsta);
-					write(1,"rra\n",4);
-					i--;
-				}
-			}
-			else
-			{
-				while(i > 1)
-				{
-					rotate4(&lsta);
-					write(1,"ra\n",3);
-					i--;
-				}
-			}
+				ind1 = 1;
 		}
-	}
-	while(lstb)
-	{
-		push2(&lsta,&lstb);
-		write(1,"pa\n",3);
+		while(lstb)
+		{
+			push2(&lsta,&lstb);
+			write(1,"pa\n",3);
+		}
 	}
 }
 
