@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 16:53:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 18:09:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	rotate3(t_lst *****lsta);
 void	rotate4(t_lst ****lsta);
 void	reverse1(t_lst ***lsta);
 void	reverse3(t_lst *****lsta);
+void	reverse4(t_lst ****lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
@@ -99,5 +100,6 @@ void	ft_bublesort3(t_lst **lstb);
 void		ft_insertionsort(t_lst ***lsta);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
+int		get_indexinsert(t_lst *lstmp);
 
 #endif
