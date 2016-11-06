@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 19:56:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 20:57:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,56 +42,61 @@ void		ft_insertionsort(t_lst ***lsta)
 	int		nbelema;
 
 	lstb = NULL;
-	while(**lsta)
+	ft_slide_a(&lsta);
+	if (ft_checksort(**lsta) == 0)
 	{
-		nbelema = ft_comptelem(**lsta);
-		index = get_indexinsert(**lsta);
-		i = 0;
-		if (index < nbelema / 2)
+		while(**lsta)
 		{
-			while( i < index)
+			ft_slide_a(&lsta);
+			nbelema = ft_comptelem(**lsta);
+			index = get_indexinsert(**lsta);
+			i = 0;
+			if (index < nbelema / 2)
 			{
-				rotate4(&lsta);
-				write(1,"ra\n",3);
-				i++;
+				while( i < index)
+				{
+					rotate4(&lsta);
+					write(1,"ra\n",3);
+					i++;
+				}
 			}
+			else
+			{
+				while( i <= nbelema  - (index + 1))
+				{
+					reverse4(&lsta);
+					write(1,"rra\n",4);
+					i++;
+				}
+			}
+			push1(&lstb,&lsta);
+			write(1,"pb\n",3);
+			/*
+			   if (index < nbelema / 2)
+			   {
+			   while(i > 1)
+			   {
+			   reverse4(&lsta);
+			   write(1,"rra\n",4);
+			   i--;
+			   }
+			   }
+			   else
+			   {
+			   while(i > 1)
+			   {
+			   rotate4(&lsta);
+			   write(1,"ra\n",3);
+			   i--;
+			   }
+			   }
+			   */
 		}
-		else
+		while(lstb)
 		{
-			while( i <= nbelema  - (index + 1))
-			{
-				reverse4(&lsta);
-				write(1,"rra\n",4);
-				i++;
-			}
+			push2(&lsta,&lstb);
+			write(1,"pa\n",3);
 		}
-		push1(&lstb,&lsta);
-		write(1,"pb\n",3);
-		/*
-		if (index < nbelema / 2)
-		{
-			while(i > 1)
-			{
-				reverse4(&lsta);
-				write(1,"rra\n",4);
-				i--;
-			}
-		}
-		else
-		{
-			while(i > 1)
-			{
-				rotate4(&lsta);
-				write(1,"ra\n",3);
-				i--;
-			}
-		}
-		*/
-	}
-	while(lstb)
-	{
-		push2(&lsta,&lstb);
-		write(1,"pa\n",3);
 	}
 }
 
