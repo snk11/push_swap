@@ -6,12 +6,19 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 10:30:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 14:42:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
+
+
+
+
+
+#include <stdio.h>
 int main(int ac,char **av)
 {
 	char	*line;
@@ -31,7 +38,6 @@ int main(int ac,char **av)
 	r1 = 0;
 	nbelema = 0;
 
-	nbelema = ft_comptelem(*lsta);
 	if (ac <= 2)
 	{
 		write(2, "Error\n", 6);
@@ -62,6 +68,7 @@ int main(int ac,char **av)
 		}
 		ac--;
 	}
+	nbelema = ft_comptelem(*lsta);
 	while (get_next_line(0, &line) > 0)
 	{
 		if(ft_strcmp(line,"pa") == 0)

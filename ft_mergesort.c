@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:54:35 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 14:27:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/06 14:32:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ void	ft_mergesort(t_lst ***lsta)
 	irra = 0;
 	irrb = 0;
 	nbelema = ft_comptelem(**lsta);
-	ft_putnbr(nbelema);
-	ft_putstr("\n");
+//	ft_putnbr(nbelema);
+//	ft_putstr("\n");
 	while(i < (nbelema / 2))
 	{
 		push1(&lstb,&lsta);
-		write(1,"pb1\n",4);
+		write(1,"pb\n",3);
 		i++;
 	}
 	int g = 0;
@@ -96,12 +96,12 @@ void	ft_mergesort(t_lst ***lsta)
 				write(1,"rb\n",3);
 			}
 			i++;
-	ft_putstr("lsta = ");
-	ft_printlst(**lsta);
-	ft_putstr("\n");
-	ft_putstr("lstb = ");
-	ft_printlst(lstb);
-	ft_putstr("\n");
+//	ft_putstr("lsta = ");
+//	ft_printlst(**lsta);
+//	ft_putstr("\n");
+//	ft_putstr("lstb = ");
+//	ft_printlst(lstb);
+//	ft_putstr("\n");
 		}
 //		if((ft_comptelem(**lsta) % 2 != 0) && ft_comptelem(**lsta) >= 2)
 		if (ft_comptelem(**lsta) >= 2)
@@ -122,26 +122,26 @@ void	ft_mergesort(t_lst ***lsta)
 			rotate4(&lsta);
 			write(1,"ra\n",3);
 		}
-	ft_putstr("lsta = ");
-	ft_printlst(**lsta);
-	ft_putstr("\n");
-	ft_putstr("lstb = ");
-	ft_printlst(lstb);
-	ft_putstr("\n");
+//	ft_putstr("lsta = ");
+//	ft_printlst(**lsta);
+//	ft_putstr("\n");
+//	ft_putstr("lstb = ");
+//	ft_printlst(lstb);
+//	ft_putstr("\n");
 
 	while(**lsta)
 	{
 		push1(&lstb,&lsta);
-		write(1,"pb2\n",4);
+		write(1,"pb\n",3);
 		i++;
 	}
 	i = 0;
 	isb = 0;
 	while(i < (nbelema / 2))
 	{
-		ft_putstr("i = ");
-		ft_putnbr(i);
-		ft_putstr("\n");
+//		ft_putstr("i = ");
+//		ft_putnbr(i);
+//		ft_putstr("\n");
 		irrb = 0;
 		if(isb == 0)
 		{
@@ -156,7 +156,7 @@ void	ft_mergesort(t_lst ***lsta)
 			write(1,"sb\n",3);
 			isb = 1;
 		}
-		printf("isb = %d, irrb = %d\n",isb,irrb);
+//		printf("isb = %d, irrb = %d\n",isb,irrb);
 		if(isb != 0 && irrb != 0)
 		{
 			push2(&lsta,&lstb);
@@ -165,12 +165,12 @@ void	ft_mergesort(t_lst ***lsta)
 		//		push2(&lsta,&lstb);
 		//		write(1,"pa\n",3);
 		i++;
-		ft_putstr("lsta = ");
-		ft_printlst(**lsta);
-		ft_putstr("\n");
-		ft_putstr("lstb = ");
-		ft_printlst(lstb);
-		ft_putstr("\n");
+//		ft_putstr("lsta = ");
+//		ft_printlst(**lsta);
+//		ft_putstr("\n");
+//		ft_putstr("lstb = ");
+//		ft_printlst(lstb);
+//		ft_putstr("\n");
 	}
 	if(ft_comptelem(lstb) == 2)
 	{
@@ -195,9 +195,9 @@ void	ft_mergesort(t_lst ***lsta)
 			i = 0;
 			while(i < (ft_comptelem(lstb)) - 1)
 			{
-							ft_putstr("i = ");
-							ft_putnbr(i);
-							ft_putstr("\n");
+//							ft_putstr("i = ");
+//							ft_putnbr(i);
+//							ft_putstr("\n");
 				if(ft_comptelem(lstb) >= 2)
 				{
 					if(((t_numb*)lstb->content)->val < ((t_numb*)(lstb->next)->content)->val)
@@ -213,9 +213,9 @@ void	ft_mergesort(t_lst ***lsta)
 					write(1,"rb\n",3);
 				}
 				i++;
-	ft_putstr("lstb = ");
-	ft_printlst(lstb);
-	ft_putstr("\n");
+//	ft_putstr("lstb = ");
+//	ft_printlst(lstb);
+//	ft_putstr("\n");
 			}
 //			if((ft_comptelem(lstb) % 2 = 0) && ft_comptelem(lstb) >= 2)
 			{
