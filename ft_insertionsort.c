@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 09:13:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 09:32:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 
 #include <stdio.h>
-int		get_indexinsert(t_lst *lstmp)
+int		get_indexinsert(t_lst *lstmp,int limit)
 {
 	int		index;
 	int		min;
@@ -24,7 +24,7 @@ int		get_indexinsert(t_lst *lstmp)
 	index = 0;
 	min = ((t_numb*)(lstmp)->content)->val;
 	i = 0;
-	while (lstmp)
+	while (i < limit)
 	{
 		if(((t_numb*)(lstmp)->content)->val < min)
 		{
@@ -52,48 +52,31 @@ void		ft_insertionsort(t_lst ***lsta)
 		{
 			ft_slide_a(&lsta);
 			nbelema = ft_comptelem(**lsta);
-			index = get_indexinsert(**lsta);
+			index = get_indexinsert(**lsta,nbelema);
 			i = 0;
-			if (index < nbelema / 2)
+//			if(nbelema > 1)
 			{
-				while( i < index)
+				if (index < nbelema / 2)
 				{
-					rotate4(&lsta);
-					write(1,"ra\n",3);
-					i++;
+					while( i < index)
+					{
+						rotate4(&lsta);
+						write(1,"ra\n",3);
+						i++;
+					}
 				}
-			}
-			else
-			{
-				while( i <= nbelema  - (index + 1))
+				else
 				{
-					reverse4(&lsta);
-					write(1,"rra\n",4);
-					i++;
+					while( i <= nbelema  - (index + 1))
+					{
+						reverse4(&lsta);
+						write(1,"rra\n",4);
+						i++;
+					}
 				}
+				push1(&lstb,&lsta);
+				write(1,"pb\n",3);
 			}
-			push1(&lstb,&lsta);
-			write(1,"pb\n",3);
-			/*
-			   if (index < nbelema / 2)
-			   {
-			   while(i > 1)
-			   {
-			   reverse4(&lsta);
-			   write(1,"rra\n",4);
-			   i--;
-			   }
-			   }
-			   else
-			   {
-			   while(i > 1)
-			   {
-			   rotate4(&lsta);
-			   write(1,"ra\n",3);
-			   i--;
-			   }
-			   }
-			   */
 		}
 		while(lstb)
 		{

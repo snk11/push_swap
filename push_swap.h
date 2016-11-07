@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 19:51:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 09:32:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	ft_bublesort3(t_lst **lstb);
 void		ft_insertionsort(t_lst ***lsta);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
-int		get_indexinsert(t_lst *lstmp);
+int		get_indexinsert(t_lst *lstmp, int limit);
 int			get_indextopush(t_lst *lsta);
 
 #endif
