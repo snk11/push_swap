@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/06 20:57:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 09:13:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int		get_indexinsert(t_lst *lstmp)
 	while (lstmp)
 	{
 		if(((t_numb*)(lstmp)->content)->val < min)
+		{
 			index = i;
+			min = ((t_numb*)lstmp->content)->val;
+		}
 		lstmp = lstmp->next;
 		i++;
 	}
