@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 10:07:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 11:07:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add11(t_lst ******toplist, t_lst ****lst1);
 void		lst_add10(t_lst ****toplist, t_lst ******lst1);
 void		lst_add9(t_lst ****toplist, t_lst *lst1);
 void		lst_add8(t_lst ***toplist, t_lst ****lst1);
@@ -66,6 +67,7 @@ void		lst_add5(t_lst **toplist, t_lst *t_lst1);
 void		lst_add4(t_lst *****toplist, t_lst **lst1);
 void		lst_add6(t_lst *****toplist, t_lst ***lst1);
 void		lst_add2(t_lst ***toplist, t_lst *t_lst1);
+void	push6(t_lst *****lstb, t_lst ***lsta);
 void	push5(t_lst ***lstb, t_lst *****lsta);
 void	push4(t_lst **lstb, t_lst ***lsta);
 void	push3(t_lst ***lstb, t_lst **lsta);
@@ -100,15 +102,19 @@ void	ft_slide_a1(t_lst *****lsta);
 //void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
 //void	ft_mergesort1(t_lst ***lsta);
-void	ft_mergesort(t_lst ***lsta);
+//void	ft_mergesort(t_lst ***lsta);
+//void	ft_mergesort(t_lst ****lsta, t_lst **lstb);
+void	ft_mergesort(t_lst ****lsta, t_lst **lstb,int nbelema);
 void	ft_bublesort(t_lst ***lstb);
 void	ft_bublesort1_uns(t_lst **lstb);
 void	ft_bublesort3(t_lst **lstb);
 void		ft_insertionsort(t_lst ***lsta);
 void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
+void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
 int		get_indexinsert(t_lst *lstmp, int limit);
+int		get_indexinsert2(t_lst *lstmp,int limit);
 int			get_indextopush(t_lst *lsta);
 
 #endif
