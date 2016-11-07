@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 15:39:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 15:47:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -257,11 +257,11 @@ void	ft_quicksort(t_lst ***lsta)
 				//			if(nbelema > 1)
 				{
 					index = get_indextopush2(**lsta,valpivot);
-//					printf("index = %d\n",index);
+					printf("index = %d\n",index);
 					//		if(index >= 0)
 					{
 						i = 0;
-						if (index < nbelema / 2)
+						if (index <= nbelema / 2)
 						{
 							while( i < index)
 							{
