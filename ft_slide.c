@@ -6,12 +6,16 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 12:41:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 12:56:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+
+
+
+#include <stdio.h>
 void	ft_slide_a(t_lst ****lsta)
 {
 	t_lst	*lstmp;
@@ -44,6 +48,7 @@ void	ft_slide_a(t_lst ****lsta)
 		{
 			reverse3(&lsta);
 			write(1,"rra\n",4);
+//			printf("slide1\n");
 			cnt1--;
 		}
 	}
@@ -55,6 +60,7 @@ void	ft_slide_a(t_lst ****lsta)
 		{
 			rotate3(&lsta);
 			write(1,"ra\n",4);
+//			printf("slide1\n");
 			cnt2--;
 		}
 	}
@@ -92,6 +98,7 @@ void	ft_slide_a1(t_lst *****lsta)
 		{
 			reverse5(&lsta);
 			write(1,"rra\n",4);
+//			printf("slide2\n");
 			cnt1--;
 		}
 	}
@@ -103,6 +110,7 @@ void	ft_slide_a1(t_lst *****lsta)
 		{
 			rotate5(&lsta);
 			write(1,"ra\n",4);
+//			printf("slide2\n");
 			cnt2--;
 		}
 	}
@@ -140,6 +148,7 @@ void	ft_slide_a2(t_lst ***lsta)
 		{
 			reverse4(&lsta);
 			write(1,"rra\n",4);
+//			printf("slide3\n");
 			cnt1--;
 		}
 	}
@@ -151,6 +160,7 @@ void	ft_slide_a2(t_lst ***lsta)
 		{
 			rotate4(&lsta);
 			write(1,"ra\n",4);
+//			printf("slide3\n");
 			cnt2--;
 		}
 	}
@@ -188,6 +198,7 @@ void	ft_slide_a2_uns(t_lst ***lsta)
 		{
 			reverse4(&lsta);
 			write(1,"rra\n",4);
+//			printf("slide4\n");
 			cnt1--;
 		}
 	}
@@ -199,6 +210,7 @@ void	ft_slide_a2_uns(t_lst ***lsta)
 		{
 			rotate4(&lsta);
 			write(1,"ra\n",4);
+//			printf("slide4\n");
 			cnt2--;
 		}
 	}
@@ -236,6 +248,7 @@ void	ft_slide_a4_uns(t_lst ****lsta)
 		{
 			reverse3(&lsta);
 			write(1,"rra\n",4);
+//			printf("slide5\n");
 			cnt1--;
 		}
 	}
@@ -247,6 +260,7 @@ void	ft_slide_a4_uns(t_lst ****lsta)
 		{
 			rotate3(&lsta);
 			write(1,"ra\n",4);
+//			printf("slide5\n");
 			cnt2--;
 		}
 	}
