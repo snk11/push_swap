@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 13:53:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 14:39:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int		main(int ac, char **av)
 //	ft_bublesort(&lsta);
 //	ft_insertionsort(&lsta);
 	
-//	ft_printlst(*lsta);
+	ft_printlst(*lsta);
 	return (0);
 }
