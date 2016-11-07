@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 11:43:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 12:34:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,11 @@ void	ft_quicksort(t_lst ***lsta)
 		{
 			j = 0;
 			indpivot = ft_comptelem(**lsta) * 5 / 100;
-			indpivot = ft_comptelem(**lsta);
+			printf("pivot = %d\n",indpivot);
+//			indpivot = ft_comptelem(**lsta);
 //			while(**lsta && ind1 == 0)
+			if (indpivot != 0)
+			{
 			while(**lsta && j < indpivot)
 			{
 				ft_slide_a(&lsta);
@@ -161,12 +164,25 @@ void	ft_quicksort(t_lst ***lsta)
 				//				ind1 = 1;
 				j++;
 			}
+			}
+			else
+			{
+				if(**lsta)
+				{
+					push1(&lstb,&lsta);
+					write(1,"pb\n",3);
+				}
+			}
 		}
+//		ft_printlst(lstb);
+		ft_insertionsort2(&lsta,&lstb);
+		/*
 		while(lstb)
 		{
 			push2(&lsta,&lstb);
 			write(1,"pa\n",3);
 		}
+		*/
 	}
 }
 

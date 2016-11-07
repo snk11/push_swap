@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 11:42:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 12:43:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,6 +172,73 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 	}
 }
 
+void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb)
+{
+	int		index;
+	int		i;
+	int		j;
+	int		nbelema;
+	int		nbelemf;
+
+	nbelemf = ft_comptelem(*lstb);
+	ft_slide_a2_uns(&lstb);
+//	ft_printlst(*lstb);
+	if (ft_checksort(*lstb) == 0)
+	{
+		j = 0;
+//		ft_insertionsort_p1(&lsta,&lstb);
+		ft_insertionsort_p21(&lsta,&lstb);
+//		ft_mergesort(&lsta,&lstb,nbelemf);
+//		while(lstb)
+//		{
+//			push5(&lstb,&lsta);
+//			write(1,"pa\n",3);
+//		}
+	}
+}
+
+void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
+{
+	int		i;
+	int		j;
+	int		index;
+	int		nbelema;
+	int		nbelemf;
+
+	nbelemf = ft_comptelem(**lstb);
+	j = 0;
+	while(j < nbelemf)
+	{
+		ft_slide_a4_uns(&lstb);
+		nbelema = ft_comptelem(**lstb);
+		index = get_indexinsert2(**lstb,nbelema);
+		i = 0;
+		//			if(nbelema > 1)
+		{
+			if (index < nbelema / 2)
+			{
+				while( i < index)
+				{
+					rotate4(&lstb);
+					write(1,"ra\n",3);
+					i++;
+				}
+			}
+			else
+			{
+				while( i <= nbelema  - (index + 1))
+				{
+					reverse4(&lstb);
+					write(1,"rra\n",4);
+					i++;
+				}
+			}
+			push7(&lsta,&lstb);
+			write(1,"pb\n",3);
+		}
+		j++;
+	}
+}
 /*
    void		ft_insertionsort(t_lst ***lsta)
    {
