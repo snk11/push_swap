@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 10:40:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 11:43:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,40 @@
 
 
 #include <stdio.h>
+
+int			get_indextopush1(t_lst *lsta,int indpivot)
+{
+	int		index;
+	int		i;
+	int		j;
+	int		ref;
+	int		min;
+	t_lst	*lstabegi;
+
+	lstabegi = lsta;
+	index = 0;
+	while(lsta && lsta->next && j < indpivot)
+	{
+		lsta = lsta->next;
+		index++;
+		j++;
+	}
+	ref = ((t_numb*)lsta->content)->val;
+	min = ref;
+	lsta = lstabegi;
+	i = 0;
+	while(lsta && lsta->next)
+	{
+		if(((t_numb*)lsta->content)->val < ref && ((t_numb*)lsta->content)->val < min)
+		{
+			index = i;
+			min = (((t_numb*)lsta->content)->val);
+		}
+		lsta = lsta->next;
+		i++;
+	}
+	return (index);
+}
 
 int			get_indextopush(t_lst *lsta)
 {
@@ -56,7 +90,9 @@ void	ft_quicksort(t_lst ***lsta)
 	int		index;
 	int		nbelema;
 	int		i;
+	int		j;
 	int		ind1;
+	int		indpivot;
 	t_lst	*lstb;
 
 	lstb = NULL;
@@ -64,58 +100,67 @@ void	ft_quicksort(t_lst ***lsta)
 	ft_slide_a(&lsta);
 	if (ft_checksort(**lsta) == 0)
 	{
-		while(**lsta && ind1 == 0)
+
+		while (**lsta)
 		{
-			ft_slide_a(&lsta);
-			nbelema = ft_comptelem(**lsta);
-			if(nbelema > 1)
+			j = 0;
+			indpivot = ft_comptelem(**lsta) * 5 / 100;
+			indpivot = ft_comptelem(**lsta);
+//			while(**lsta && ind1 == 0)
+			while(**lsta && j < indpivot)
 			{
-				index = get_indextopush(**lsta);
-				//		if(index >= 0)
+				ft_slide_a(&lsta);
+				nbelema = ft_comptelem(**lsta);
+				//			if(nbelema > 1)
 				{
-					i = 0;
-					if (index < nbelema / 2)
+					index = get_indextopush1(**lsta,indpivot);
+					//		if(index >= 0)
 					{
-						while( i < index)
+						i = 0;
+						if (index < nbelema / 2)
 						{
-							rotate4(&lsta);
-							write(1,"ra\n",3);
-							i++;
+							while( i < index)
+							{
+								rotate4(&lsta);
+								write(1,"ra\n",3);
+								i++;
+							}
 						}
-					}
-					else
-					{
-						while( i <= nbelema  - (index + 1))
+						else
 						{
-							reverse4(&lsta);
-							write(1,"rra\n",4);
-							i++;
+							while( i <= nbelema  - (index + 1))
+							{
+								reverse4(&lsta);
+								write(1,"rra\n",4);
+								i++;
+							}
 						}
-					}
-					push1(&lstb,&lsta);
-					write(1,"pb\n",3);
-					if (index < nbelema / 2)
-					{
-						while(i >= 1)
+						push1(&lstb,&lsta);
+						write(1,"pb\n",3);
+						if (index < nbelema / 2)
 						{
-							reverse4(&lsta);
-							write(1,"rra\n",4);
-							i--;
+							while(i >= 1)
+							{
+								reverse4(&lsta);
+								write(1,"rra\n",4);
+								i--;
+							}
 						}
-					}
-					else
-					{
-						while(i > 1)
+						else
 						{
-							rotate4(&lsta);
-							write(1,"ra\n",3);
-							i--;
+							while(i > 1)
+							{
+								rotate4(&lsta);
+								write(1,"ra\n",3);
+								i--;
+							}
 						}
 					}
 				}
+				//			else
+				//				ind1 = 1;
+				j++;
 			}
-			else
-				ind1 = 1;
 		}
 		while(lstb)
 		{

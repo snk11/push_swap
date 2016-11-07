@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 11:07:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 11:42:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,14 @@ void		ft_insertionsort(t_lst ***lsta)
 	if (ft_checksort(**lsta) == 0)
 	{
 		j = 0;
-		ft_insertionsort_p1(&lsta,&lstb);
+//		ft_insertionsort_p1(&lsta,&lstb);
 		ft_insertionsort_p2(&lsta,&lstb);
-		ft_mergesort(&lsta,&lstb,nbelemf);
-		/*
+//		ft_mergesort(&lsta,&lstb,nbelemf);
 		while(lstb)
 		{
 			push2(&lsta,&lstb);
 			write(1,"pa\n",3);
 		}
-		*/
 	}
 }
 

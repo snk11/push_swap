@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 11:07:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 11:40:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,6 @@ void	ft_printlst(t_lst *lst1);
 int		get_indexinsert(t_lst *lstmp, int limit);
 int		get_indexinsert2(t_lst *lstmp,int limit);
 int			get_indextopush(t_lst *lsta);
+int			get_indextopush1(t_lst *lsta,int indpivot);
 
 #endif
