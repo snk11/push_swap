@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 09:32:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 10:07:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,16 @@ int			ft_p1(t_lst ***lsta,int ac,char **av);
 void	rotate1(t_lst ***lsta);
 void	rotate3(t_lst *****lsta);
 void	rotate4(t_lst ****lsta);
+void	rotate5(t_lst ******lsta);
 void	reverse1(t_lst ***lsta);
 void	reverse3(t_lst *****lsta);
 void	reverse4(t_lst ****lsta);
+void	reverse5(t_lst ******lsta);
+void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add10(t_lst ****toplist, t_lst ******lst1);
 void		lst_add9(t_lst ****toplist, t_lst *lst1);
 void		lst_add8(t_lst ***toplist, t_lst ****lst1);
 void		lst_add7(t_lst ****toplist, t_lst ***lst1);
@@ -62,6 +66,7 @@ void		lst_add5(t_lst **toplist, t_lst *t_lst1);
 void		lst_add4(t_lst *****toplist, t_lst **lst1);
 void		lst_add6(t_lst *****toplist, t_lst ***lst1);
 void		lst_add2(t_lst ***toplist, t_lst *t_lst1);
+void	push5(t_lst ***lstb, t_lst *****lsta);
 void	push4(t_lst **lstb, t_lst ***lsta);
 void	push3(t_lst ***lstb, t_lst **lsta);
 void	push2(t_lst ****lstb, t_lst **lsta);
@@ -91,6 +96,7 @@ int	ft_balance(t_lst **lstmp2,void (*f)(t_lst***));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
 void	ft_slide_a(t_lst ****lsta);
+void	ft_slide_a1(t_lst *****lsta);
 //void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
 //void	ft_mergesort1(t_lst ***lsta);
@@ -99,6 +105,7 @@ void	ft_bublesort(t_lst ***lstb);
 void	ft_bublesort1_uns(t_lst **lstb);
 void	ft_bublesort3(t_lst **lstb);
 void		ft_insertionsort(t_lst ***lsta);
+void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
 int		get_indexinsert(t_lst *lstmp, int limit);

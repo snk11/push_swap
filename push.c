@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/05 14:27:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/07 09:58:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,6 +133,26 @@ void	push4(t_lst **lstb, t_lst ***lsta)
 		else
 		{
 			lst_add8(&lstb,&lsta);
+		}
+	}
+}
+
+void	push5(t_lst ***lstb, t_lst *****lsta)
+{
+	t_lst	*lstmp;
+
+	if (****lsta)
+	{
+
+		if(!(**lstb))
+		{
+			**lstb = ****lsta;
+			****lsta = (****lsta)->next;
+			(**lstb)->next = NULL;
+		}
+		else
+		{
+			lst_add10(&lstb,&lsta);
 		}
 	}
 }
