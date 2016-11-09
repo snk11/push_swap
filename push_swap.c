@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 18:50:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 19:02:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int		main(int ac, char **av)
 	}
 	else
 	{
-		while (ac > 2)
+		while (ac >= 2)
 		{
 			if (ft_checkint(av[ac - 1]) == 0)
 			{
