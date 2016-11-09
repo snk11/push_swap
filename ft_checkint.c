@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:53:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 13:15:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 17:40:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		ft_checkint(char *s)
 	char	*s1;
 
 	s1 = NULL;
+	while(*s && (*s == ' ' || *s == '\t'))
+		s++;
 	s1 = s;
 	if(*s1 == '-' || *s1 == '+')
 	{
@@ -157,7 +159,16 @@ int		ft_checkint(char *s)
 	while(*s1)
 	{
 		if (!(*s1 >= '0' && *s1 <= '9'))
-			return (0);
+		{
+			if(*s1 != ' ' && *s1 != '\t')
+				return (0);
+			while(*s1 && (*s1 == ' ' || *s1 == '\t'))
+					s1++;
+			if(*s1)
+				return (0);
+			else
+				return (1);
+		}
 		s1++;
 	}
 	return (1);

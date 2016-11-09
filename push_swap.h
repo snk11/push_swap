@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 14:55:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 17:11:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,6 @@ int			get_indexpivot(t_lst *lsta,int valpivot);
 int			get_valpivot(t_lst *lsta);
 void	ft_copy_in_tab(t_lst *lsta,int	**tab);
 void	ft_sort_tab(int **tab, int nbelema);
+int		ft_parse1(t_lst ***lsta,char *s);
 
 #endif
