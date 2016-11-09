@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 12:43:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 11:36:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,6 +146,7 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 		index = get_indexinsert(***lsta,nbelema);
 		i = 0;
 		//			if(nbelema > 1)
+		if (nbelema % 2 == 0)
 		{
 			if (index < nbelema / 2)
 			{
@@ -156,9 +157,32 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 					i++;
 				}
 			}
-			else
+			else if (index >= nbelema / 2)
 			{
-				while( i <= nbelema  - (index + 1))
+				while( i < nbelema  - index)
+				{
+					reverse3(&lsta);
+					write(1,"rra\n",4);
+					i++;
+				}
+			}
+			push5(&lstb,&lsta);
+			write(1,"pb\n",3);
+		}
+		else if (nbelema % 2 != 0)
+		{
+			if (index <= nbelema / 2)
+			{
+				while( i < index)
+				{
+					rotate3(&lsta);
+					write(1,"ra\n",3);
+					i++;
+				}
+			}
+			else if (index > nbelema / 2)
+			{
+				while( i < nbelema  - index)
 				{
 					reverse3(&lsta);
 					write(1,"rra\n",4);
