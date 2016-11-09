@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 15:47:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 11:50:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,7 +244,7 @@ void	ft_quicksort(t_lst ***lsta)
 		{
 			j = 0;
 			valpivot = get_valpivot(**lsta);
-			printf("valpivot = %d\n",valpivot);
+//			printf("valpivot = %d\n",valpivot);
 			indexpivot = get_indexpivot(**lsta,valpivot);
 			//			printf("index = %d\n",index);
 			//			printf("pivot = %d\n",indpivot);
@@ -255,97 +255,94 @@ void	ft_quicksort(t_lst ***lsta)
 				//				ft_slide_a(&lsta);
 				nbelema = ft_comptelem(**lsta);
 				//			if(nbelema > 1)
+				index = get_indextopush2(**lsta,valpivot);
+//				printf("index = %d\n",index);
+				if (nbelema % 2 == 0)
 				{
-					index = get_indextopush2(**lsta,valpivot);
-					printf("index = %d\n",index);
-					//		if(index >= 0)
+					if (index < nbelema / 2)
 					{
-						i = 0;
-						if (index <= nbelema / 2)
+						while( i < index)
 						{
-							while( i < index)
-							{
-								rotate4(&lsta);
-								write(1,"ra\n",3);
-								i++;
-							}
+							rotate4(&lsta);
+							write(1,"ra\n",3);
+							i++;
 						}
-						else
-						{
-							while( i <= nbelema  - (index + 1))
-							{
-								reverse4(&lsta);
-								write(1,"rra\n",4);
-								i++;
-							}
-						}
-						push1(&lstb,&lsta);
-						write(1,"pb\n",3);
-						/*
-						if(index >= 0)
-						{
-							if (index < nbelema / 2)
-							{
-								while(i >= 1)
-								{
-									reverse4(&lsta);
-									write(1,"rra\n",4);
-									i--;
-								}
-							}
-							else
-							{
-								while(i > 1)
-								{
-									rotate4(&lsta);
-									write(1,"ra\n",3);
-									i--;
-								}
-							}
-						}
-						*/
 					}
-				}
-				ft_printlst(**lsta);
-				//			else
-				//				ind1 = 1;
-			}
-			/*
-			{
-				index = get_indexpivot(**lsta,valpivot);
-				printf("valpivot = %d,index2 = %d\n",valpivot,index);
-				nbelemc = ft_comptelem(**lsta);
-				//					if(index >= 0)
-				{
-					i = 0;
-					if(index >= 0)
+					else if (index >= nbelema / 2)
 					{
-						if (index < nbelemc / 2)
+						while( i < nbelema  - index)
 						{
-							while( i < index)
-							{
-								rotate4(&lsta);
-								write(1,"ra\n",3);
-								i++;
-							}
-						}
-						else
-						{
-							while( i <= nbelemc  - (index + 1))
-							{
-								reverse4(&lsta);
-								write(1,"rra\n",4);
-								i++;
-							}
+							reverse4(&lsta);
+							write(1,"rra\n",4);
+							i++;
 						}
 					}
 					push1(&lstb,&lsta);
 					write(1,"pb\n",3);
 				}
+				else if (nbelema % 2 != 0)
+				{
+					if (index <= nbelema / 2)
+					{
+						while( i < index)
+						{
+							rotate4(&lsta);
+							write(1,"ra\n",3);
+							i++;
+						}
+					}
+					else if (index > nbelema / 2)
+					{
+						while( i < nbelema  - index)
+						{
+							reverse4(&lsta);
+							write(1,"rra\n",4);
+							i++;
+						}
+					}
+					push1(&lstb,&lsta);
+					write(1,"pb\n",3);
+				}
+//				ft_printlst(**lsta);
+				//			else
+				//				ind1 = 1;
+			}
+			/*
+			   {
+			   index = get_indexpivot(**lsta,valpivot);
+			   printf("valpivot = %d,index2 = %d\n",valpivot,index);
+			   nbelemc = ft_comptelem(**lsta);
+			//					if(index >= 0)
+			{
+			i = 0;
+			if(index >= 0)
+			{
+			if (index < nbelemc / 2)
+			{
+			while( i < index)
+			{
+			rotate4(&lsta);
+			write(1,"ra\n",3);
+			i++;
+			}
+			}
+			else
+			{
+			while( i <= nbelemc  - (index + 1))
+			{
+			reverse4(&lsta);
+			write(1,"rra\n",4);
+			i++;
+			}
+			}
+			}
+			push1(&lstb,&lsta);
+			write(1,"pb\n",3);
+			}
 			}
 			*/
 		}
-		ft_printlst(lstb);
+//		ft_printlst(lstb);
 		ft_insertionsort2(&lsta,&lstb);
 		/*
 		   while(lstb)
