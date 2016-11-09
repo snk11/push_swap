@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 19:35:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 19:44:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 		while(cnt1 > 0)
 		{
 			reverse3(&lsta);
+		ft_lstop_add1(&lstop,3);
 			write(1,"rra\n",4);
 //			printf("slide1\n");
 			cnt1--;
@@ -60,6 +61,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 		while(cnt2 > 0)
 		{
 			rotate3(&lsta);
+		ft_lstop_add1(&lstop,2);
 			write(1,"ra\n",4);
 //			printf("slide1\n");
 			cnt2--;

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 19:35:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 20:02:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+void	ft_lstop_add3(t_lst ******lstop,int p);
+void	ft_lstop_add2(t_lst ****lstop,int p);
 void	ft_lstop_add1(t_lst *****lstop,int p);
 int			ft_p1(t_lst ***lsta,int ac,char **av);
 int			ft_p2(t_lst ***lsta,int ac,char **av);
@@ -60,6 +62,8 @@ void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add15(t_lst *******toplist, t_lst *lst1);
+void		lst_add14(t_lst *****toplist, t_lst *lst1);
 void		lst_add13(t_lst ******toplist, t_lst *lst1);
 void		lst_add12(t_lst *******toplist, t_lst *****lst1);
 void		lst_add11(t_lst ******toplist, t_lst ****lst1);
@@ -119,8 +123,8 @@ void	ft_bublesort3(t_lst **lstb);
 void		ft_insertionsort(t_lst ***lsta);
 void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
 void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb);
-void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb);
-void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb);
+void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb,t_lst ****lstop);
+void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
 int		get_indexinsert(t_lst *lstmp, int limit);

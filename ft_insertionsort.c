@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 18:33:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 20:03:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,7 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 	}
 }
 */
-void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb)
+void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb,t_lst ****lstop)
 {
 	int		index;
 	int		i;
@@ -233,7 +233,7 @@ void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb)
 	{
 		j = 0;
 //		ft_insertionsort_p1(&lsta,&lstb);
-		ft_insertionsort_p21(&lsta,&lstb);
+		ft_insertionsort_p21(&lsta,&lstb,&lstop);
 //		ft_mergesort(&lsta,&lstb,nbelemf);
 //		while(lstb)
 //		{
@@ -243,7 +243,7 @@ void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb)
 	}
 }
 
-void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
+void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 {
 	int		i;
 	int		j;
@@ -266,6 +266,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < index)
 				{
 					rotate4(&lstb);
+					ft_lstop_add3(&lstop,22);
 					write(1,"rb\n",3);
 					i++;
 				}
@@ -275,6 +276,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
+					ft_lstop_add3(&lstop,23);
 					write(1,"rrb\n",4);
 					i++;
 				}
@@ -289,6 +291,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < index)
 				{
 					rotate4(&lstb);
+					ft_lstop_add3(&lstop,22);
 					write(1,"rb\n",3);
 					i++;
 				}
@@ -298,11 +301,13 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
+					ft_lstop_add3(&lstop,23);
 					write(1,"rrb\n",4);
 					i++;
 				}
 			}
 			push7(&lsta,&lstb);
+			ft_lstop_add3(&lstop,24);
 			write(1,"pa\n",3);
 		}
 		j++;
