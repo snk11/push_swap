@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 16:12:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 18:50:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,35 +38,44 @@ int main(int ac,char **av)
 	r1 = 0;
 	nbelema = 0;
 
-	if (ac <= 2)
+	if (ac < 2)
 	{
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	while (ac >= 2)
+	if (ac == 2)
 	{
-		if(ft_checkint(av[ac - 1]) == 0)
-		{
-			write(2, "Error\n", 6);
+		if(ft_parse1(&lsta,av[ac - 1]) == 0)
 			return (0);
-		}
-		else
+		*lsta = ft_reverse_lst(*lsta);
+	}
+	else
+	{
+		while (ac > 2)
 		{
-			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
-				return (0);
-			e->val = ft_atoi(av[ac - 1]);
-			if (ft_checkdouble(*lsta,e->val) == 0)
+			if(ft_checkint(av[ac - 1]) == 0)
 			{
 				write(2, "Error\n", 6);
 				return (0);
 			}
-			lstmp = create_lst(e);
-			free(e);
-			e = NULL;
-			lst_add2(&lsta, lstmp);
-			ft_freelst(&lstmp);
+			else
+			{
+				if (!(e = (t_numb*)malloc(sizeof(t_numb))))
+					return (0);
+				e->val = ft_atoi(av[ac - 1]);
+				if (ft_checkdouble(*lsta,e->val) == 0)
+				{
+					write(2, "Error\n", 6);
+					return (0);
+				}
+				lstmp = create_lst(e);
+				free(e);
+				e = NULL;
+				lst_add2(&lsta, lstmp);
+				ft_freelst(&lstmp);
+			}
+			ac--;
 		}
-		ac--;
 	}
 	while (get_next_line(0, &line) > 0)
 	{
@@ -119,8 +128,8 @@ int main(int ac,char **av)
 	nbelema = ft_comptelem(*lsta);
 	if (ft_comptelem(*lsta) != nbelema)
 	{
-			write(1,"KO\n",3);
-			return (0);
+		write(1,"KO\n",3);
+		return (0);
 	}
 	lstmp = *lsta;
 	while(lstmp && lstmp->next)
