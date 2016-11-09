@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 11:54:52 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 13:06:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 13:32:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_sort_tab(int **tab,int nbelema)
 	int		i;
 	int		w;
 	int		ind1;
-
+/*
 	ind1 = 1;
 	while(ind1 == 1)
 	{
@@ -41,6 +41,7 @@ void	ft_sort_tab(int **tab,int nbelema)
 			i++;
 		}
 	}
+	*/
 }
 
 void	ft_copy_in_tab(t_lst *lsta,int	**tab)

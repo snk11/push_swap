@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 13:27:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 13:50:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ int			get_valpivot(t_lst *lsta)
 //	valpivot = get_valp(&tab);
 //	return (valpivot);
 //	return (tab[i * 5 / 100]);
-	if (nbelema > 10)
-		return (tab[10]);
+	if (nbelema > 35)
+		return (tab[35]);
 	else if (nbelema >= 1)
 		return (tab[0]);
 	return (-1);
