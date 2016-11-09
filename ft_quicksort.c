@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 11:50:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 13:24:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,23 @@
 
 
 #include <stdio.h>
+/*
+int		get_valp(int *tab)
+{
+	int		i;
+	int		w;
+	int		ind1;
+
+//	while(tab[i])
+//		i++;
+//	printf("i = %d\n",i * 25 / 100);
+//	return (tab[i * 5 / 100]);
+	if (tab[10])
+		return (tab[10]);
+	else
+		return (tab[0]);
+}
+*/
 
 int			get_valpivot(t_lst *lsta)
 {
@@ -24,56 +41,101 @@ int			get_valpivot(t_lst *lsta)
 	int		max;
 	int		diff;
 	int		valpivot;
-	int		valpivot1;
 	t_lst	*lstabegi;
-
+	int		nbelema;
+	int		*tab;
+	int		i;
+	int		w;
+	int		ind1;
+//	int		tab[4];
 
 	lstabegi = lsta;
-	diff = INT_MAX;
-	max = ((t_numb*)lsta->content)->val;
-	valpivot1 = ((t_numb*)lsta->content)->val;
-	while(lsta && lsta->next)
+	nbelema = ft_comptelem(lsta);
+//	printf("nbelema = %d\n",nbelema);
+	tab = (int*)malloc(sizeof(int)*nbelema);
+	i = 0;
+//	tab[i] = 9;
+//	while(tab[i])
+//	{
+//		printf("%d\n",i);
+//		i++;
+//	}
+	ft_copy_in_tab(lsta,&tab);
+//	ft_sort_tab(&tab, nbelema);
+
+	ind1 = 1;
+	while(ind1 == 1)
 	{
-		if(((t_numb*)lsta->content)->val > max)
+		i = 0;
+		ind1 = 0;
+		while(i < nbelema - 2)
 		{
-			max= (((t_numb*)lsta->content)->val);
+			if((tab)[i] > (tab)[i+1])
+			{
+				w = (tab)[i];
+				(tab)[i] = (tab)[i+1];
+				(tab)[i+1] = w;
+				ind1 = 1;
+			}
+			i++;
 		}
-		lsta = lsta->next;
 	}
-	if(lsta)
-	{
-		if(((t_numb*)lsta->content)->val > max)
-		{
-			max= (((t_numb*)lsta->content)->val);
-		}
-	}
-	valpivot = max * 5 / 100;
-	lsta = lstabegi;
-	while(lsta && lsta->next)
-	{
-		if( abs(((t_numb*)lsta->content)->val - valpivot) < diff)
-			valpivot1 = ((t_numb*)lsta->content)->val;
-		lsta = lsta->next;
-	}
-	if(lsta)
-	{
-		if( abs(((t_numb*)lsta->content)->val - valpivot) < diff)
-			valpivot1 = ((t_numb*)lsta->content)->val;
-	}
-	return (valpivot1);
+//	valpivot = get_valp(&tab);
+//	return (valpivot);
+//	return (tab[i * 5 / 100]);
+	if (nbelema > 10)
+		return (tab[10]);
+	else if (nbelema >= 1)
+		return (tab[0]);
+	return (-1);
 }
 
 int			get_indextopush2(t_lst *lsta,int valpivot)
 {
 	int		index;
 	int		i;
-	int		min;
+//	int		min;
 	int		ind1;
 	t_lst	*lstabegi;
 
 	index = -1;
 	ind1 = 0;
 	lstabegi = lsta;
+	while(lsta && lsta->next && ind1 == 0)
+	{
+		if(((t_numb*)lsta->content)->val < valpivot)
+		{
+//			min = ((t_numb*)lsta->content)->val;
+			index = i;
+			ind1 = 1;
+		}
+		lsta = lsta->next;
+		i++;
+	}
+	if (ind1 == 0 && lsta)
+	{
+		if(((t_numb*)lsta->content)->val < valpivot)
+		{
+//			min = ((t_numb*)lsta->content)->val;
+			index = i;
+			ind1 = 1;
+		}
+	}
+	lsta = lstabegi;
+	i = 0;
+	while(index == -1 && lsta && lsta->next)
+	{
+		if(((t_numb*)lsta->content)->val == valpivot)
+			index = i;
+		lsta = lsta->next;
+		i++;
+	}
+	if(index == -1 && lsta)
+	{
+		if(((t_numb*)lsta->content)->val == valpivot)
+			index = i;
+	}
+	/*
 	while(lsta && lsta->next && ind1 == 0)
 	{
 		if(((t_numb*)lsta->content)->val < valpivot)
@@ -128,6 +190,7 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 		if(((t_numb*)lsta->content)->val == valpivot)
 			index = i;
 	}
+	*/
 	return (index);
 }
 
@@ -244,6 +307,7 @@ void	ft_quicksort(t_lst ***lsta)
 		{
 			j = 0;
 			valpivot = get_valpivot(**lsta);
+//				ft_printlst(**lsta);
 //			printf("valpivot = %d\n",valpivot);
 			indexpivot = get_indexpivot(**lsta,valpivot);
 			//			printf("index = %d\n",index);
@@ -256,7 +320,8 @@ void	ft_quicksort(t_lst ***lsta)
 				nbelema = ft_comptelem(**lsta);
 				//			if(nbelema > 1)
 				index = get_indextopush2(**lsta,valpivot);
-//				printf("index = %d\n",index);
+//				printf("indextopush = %d\n",index);
+				i = 0;
 				if (nbelema % 2 == 0)
 				{
 					if (index < nbelema / 2)
@@ -304,46 +369,10 @@ void	ft_quicksort(t_lst ***lsta)
 					write(1,"pb\n",3);
 				}
 //				ft_printlst(**lsta);
-				//			else
-				//				ind1 = 1;
 			}
-			/*
-			   {
-			   index = get_indexpivot(**lsta,valpivot);
-			   printf("valpivot = %d,index2 = %d\n",valpivot,index);
-			   nbelemc = ft_comptelem(**lsta);
-			//					if(index >= 0)
-			{
-			i = 0;
-			if(index >= 0)
-			{
-			if (index < nbelemc / 2)
-			{
-			while( i < index)
-			{
-			rotate4(&lsta);
-			write(1,"ra\n",3);
-			i++;
-			}
-			}
-			else
-			{
-			while( i <= nbelemc  - (index + 1))
-			{
-			reverse4(&lsta);
-			write(1,"rra\n",4);
-			i++;
-			}
-			}
-			}
-			push1(&lstb,&lsta);
-			write(1,"pb\n",3);
-			}
-			}
-			*/
 		}
-//		ft_printlst(lstb);
-		ft_insertionsort2(&lsta,&lstb);
+		ft_printlst(lstb);
+//		ft_insertionsort2(&lsta,&lstb);
 		/*
 		   while(lstb)
 		   {
