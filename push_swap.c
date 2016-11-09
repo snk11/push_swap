@@ -6,12 +6,18 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 13:52:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 15:42:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+
+
+
+
+#include <stdio.h>
 int		main(int ac, char **av)
 {
 	t_lst	**lsta;
@@ -51,7 +57,6 @@ int		main(int ac, char **av)
 //	ft_mergesort(&lsta);
 //	ft_bublesort(&lsta);
 //	ft_insertionsort(&lsta);
-	
 	ft_printlst(*lsta);
 	return (0);
 }

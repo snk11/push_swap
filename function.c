@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 12:21:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 15:10:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,7 +207,7 @@ void		lst_add9(t_lst ****toplist, t_lst *t_lst1)
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((t_lst1)->content);
+	lstmp = create_lst(((t_numb*)(t_lst1)->content));
 	if (***toplist == NULL)
 	{
 //		ft_freelst(toplist);

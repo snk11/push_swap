@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 13:05:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 14:55:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct			s_numb
 }						t_numb;
 
 int			ft_p1(t_lst ***lsta,int ac,char **av);
+int			ft_p2(t_lst ***lsta,int ac,char **av);
 void	rotate1(t_lst ***lsta);
 void	rotate3(t_lst *****lsta);
 void	rotate4(t_lst ****lsta);
