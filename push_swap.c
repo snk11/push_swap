@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 15:42:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 16:09:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int		main(int ac, char **av)
 	if (ac <= 2)
 	{
 		write(2, "Error\n", 6);
-		write(2, "trror\n", 6);
 		return (0);
 	}
 	while (ac >= 2)
