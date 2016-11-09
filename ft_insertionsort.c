@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 18:24:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 18:33:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		get_indexinsert2(t_lst *lstmp,int limit)
 	}
 	return (index);
 }
-
+/*
 void		ft_insertionsort(t_lst ***lsta)
 {
 	t_lst	*lstb;
@@ -217,7 +217,7 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 		j++;
 	}
 }
-
+*/
 void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb)
 {
 	int		index;
@@ -255,7 +255,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 	j = 0;
 	while(j < nbelemf)
 	{
-		ft_slide_a4_uns(&lstb);
+//		ft_slide_a4_uns(&lstb);
 		nbelema = ft_comptelem(**lstb);
 		index = get_indexinsert2(**lstb,nbelema);
 		i = 0;
@@ -266,7 +266,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < index)
 				{
 					rotate4(&lstb);
-					write(1,"ra\n",3);
+					write(1,"rb\n",3);
 					i++;
 				}
 			}
@@ -275,7 +275,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
-					write(1,"rra\n",4);
+					write(1,"rrb\n",4);
 					i++;
 				}
 			}
@@ -289,7 +289,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < index)
 				{
 					rotate4(&lstb);
-					write(1,"ra\n",3);
+					write(1,"rb\n",3);
 					i++;
 				}
 			}
@@ -298,7 +298,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
-					write(1,"rra\n",4);
+					write(1,"rrb\n",4);
 					i++;
 				}
 			}
