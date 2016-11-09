@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 11:43:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 13:59:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,7 @@ void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb)
 	j = 0;
 	while(j < nbelemf)
 	{
-		ft_slide_a1(&lsta);
+//		ft_slide_a1(&lsta);
 		nbelema = ft_comptelem(***lsta);
 		index = get_indexinsert(***lsta,nbelema);
 		i = 0;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 13:50:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 13:58:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -300,7 +300,7 @@ void	ft_quicksort(t_lst ***lsta)
 	lstb = NULL;
 	ind1 = 0;
 	//	ft_slide_a(&lsta);
-	if (ft_checksort(**lsta) == 0)
+//	if (ft_checksort(**lsta) == 0)
 	{
 
 		while (**lsta)
