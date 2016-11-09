@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 17:11:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 19:35:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+void	ft_lstop_add1(t_lst *****lstop,int p);
 int			ft_p1(t_lst ***lsta,int ac,char **av);
 int			ft_p2(t_lst ***lsta,int ac,char **av);
 void	rotate1(t_lst ***lsta);
@@ -59,6 +60,7 @@ void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add13(t_lst ******toplist, t_lst *lst1);
 void		lst_add12(t_lst *******toplist, t_lst *****lst1);
 void		lst_add11(t_lst ******toplist, t_lst ****lst1);
 void		lst_add10(t_lst ****toplist, t_lst ******lst1);
@@ -84,7 +86,7 @@ void	push(t_lst **lstb, t_lst **lsta);
 void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);
 void		ft_sort(t_lst **lsta);
-void	ft_quicksort(t_lst ***lst1);
+void	ft_quicksort(t_lst ***lst1,t_lst ***lstop);
 void	swap(t_lst **lsta);
 int croissant(int a, int b);
 t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
@@ -100,7 +102,7 @@ int	ft_balance(t_lst **lstmp2,void (*f)(t_lst***));
 //int	ft_balance2(t_lst **lstmp2,void (*f)(t_lst**));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
-void	ft_slide_a(t_lst ****lsta);
+void	ft_slide_a(t_lst ****lsta,t_lst ****lstop);
 void	ft_slide_a1(t_lst *****lsta);
 void	ft_slide_a2(t_lst ***lsta);
 void	ft_slide_a2_uns(t_lst ***lsta);

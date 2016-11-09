@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 19:02:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 19:16:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,12 @@
 int		main(int ac, char **av)
 {
 	t_lst	**lsta;
+	t_lst	**lstop;
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
+	lstop = (t_lst**)malloc(sizeof(t_lst*));
 	*lsta = NULL;
+	*lstop = NULL;
 	if (ac < 2)
 	{
 		write(2, "Error\n", 6);
@@ -62,7 +65,7 @@ int		main(int ac, char **av)
 		}
 
 		if(ft_comptelem(*lsta) > 2)
-			ft_quicksort(&lsta);
+			ft_quicksort(&lsta,&lstop);
 		//	ft_mergesort(&lsta);
 		//	ft_bublesort(&lsta);
 		//	ft_insertionsort(&lsta);

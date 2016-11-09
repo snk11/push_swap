@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 12:56:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/09 19:35:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 
 #include <stdio.h>
-void	ft_slide_a(t_lst ****lsta)
+void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 {
 	t_lst	*lstmp;
 	t_lst	*lstmp4;
@@ -32,6 +32,7 @@ void	ft_slide_a(t_lst ****lsta)
 	if(***lsta && (***lsta)->next && (((t_numb*)(***lsta)->content)->val > ((t_numb*)((***lsta)->next)->content)->val))
 	{
 		swap3(&lsta);
+		ft_lstop_add1(&lstop,1);
 		write(1,"sa\n",3);
 	}
 	lstmp = ft_copylst(***lsta);
