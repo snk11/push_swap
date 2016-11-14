@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 20:12:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:14:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -282,7 +282,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				}
 			}
 			push7(&lsta,&lstb);
-			ft_lstop_add3(&lstop,4);
+			ft_lstop_add_down3(&lstop,4);
 			write(1,"pa\n",3);
 		}
 		else if (nbelema % 2 != 0)
@@ -308,7 +308,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				}
 			}
 			push7(&lsta,&lstb);
-			ft_lstop_add3(&lstop,4);
+			ft_lstop_add_down3(&lstop,4);
 			write(1,"pa\n",3);
 		}
 		j++;

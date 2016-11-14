@@ -6,22 +6,11 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 20:01:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:03:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-
-void	ft_printlst(t_lst *lst1)
-{
-	while(lst1)
-	{
-		ft_putnbr(((t_numb*)(lst1)->content)->val);
-		ft_putstr(" ");
-		lst1 = lst1->next;
-	}
-}
-
 
 int		ft_comptelem(t_lst *lsta)
 {
@@ -396,6 +385,35 @@ void		lst_add_down2(t_lst **toplist, t_lst *t_lst1)
 		while(lstmp2 && lstmp2->next)
 			lstmp2 = lstmp2->next;
 		lstmp2->next = lstmp;
+	}
+}
+void		ft_lstdel(t_lst ****toplist, int pos)
+{
+
+	t_lst		*lstmp;
+	t_lst		*lstmp2;
+	int			i;
+
+	lstmp = NULL;
+	lstmp2 = NULL;
+	i = 0;
+	lstmp2 = ***toplist;
+	while (i < pos)
+	{
+		lstmp = lstmp2;
+		lstmp2 = lstmp2->next;
+		i++;
+	}
+	if (pos > 0)
+	{
+		lstmp->next = lstmp2->next;
+		ft_freelst(&lstmp2);
+	}
+	else if (pos == 0)
+	{
+		lstmp = ***toplist;
+		***toplist = (***toplist)->next;
+		ft_freelst(&lstmp);
 	}
 }
 /*
