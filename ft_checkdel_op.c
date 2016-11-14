@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:20:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:06:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 16:35:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,38 @@
 void		ft_checkdel_op(t_lst ***lstop)
 {
 	int		pos;
+	int		ind;
 	t_lst	*lstopmp;
 
-	lstopmp = **lstop;
-	pos = 0;
-	while (lstopmp)
+	ind = 1;
+	while (ind == 1)
 	{
-		if(((t_numb*)(lstopmp)->content)->val == 24)
+		ind = 0;
+		lstopmp = **lstop;
+		pos = 0;
+		while (lstopmp && ind == 0)
 		{
-			if(ft_checkdel_op1(lstopmp))
+			if(((t_numb*)(lstopmp)->content)->val == 24)
 			{
-				ft_lstdel(&lstop, pos);
-				ft_lstdel(&lstop,ft_getinxtodel(lstopmp, pos));
-				pos--;
+				if(ft_checkdel_op1(lstopmp))
+				{
+					lstopmp = NULL;
+					ft_lstdel(&lstop, pos);
+					ft_lstdel(&lstop, pos);
+					ind = 1;
+				}
 			}
+			pos++;
+			if(lstopmp)
+				lstopmp = lstopmp->next;
 		}
-		pos++;
-		lstopmp = lstopmp->next;
 	}
 }
 
 int		ft_checkdel_op1(t_lst *lstop)
 {
-	while (lstop && ((t_numb*)(lstop->content))->val == 24)
-	{
+	if (lstop && ((t_numb*)(lstop->content))->val == 24)
 		lstop = lstop->next;
-	}
 	if (lstop && ((t_numb*)(lstop->content))->val == 4)
 		return (1);
 	return (0);

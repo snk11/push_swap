@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 13:42:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 16:36:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -408,13 +408,19 @@ void		ft_lstdel(t_lst ****toplist, int pos)
 	if (pos > 0)
 	{
 		lstmp->next = lstmp2->next;
-//		ft_freelst(&lstmp2);
+		free(lstmp2->content);
+		lstmp2->content = NULL;
+		free(lstmp2);
+		lstmp2 = NULL;
 	}
 	else if (pos == 0)
 	{
 		lstmp = ***toplist;
 		***toplist = (***toplist)->next;
-//		ft_freelst(&lstmp);
+		free(lstmp->content);
+		lstmp->content = NULL;
+		free(&lstmp);
+		lstmp = NULL;
 	}
 }
 /*

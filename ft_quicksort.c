@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:31:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 15:40:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int			get_valpivot(t_lst *lsta)
 	int		i;
 	int		w;
 	int		ind1;
+	int		res;
 //	int		tab[4];
 
 	lstabegi = lsta;
@@ -57,13 +58,20 @@ int			get_valpivot(t_lst *lsta)
 			i++;
 		}
 	}
-//	valpivot = get_valp(&tab);
-//	return (valpivot);
-//	return (tab[i * 5 / 100]);
 	if (nbelema > 36)
-		return (tab[36]);
+	{
+		res = tab[36];
+		free(tab);
+		tab = NULL;
+		return (res);
+	}
 	else if (nbelema >= 1)
-		return (tab[0]);
+	{
+		res = tab[0];
+		free(tab);
+		tab = NULL;
+		return (res);
+	}
 	return (-1);
 }
 
@@ -163,20 +171,11 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 		{
 			j = 0;
 			valpivot = get_valpivot(**lsta);
-//				ft_printlst(**lsta);
-//			printf("valpivot = %d\n",valpivot);
 			indexpivot = get_indexpivot(**lsta,valpivot);
-			//			printf("index = %d\n",index);
-			//			printf("pivot = %d\n",indpivot);
-			//			indpivot = ft_comptelem(**lsta);
-			//			while(**lsta && ind1 == 0)
 			while(**lsta && get_indextopush2(**lsta,valpivot) != -1)
 			{
-				//				ft_slide_a(&lsta);
 				nbelema = ft_comptelem(**lsta);
-				//			if(nbelema > 1)
 				index = get_indextopush2(**lsta,valpivot);
-//				printf("indextopush = %d\n",index);
 				i = 0;
 				if (nbelema % 2 == 0)
 				{
@@ -235,12 +234,5 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 		}
 //		ft_printlst(lstb);
 		ft_insertionsort2(&lsta,&lstb,&lstop);
-		/*
-		   while(lstb)
-		   {
-		   push2(&lsta,&lstb);
-		   write(1,"pa\n",3);
-		   }
-		   */
 	}
 }
