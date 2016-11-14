@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 13:14:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:22:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				while( i < index)
 				{
 					rotate4(&lstb);
-					ft_lstop_add3(&lstop,22);
+					ft_lstop_add_down3(&lstop,22);
 					write(1,"rb\n",3);
 					i++;
 				}
@@ -276,7 +276,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
-					ft_lstop_add3(&lstop,23);
+					ft_lstop_add_down3(&lstop,23);
 					write(1,"rrb\n",4);
 					i++;
 				}
@@ -292,7 +292,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				while( i < index)
 				{
 					rotate4(&lstb);
-					ft_lstop_add3(&lstop,22);
+					ft_lstop_add_down3(&lstop,22);
 					write(1,"rb\n",3);
 					i++;
 				}
@@ -302,7 +302,7 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 				while( i < nbelema  - index)
 				{
 					reverse4(&lstb);
-					ft_lstop_add3(&lstop,23);
+					ft_lstop_add_down3(&lstop,23);
 					write(1,"rrb\n",4);
 					i++;
 				}

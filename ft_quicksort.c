@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 20:08:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:23:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -329,7 +329,7 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						while( i < index)
 						{
 							rotate4(&lsta);
-							ft_lstop_add2(&lstop,2);
+							ft_lstop_add_down2(&lstop,2);
 							write(1,"ra\n",3);
 							i++;
 						}
@@ -339,13 +339,13 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						while( i < nbelema  - index)
 						{
 							reverse4(&lsta);
-							ft_lstop_add2(&lstop,3);
+							ft_lstop_add_down2(&lstop,3);
 							write(1,"rra\n",4);
 							i++;
 						}
 					}
 					push1(&lstb,&lsta);
-					ft_lstop_add2(&lstop,24);
+							ft_lstop_add_down2(&lstop,24);
 					write(1,"pb\n",3);
 				}
 				else if (nbelema % 2 != 0)
@@ -355,7 +355,7 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						while( i < index)
 						{
 							rotate4(&lsta);
-							ft_lstop_add2(&lstop,2);
+							ft_lstop_add_down2(&lstop,2);
 							write(1,"ra\n",3);
 							i++;
 						}
@@ -365,13 +365,13 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						while( i < nbelema  - index)
 						{
 							reverse4(&lsta);
-							ft_lstop_add2(&lstop,3);
+							ft_lstop_add_down2(&lstop,3);
 							write(1,"rra\n",4);
 							i++;
 						}
 					}
 					push1(&lstb,&lsta);
-					ft_lstop_add2(&lstop,24);
+							ft_lstop_add_down2(&lstop,24);
 					write(1,"pb\n",3);
 				}
 //				ft_printlst(**lsta);

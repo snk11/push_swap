@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 19:44:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:26:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 	if(***lsta && (***lsta)->next && (((t_numb*)(***lsta)->content)->val > ((t_numb*)((***lsta)->next)->content)->val))
 	{
 		swap3(&lsta);
-		ft_lstop_add1(&lstop,1);
+		ft_lstop_add_down1(&lstop, 1);
 		write(1,"sa\n",3);
 	}
 	lstmp = ft_copylst(***lsta);
@@ -48,7 +48,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 		while(cnt1 > 0)
 		{
 			reverse3(&lsta);
-		ft_lstop_add1(&lstop,3);
+		ft_lstop_add_down1(&lstop, 3);
 			write(1,"rra\n",4);
 //			printf("slide1\n");
 			cnt1--;
@@ -61,7 +61,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 		while(cnt2 > 0)
 		{
 			rotate3(&lsta);
-		ft_lstop_add1(&lstop,2);
+		ft_lstop_add_down1(&lstop, 2);
 			write(1,"ra\n",4);
 //			printf("slide1\n");
 			cnt2--;
