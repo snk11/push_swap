@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:18:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 14:21:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int		main(int ac, char **av)
 		//	ft_mergesort(&lsta);
 		//	ft_bublesort(&lsta);
 		//	ft_insertionsort(&lsta);
+		/*
 		while(*lsta)
 		{
 			ft_putnbr(((t_numb*)(*lsta)->content)->val);
@@ -77,7 +78,9 @@ int		main(int ac, char **av)
 			(*lsta) = (*lsta)->next;
 		}
 		printf("\n");
-		ft_checkdel_op(&lstop);
+		*/
+		if(*lstop)
+			ft_checkdel_op(&lstop);
 		if(*lstop)
 			ft_printlst(*lstop);
 	return (0);
