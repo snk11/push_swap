@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 16:50:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 20:37:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int main(int ac,char **av)
 	t_lst	*lstmp;
 	t_numb	*e;
 	int		r1;
+	int		indko;
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
 	*lsta = NULL;
@@ -37,6 +38,7 @@ int main(int ac,char **av)
 	e = NULL;
 	r1 = 0;
 	nbelema = 0;
+	indko = 0;
 
 	if (ac < 2)
 	{
@@ -83,41 +85,90 @@ int main(int ac,char **av)
 		{
 			if(lstb)
 				push3(&lsta,&lstb);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"rra") == 0)
 		{
 			if(*lsta)
 				reverse1(&lsta);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"ra") == 0)
 		{
 			if(*lsta)
 				rotate1(&lsta);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"sa") == 0)
 		{
 			if(*lsta)
 				swap4(&lsta);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"rrb") == 0)
 		{
 			if(lstb)
 				reverse(&lstb);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"rb") == 0)
 		{
 			if(lstb)
 				rotate(&lstb);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"sb") == 0)
 		{
 			if(lstb)
 				swap(&lstb);
+			else
+				indko = 1;
 		}
 		else if(ft_strcmp(line,"pb") == 0)
 		{
 			if(*lsta)
 				push4(&lstb,&lsta);
+			else
+				indko = 1;
+		}
+		else if(ft_strcmp(line,"ss") == 0)
+		{
+			if(*lsta)
+				swap4(&lsta);
+			else
+				indko = 1;
+			if(lstb)
+				swap(&lstb);
+			else
+				indko = 1;
+		}
+		else if(ft_strcmp(line,"rr") == 0)
+		{
+			if(*lsta)
+				rotate1(&lsta);
+			else
+				indko = 1;
+			if(lstb)
+				rotate(&lstb);
+			else
+				indko = 1;
+		}
+		else if(ft_strcmp(line,"rrr") == 0)
+		{
+			if(*lsta)
+				reverse1(&lsta);
+			else
+				indko = 1;
+			if(lstb)
+				reverse(&lstb);
+			else
+				indko = 1;
 		}
 		else
 		{
