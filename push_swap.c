@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 12:58:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 13:56:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int		main(int ac, char **av)
 			(*lsta) = (*lsta)->next;
 		}
 		printf("\n");
-//		ft_checkdel_op(&lstop);
+		ft_checkdel_op(&lstop);
 		if(*lstop)
 			ft_printlst(*lstop);
 	return (0);
