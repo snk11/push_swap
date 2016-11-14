@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/09 19:01:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 16:50:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,11 @@ int main(int ac,char **av)
 		{
 			write(2,"Error\n",6);
 			return (0);
+		}
+		if(line)
+		{
+			free(line);
+			line = NULL;
 		}
 	}
 	nbelema = ft_comptelem(*lsta);
