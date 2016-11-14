@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:16:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 14:38:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int croissant(int a, int b);
 t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
 int		ft_comptelem(t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
-int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2);
+//int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2);
 t_lst	*ft_reverse_lst(t_lst *lstmp);
 int						get_next_line(int const fd, char **line);
 int		ft_checkint(char *s);
@@ -120,17 +120,17 @@ void	ft_mergesort(t_lst ****lsta, t_lst **lstb,int nbelema);
 void	ft_bublesort(t_lst ***lstb);
 void	ft_bublesort1_uns(t_lst **lstb);
 void	ft_bublesort3(t_lst **lstb);
-void		ft_insertionsort(t_lst ***lsta);
-void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
+//void		ft_insertionsort(t_lst ***lsta);
+//void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
 void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb);
 void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb,t_lst ****lstop);
 void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop);
 int		ft_checksort(t_lst *lstb);
 void	ft_printlst(t_lst *lst1);
-int		get_indexinsert(t_lst *lstmp, int limit);
+//int		get_indexinsert(t_lst *lstmp, int limit);
 int		get_indexinsert2(t_lst *lstmp,int limit);
-int			get_indextopush(t_lst *lsta);
-int			get_indextopush1(t_lst *lsta,int indpivot);
+//int			get_indextopush(t_lst *lsta);
+//int			get_indextopush1(t_lst *lsta,int indpivot);
 int			get_indextopush2(t_lst *lsta,int valpivot);
 int			get_indexpivot(t_lst *lsta,int valpivot);
 int			get_valpivot(t_lst *lsta);
