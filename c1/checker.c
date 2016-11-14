@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 20:37:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 20:39:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,7 +182,7 @@ int main(int ac,char **av)
 		}
 	}
 	nbelema = ft_comptelem(*lsta);
-	if (ft_comptelem(*lsta) != nbelema)
+	if (ft_comptelem(*lsta) != nbelema || indko == 1)
 	{
 		write(1,"KO\n",3);
 		return (0);
