@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 23:12:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 23:17:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,11 @@ int		ft_parse1(t_lst ***lsta,char *s)
 				j++;
 			}
 			s1[j] = 0;
+			if(ft_checkint(s1) == 0)
+			{
+				write(2, "Error\n", 6);
+				return (0);
+			}
 			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 				return (0);
 			e->val = ft_atoi(s1);
