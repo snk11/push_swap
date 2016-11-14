@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 20:39:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 21:18:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int main(int ac,char **av)
 	t_numb	*e;
 	int		r1;
 	int		indko;
+	int		inderror;
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
 	*lsta = NULL;
@@ -39,6 +40,7 @@ int main(int ac,char **av)
 	r1 = 0;
 	nbelema = 0;
 	indko = 0;
+	inderror = 0;
 
 	if (ac < 2)
 	{
@@ -81,63 +83,66 @@ int main(int ac,char **av)
 	}
 	while (get_next_line(0, &line) > 0)
 	{
-		if(ft_strcmp(line,"pa") == 0)
+		if(ft_checknothing(line))
+		{
+		}
+		else if(ft_comparestr(line,"pa") == 1)
 		{
 			if(lstb)
 				push3(&lsta,&lstb);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"rra") == 0)
+		else if(ft_comparestr(line,"rra") == 1)
 		{
 			if(*lsta)
 				reverse1(&lsta);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"ra") == 0)
+		else if(ft_comparestr(line,"ra") == 1)
 		{
 			if(*lsta)
 				rotate1(&lsta);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"sa") == 0)
+		else if(ft_comparestr(line,"sa") == 1)
 		{
 			if(*lsta)
 				swap4(&lsta);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"rrb") == 0)
+		else if(ft_comparestr(line,"rrb") == 1)
 		{
 			if(lstb)
 				reverse(&lstb);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"rb") == 0)
+		else if(ft_comparestr(line,"rb") == 1)
 		{
 			if(lstb)
 				rotate(&lstb);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"sb") == 0)
+		else if(ft_comparestr(line,"sb") == 1)
 		{
 			if(lstb)
 				swap(&lstb);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"pb") == 0)
+		else if(ft_comparestr(line,"pb") == 1)
 		{
 			if(*lsta)
 				push4(&lstb,&lsta);
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"ss") == 0)
+		else if(ft_comparestr(line,"ss") == 1)
 		{
 			if(*lsta)
 				swap4(&lsta);
@@ -148,7 +153,7 @@ int main(int ac,char **av)
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"rr") == 0)
+		else if(ft_comparestr(line,"rr") == 1)
 		{
 			if(*lsta)
 				rotate1(&lsta);
@@ -159,7 +164,7 @@ int main(int ac,char **av)
 			else
 				indko = 1;
 		}
-		else if(ft_strcmp(line,"rrr") == 0)
+		else if(ft_comparestr(line,"rrr") == 1)
 		{
 			if(*lsta)
 				reverse1(&lsta);
@@ -172,14 +177,18 @@ int main(int ac,char **av)
 		}
 		else
 		{
-			write(2,"Error\n",6);
-			return (0);
+			inderror = 1;
 		}
 		if(line)
 		{
 			free(line);
 			line = NULL;
 		}
+	}
+	if (inderror == 1)
+	{
+		write(2,"Error\n",6);
+		return (0);
 	}
 	nbelema = ft_comptelem(*lsta);
 	if (ft_comptelem(*lsta) != nbelema || indko == 1)
