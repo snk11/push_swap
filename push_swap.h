@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 21:15:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 22:03:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ typedef struct			s_numb
 	int					val;
 }						t_numb;
 
+int		ft_strlen_isdigit(char *s);
 int		ft_checknothing(char *line);
 int		ft_comparestr(char *line, char *s);
 void	ft_lstop_add3(t_lst ******lstop,int p);
