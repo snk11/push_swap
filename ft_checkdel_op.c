@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:20:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:04:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 14:06:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void		ft_checkdel_op(t_lst ***lstop)
 			{
 				ft_lstdel(&lstop, pos);
 				ft_lstdel(&lstop,ft_getinxtodel(lstopmp, pos));
-				ft_putnbr(ft_getinxtodel(lstopmp, pos));
 				pos--;
 			}
 		}

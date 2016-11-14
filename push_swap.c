@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 13:56:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 14:18:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ int		main(int ac, char **av)
 			if(((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
 			{
 				swap4(&lsta);
-				write(1,"sa\n",3);
+				ft_lstop_add_down0(&lstop, 1);
+//				write(1,"sa\n",3);
 			}
 		}
 

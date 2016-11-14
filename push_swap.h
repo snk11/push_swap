@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 13:54:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 14:16:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ int		ft_parse1(t_lst ***lsta,char *s);
 void		ft_lstdel(t_lst ****toplist, int pos);
 void		ft_checkdel_op(t_lst ***lstop);
 int		ft_checkdel_op1(t_lst *lstop);
+void		ft_lstop_add_down0(t_lst ***toplist, int p);
 void		ft_lstop_add_down1(t_lst *****toplist, int p);
 void		ft_lstop_add_down2(t_lst ****toplist, int p);
 void		ft_lstop_add_down3(t_lst ******toplist, int p);
