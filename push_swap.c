@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 16:37:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 21:34:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ int		main(int ac, char **av)
 	*lstop = NULL;
 	if (ac < 2)
 	{
-		write(2, "Error\n", 6);
-		return (0);
+		return (1);
 	}
 	if (ac == 2)
 	{
@@ -38,7 +37,7 @@ int		main(int ac, char **av)
 			return (0);
 		*lsta = ft_reverse_lst(*lsta);
 	}
-	else
+	else if (ac > 2)
 	{
 		while (ac >= 2)
 		{
