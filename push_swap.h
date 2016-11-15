@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 15:28:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 16:17:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ int			get_valpivot(t_lst *lsta);
 void	ft_copy_in_tab(t_lst *lsta,int	**tab);
 void	ft_sort_tab(int **tab, int nbelema);
 int		ft_parse1(t_lst ***lsta,char *s);
+int		ft_parse2(t_lst ****lsta,char *s);
 void		ft_lstdel(t_lst ****toplist, int pos);
 void		ft_checkdel_op(t_lst ***lstop);
 int		ft_checkdel_op1(t_lst *lstop);
@@ -150,5 +151,6 @@ void		ft_lstop_add_down3(t_lst ******toplist, int p);
 int			ft_getinxtodel(t_lst *lstop, int pos);
 int			ft_checkentry(int ac, char **av);
 int			ft_checkdigit(char *s1);
+int			ft_p2(t_lst ***lsta, int ac, char **av);
 
 #endif
