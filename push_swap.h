@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 16:17:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 16:35:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,5 +152,6 @@ int			ft_getinxtodel(t_lst *lstop, int pos);
 int			ft_checkentry(int ac, char **av);
 int			ft_checkdigit(char *s1);
 int			ft_p2(t_lst ***lsta, int ac, char **av);
+void	ft_p3(t_lst ***lsta, t_lst ***lstop);
 
 #endif
