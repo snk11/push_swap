@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 23:14:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 15:18:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,19 +44,16 @@ int		main(int ac, char **av)
 	}
 	else if (ac > 2)
 	{
-		while (ac >= 2)
+		if (ft_checkentry(ac, av) == 0)
+			return (0);
+		else
 		{
-			if (ft_checkint(av[ac - 1]) == 0)
+			while (ac >= 2)
 			{
-				write(2, "Error\n", 6);
-				return (0);
+					if (ft_p1(&lsta, ac, av) == 0)
+						return (0);
+				ac--;
 			}
-			else
-			{
-				if (ft_p1(&lsta, ac, av) == 0)
-					return (0);
-			}
-			ac--;
 		}
 	}
 	if(ft_comptelem(*lsta) == 2)

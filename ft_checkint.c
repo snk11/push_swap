@@ -6,17 +6,24 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:53:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 23:12:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 15:50:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
 
+
+
+
+
+#include <stdio.h>
 int		ft_checkint(char *s)
 {
 	char	*s1;
 
 	s1 = NULL;
+	if (ft_checkdigit(s) == 0)
+		return (0);
 	while(*s && (*s == ' ' || *s == '\t'))
 		s++;
 	s1 = s;

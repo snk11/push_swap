@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 23:04:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/15 16:03:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,11 @@ int main(int ac,char **av)
 	}
 	else if (ac > 2)
 	{
-		while (ac >= 2)
+		if(ft_checkentry(ac, av) == 0)
+			return (0);
+		else
 		{
-			if(ft_checkint(av[ac - 1]) == 0)
-			{
-				write(2, "Error\n", 6);
-				return (0);
-			}
-			else
+			while (ac >= 2)
 			{
 				if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 					return (0);
@@ -79,8 +76,8 @@ int main(int ac,char **av)
 				e = NULL;
 				lst_add2(&lsta, lstmp);
 				ft_freelst(&lstmp);
+				ac--;
 			}
-			ac--;
 		}
 	}
 	while (get_next_line(0, &line) > 0)
