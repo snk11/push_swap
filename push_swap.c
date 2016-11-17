@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 13:36:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:47:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,10 @@ int		main(int ac, char **av)
 	{
 		if(ft_p4(&lsta, ac, av) == 0)
 			return (0);
-		/*
-		if (ft_checkentry(ac, av) == 0)
-			return (0);
-		else
-		{
-			while (ac >= 2)
-			{
-					if (ft_p1(&lsta, ac, av) == 0)
-						return (0);
-				ac--;
-			}
-		}
-		*/
 	}
 	ft_p3(&lsta, &lstop);
-
+	ft_p6(&lsta, &lstop);
+/*
 	if(ft_comptelem(*lsta) == 2)
 	{
 		if(((t_numb*)(*lsta)->content)->val > ((t_numb*)((*lsta)->next)->content)->val)
@@ -76,7 +64,7 @@ int		main(int ac, char **av)
 			//				write(1,"sa\n",3);
 		}
 	}
-
+*/
 	if(ft_comptelem(*lsta) > 2)
 		ft_quicksort(&lsta,&lstop);
 	//	ft_mergesort(&lsta);

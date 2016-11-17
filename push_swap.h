@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 13:29:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:47:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,5 +158,6 @@ void	ft_p3(t_lst ***lsta, t_lst ***lstop);
 int		ft_p4(t_lst ***lsta, int ac, char **av);
 int			ft_p4_p1(t_lst ****lsta,int ac,char **av);
 int		ft_p5(int ac, char **av);
+void	ft_p6(t_lst ***lsta, t_lst ***lstop);
 
 #endif
