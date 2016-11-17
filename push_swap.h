@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 21:43:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 21:47:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct			s_read
 {
 	int					indko;
 	int					inderror;
+	int					nbelema;
 }						t_read;
 
 int		ft_strlen_isdigit(char *s);

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 21:45:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 21:47:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 int main(int ac,char **av)
 {
 	char	*line;
-	int		nbelema;
 	t_lst	**lsta;
 	t_lst	*lstb;
 	t_lst	*lstmp;
@@ -58,8 +57,8 @@ int main(int ac,char **av)
 		write(2,"Error\n",6);
 		return (0);
 	}
-	nbelema = ft_comptelem(*lsta);
-	if (ft_comptelem(*lsta) != nbelema || r.indko == 1)
+	r.nbelema = ft_comptelem(*lsta);
+	if (ft_comptelem(*lsta) != r.nbelema || r.indko == 1)
 	{
 		write(1,"KO\n",3);
 		return (0);
