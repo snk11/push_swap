@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:53:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 19:58:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 20:36:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,22 +86,71 @@ int		ft_checkint_p2_p1(char *s, char *s1)
 
 				s1++;
 				if(*s1 == '2')
-				{
+					return (ft_checkint_p2_p1_p1(s, s1));
+				else if (*s1 > '2')
+					return (0);
+				return (1);
+}
+
+int		ft_checkint_p2_p1_p1(char *s, char *s1)
+{
 					s1++;
 					if(*s1 == '1')
-					{
+						return (ft_checkint_p2_p1_p4(s, s1));
+					else if(*s1 > '1')
+						return (0);
+	return (1);
+}
+
+int		ft_checkint_p2_p1_p4(char *s, char *s1)
+{
 						s1++;
 						if(*s1 == '4')
-						{
+							return (ft_checkint_p2_p1_p7(s, s1));
+						else if(*s1 > '4')
+							return (0);
+						return (1);
+}
+
+
+
+int		ft_checkint_p2_p1_p7(char *s, char *s1)
+{
+
 							s1++;
 							if(*s1 == '7')
-							{
+								return (ft_checkint_p2_p1_p42(s, s1));
+							else if(*s1 > '7')
+								return (0);
+							return (1);
+}
+
+int		ft_checkint_p2_p1_p42(char *s, char *s1)
+{
+
 								s1++;
 								if(*s1 == '4')
-								{
+									return (ft_checkint_p2_p1_p8(s, s1));
+								else if(*s1 > '4')
+									return (0);
+								return (1);
+
+}
+
+int		ft_checkint_p2_p1_p8(char *s, char *s1)
+{
+
 									s1++;
 									if(*s1 == '8')
-									{
+										return (ft_checkint_p2_p1_p3(s, s1));
+									else if(*s1 > '8')
+										return (0);
+									return (1);
+}
+
+
+int		ft_checkint_p2_p1_p3(char *s, char *s1)
+{
 										s1++;
 										if(*s1 == '3')
 										{
@@ -126,25 +175,7 @@ int		ft_checkint_p2_p1(char *s, char *s1)
 										}
 										else if(*s1 > '3')
 											return (0);
-									}
-									else if(*s1 > '8')
-										return (0);
-								}
-								else if(*s1 > '4')
-									return (0);
-							}
-							else if(*s1 > '7')
-								return (0);
-						}
-						else if(*s1 > '4')
-							return (0);
-					}
-					else if(*s1 > '1')
-						return (0);
-				}
-				else if (*s1 > '2')
-					return (0);
-				return (1);
+										return (1);
 }
 
 int		ft_checkint_p2_p2(char *s, char *s1)
@@ -152,87 +183,71 @@ int		ft_checkint_p2_p2(char *s, char *s1)
 
 				s1++;
 				if(*s1 == '2')
-				{
-					s1++;
-					if(*s1 == '1')
-					{
-						s1++;
-						if(*s1 == '4')
-						{
-							s1++;
-							if(*s1 == '7')
-							{
-								s1++;
-								if(*s1 == '4')
-								{
-									s1++;
-									if(*s1 == '8')
-									{
-										s1++;
-										if(*s1 == '3')
-										{
-											s1++;
-											if(*s1 == '6')
-											{
-												s1++;
-												if(*s1 == '4')
-												{
-													s1++;
-													if(*s1 == '7')
-													{
-													}
-													else if(*s1 > '7')
-														return (0);
-												}
-												else if(*s1 > '4')
-													return (0);
-											}
-											else if(*s1 > '6')
-												return (0);
-										}
-										else if(*s1 > '3')
-											return (0);
-									}
-									else if(*s1 > '8')
-										return (0);
-								}
-								else if(*s1 > '4')
-									return (0);
-							}
-							else if(*s1 > '7')
-								return (0);
-						}
-						else if(*s1 > '4')
-							return (0);
-					}
-					else if(*s1 > '1')
-						return (0);
-				}
+					return (ft_checkint_p2_p2_p1(s, s1));
 				else if (*s1 > '2')
 					return (0);
 				return (1);
 }
 
-int		ft_checkint_p2(char *s, char *s1)
+int		ft_checkint_p2_p2_p1(char *s, char *s1)
 {
-
-				if(*s1 == '2')
-				{
 					s1++;
 					if(*s1 == '1')
-					{
+						return (ft_checkint_p2_p2_p4(s, s1));
+					else if(*s1 > '1')
+						return (0);
+	return (1);
+}
+
+int		ft_checkint_p2_p2_p4(char *s, char *s1)
+{
 						s1++;
 						if(*s1 == '4')
-						{
+							return (ft_checkint_p2_p2_p7(s, s1));
+						else if(*s1 > '4')
+							return (0);
+						return (1);
+}
+
+
+
+int		ft_checkint_p2_p2_p7(char *s, char *s1)
+{
+
 							s1++;
 							if(*s1 == '7')
-							{
+								return (ft_checkint_p2_p2_p42(s, s1));
+							else if(*s1 > '7')
+								return (0);
+							return (1);
+}
+
+int		ft_checkint_p2_p2_p42(char *s, char *s1)
+{
+
 								s1++;
 								if(*s1 == '4')
-								{
+									return (ft_checkint_p2_p2_p8(s, s1));
+								else if(*s1 > '4')
+									return (0);
+								return (1);
+
+}
+
+int		ft_checkint_p2_p2_p8(char *s, char *s1)
+{
+
 									s1++;
 									if(*s1 == '8')
-									{
+										return (ft_checkint_p2_p2_p3(s, s1));
+									else if(*s1 > '8')
+										return (0);
+									return (1);
+}
+
+
+int		ft_checkint_p2_p2_p3(char *s, char *s1)
+{
 										s1++;
 										if(*s1 == '3')
 										{
@@ -257,22 +272,13 @@ int		ft_checkint_p2(char *s, char *s1)
 										}
 										else if(*s1 > '3')
 											return (0);
-									}
-									else if(*s1 > '8')
-										return (0);
-								}
-								else if(*s1 > '4')
-									return (0);
-							}
-							else if(*s1 > '7')
-								return (0);
-						}
-						else if(*s1 > '4')
-							return (0);
-					}
-					else if(*s1 > '1')
-						return (0);
-				}
+										return (1);
+}
+
+int		ft_checkint_p2(char *s, char *s1)
+{
+				if(*s1 == '2')
+					return (ft_checkint_p2_p2_p1(s, s1));
 				else if (*s1 > '2')
 					return (0);
 				return(1);
