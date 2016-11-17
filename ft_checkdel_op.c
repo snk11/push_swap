@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:20:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 16:35:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 15:16:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		ft_checkdel_op(t_lst ***lstop)
+void		ft_checkdel_op(t_lst ****lstop)
 {
 	int		pos;
 	int		ind;
@@ -22,7 +22,7 @@ void		ft_checkdel_op(t_lst ***lstop)
 	while (ind == 1)
 	{
 		ind = 0;
-		lstopmp = **lstop;
+		lstopmp = ***lstop;
 		pos = 0;
 		while (lstopmp && ind == 0)
 		{

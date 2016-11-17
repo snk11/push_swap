@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 16:36:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 15:15:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -388,7 +388,7 @@ void		lst_add_down2(t_lst **toplist, t_lst *t_lst1)
 	}
 }
 
-void		ft_lstdel(t_lst ****toplist, int pos)
+void		ft_lstdel(t_lst *****toplist, int pos)
 {
 
 	t_lst		*lstmp;
@@ -398,7 +398,7 @@ void		ft_lstdel(t_lst ****toplist, int pos)
 	lstmp = NULL;
 	lstmp2 = NULL;
 	i = 0;
-	lstmp2 = ***toplist;
+	lstmp2 = ****toplist;
 	while (i < pos)
 	{
 		lstmp = lstmp2;
@@ -415,8 +415,8 @@ void		ft_lstdel(t_lst ****toplist, int pos)
 	}
 	else if (pos == 0)
 	{
-		lstmp = ***toplist;
-		***toplist = (***toplist)->next;
+		lstmp = ****toplist;
+		****toplist = (****toplist)->next;
 		free(lstmp->content);
 		lstmp->content = NULL;
 		free(&lstmp);
