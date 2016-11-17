@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 13:31:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 20:46:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,12 @@ int main(int ac,char **av)
 		return (1);
 	if (ac == 2)
 	{
+		if (ft_p5(ac, av) == 0)
+			return (0);
+		if(ft_parse1(&lsta,av[ac - 1]) == 0)
+			return (0);
+		*lsta = ft_reverse_lst(&lsta);
+		/*
 		if (ft_checkint(av[ac - 1]) == 0)
 		{
 			write(2, "Error\n", 6);
@@ -54,9 +60,13 @@ int main(int ac,char **av)
 		if(ft_parse1(&lsta,av[ac - 1]) == 0)
 			return (0);
 		*lsta = ft_reverse_lst(&lsta);
+		*/
 	}
 	else if (ac > 2)
 	{
+		if(ft_p4(&lsta, ac, av) == 0)
+			return (0);
+		/*
 		if(ft_checkentry(ac, av) == 0)
 			return (0);
 		else
@@ -79,6 +89,7 @@ int main(int ac,char **av)
 				ac--;
 			}
 		}
+		*/
 	}
 	while (get_next_line(0, &line) > 0)
 	{
