@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 15:45:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:08:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,16 @@ typedef struct			s_numb
 {
 	int					val;
 }						t_numb;
+
+typedef struct			s_pars
+{
+	int					i;
+	int					k;
+	int					ind1;
+	char				*sbegi;
+}						t_pars;
+
+
 
 int		ft_strlen_isdigit(char *s);
 int		ft_checknothing(char *line);

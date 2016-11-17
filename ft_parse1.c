@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 16:00:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:12:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,30 @@
 #include <stdio.h>
 int		ft_parse1(t_lst ***lsta,char *s)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		ind1;
-	int		ind2;
-	char	*sbegi;
-	char	*s1;
-	t_numb	*e;
-	t_lst	*lstmp;
+//	int		i;
+//	int		k;
+//	int		ind1;
+//	char	*sbegi;
+	t_pars		p;
 
-	ind1 = 0;
-	ind2 = 0;
-	s1 = NULL;
-	sbegi = NULL;
-	e = NULL;
-	while(ind1 == 0)
+	p.ind1 = 0;
+	while(p.ind1 == 0)
 	{
 		while(*s && (*s == ' ' || *s == '\t'))
 			s++;
-		sbegi = s;
-		i = ft_strlen_isdigit(s);
-		k = i;
-		while(k > 0)
+		p.sbegi = s;
+		p.i = ft_strlen_isdigit(s);
+		p.k = p.i;
+		while(p.k > 0)
 		{
-			k--;
+			p.k--;
 			s++;
 		}
-		if (ft_parse1_p1(s, &ind1, i) == 0)
+		if (ft_parse1_p1(s, &(p.ind1), p.i) == 0)
 			return (0);
-		if (i > 0)
+		if (p.i > 0)
 		{
-			if (ft_parse1_p2(&lsta, i,sbegi) == 0)
+			if (ft_parse1_p2(&lsta, p.i,p.sbegi) == 0)
 				return (0);
 			/*
 			s1 = ft_strnew(i);
@@ -108,9 +100,9 @@ int		ft_parse1(t_lst ***lsta,char *s)
 		}
 		while(*s && (*s == ' ' || *s == '\t'))
 			s++;
-		if(!(*s) && ind1 == 0)
+		if(!(*s) && p.ind1 == 0)
 			return (1);
-		else if(!(*s) && ind1 == 1)
+		else if(!(*s) && p.ind1 == 1)
 		{
 			write(2, "Error\n", 6);
 			return (0);
