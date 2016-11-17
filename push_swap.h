@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 21:47:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 22:17:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add20(t_lst *****toplist, t_lst ******lst1);
+void		lst_add19(t_lst ******toplist, t_lst *****lst1);
 void		lst_add18(t_lst ****toplist, t_lst *****lst1);
 void		lst_add17(t_lst *****toplist, t_lst ****lst1);
 void		lst_add16(t_lst ********toplist, t_lst ******lst1);
@@ -102,6 +104,8 @@ void		lst_add5(t_lst **toplist, t_lst *t_lst1);
 void		lst_add4(t_lst *****toplist, t_lst **lst1);
 void		lst_add6(t_lst *****toplist, t_lst ***lst1);
 void		lst_add2(t_lst ***toplist, t_lst *t_lst1);
+void	push12(t_lst ****lstb, t_lst *****lsta);
+void	push11(t_lst *****lstb, t_lst ****lsta);
 void	push10(t_lst ***lstb, t_lst ****lsta);
 void	push9(t_lst ****lstb, t_lst ***lsta);
 void	push8(t_lst *******lstb, t_lst *****lsta);
@@ -217,7 +221,9 @@ int		ft_checkint_p2_p2_p7(char *s, char *s1);
 int		ft_checkint_p2_p2_p42(char *s, char *s1);
 int		ft_checkint_p2_p2_p8(char *s, char *s1);
 int		ft_checkint_p2_p2_p3(char *s, char *s1);
-void		ft_readline(char *line, t_lst ***lsta,t_lst **lstb, t_read *r);
-void		ft_checker_p1(t_lst ***lsta, t_lst **lstb, char **line,t_read *r);
+void		ft_readline(char *line, t_lst ****lsta,t_lst ***lstb, t_read *r);
+void		ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
+int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r);
+int		ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb, t_read *r);
 
 #endif
