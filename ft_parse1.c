@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 14:02:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 14:57:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,8 @@ int		ft_parse1(t_lst ***lsta,char *s)
 			k--;
 			s++;
 		}
-		if(*s && *s != ' ' && *s != '\t')
-		{
-			write(2, "Error\n", 6);
+		if (ft_parse1_p1(s, &ind1, i) == 0)
 			return (0);
-		}
-		else if (*s)
-			ind1 = 0;
-		else if (!(*s) && i == 0)
-			ind1 = 1;
 		if (i > 0)
 		{
 			s1 = ft_strnew(i);
@@ -119,6 +112,20 @@ int		ft_parse1(t_lst ***lsta,char *s)
 			return (0);
 		}
 	}
+	return (1);
+}
+
+int		ft_parse1_p1(char *s, int *ind1, int i)
+{
+		if(*s && *s != ' ' && *s != '\t')
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
+		else if (*s)
+			*ind1 = 0;
+		else if (!(*s) && i == 0)
+			*ind1 = 1;
 	return (1);
 }
 
