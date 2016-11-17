@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:53:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 19:36:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 19:58:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ int		ft_checkint(char *s)
 		s++;
 	s1 = s;
 	if(*s1 == '-' || *s1 == '+')
-	{
-		if (ft_checkint_p1(s, s1) == 0)
-			return (0);
-	}
+		return (ft_checkint_p1(s, s1));
 
 
 
@@ -44,10 +41,7 @@ int		ft_checkint(char *s)
 
 
 	else if (ft_strlen_isdigit(s) == 10)
-	{
-		if (ft_checkint_p2(s, s1) == 0)
-			return (0);
-	}
+		return (ft_checkint_p2(s, s1));
 	else if (ft_strlen_isdigit(s) > 10)
 		return (0);
 	/*
@@ -78,7 +72,18 @@ int		ft_checkint_p1(char *s, char *s1)
 		{
 
 			if(*s1 == '-')
-			{
+				return (ft_checkint_p2_p1(s, s1));
+			else if(*s1 == '+')
+				return (ft_checkint_p2_p2(s, s1));
+		}
+		else if (ft_strlen_isdigit(s) > 11)
+			return (0);
+	return (1);
+}
+
+int		ft_checkint_p2_p1(char *s, char *s1)
+{
+
 				s1++;
 				if(*s1 == '2')
 				{
@@ -139,9 +144,12 @@ int		ft_checkint_p1(char *s, char *s1)
 				}
 				else if (*s1 > '2')
 					return (0);
-			}
-			else if(*s1 == '+')
-			{
+				return (1);
+}
+
+int		ft_checkint_p2_p2(char *s, char *s1)
+{
+
 				s1++;
 				if(*s1 == '2')
 				{
@@ -202,15 +210,8 @@ int		ft_checkint_p1(char *s, char *s1)
 				}
 				else if (*s1 > '2')
 					return (0);
-			}
-		}
-		else if (ft_strlen_isdigit(s) > 11)
-			return (0);
-		else
-			s1++;
-	return (1);
+				return (1);
 }
-
 
 int		ft_checkint_p2(char *s, char *s1)
 {
