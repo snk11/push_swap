@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 15:40:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 18:25:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ int			get_valpivot(t_lst *lsta)
 	int		w;
 	int		ind1;
 	int		res;
-//	int		tab[4];
+	//	int		tab[4];
 
 	lstabegi = lsta;
 	nbelema = ft_comptelem(lsta);
-//	printf("nbelema = %d\n",nbelema);
+	//	printf("nbelema = %d\n",nbelema);
 	tab = (int*)malloc(sizeof(int)*nbelema);
 	i = 0;
-//	tab[i] = 9;
-//	while(tab[i])
-//	{
-//		printf("%d\n",i);
-//		i++;
-//	}
+	//	tab[i] = 9;
+	//	while(tab[i])
+	//	{
+	//		printf("%d\n",i);
+	//		i++;
+	//	}
 	ft_copy_in_tab(lsta,&tab);
-//	ft_sort_tab(&tab, nbelema);
+	//	ft_sort_tab(&tab, nbelema);
 
 	ind1 = 1;
 	while(ind1 == 1)
@@ -79,7 +79,7 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 {
 	int		index;
 	int		i;
-//	int		min;
+	//	int		min;
 	int		ind1;
 	t_lst	*lstabegi;
 
@@ -90,7 +90,7 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 	{
 		if(((t_numb*)lsta->content)->val < valpivot)
 		{
-//			min = ((t_numb*)lsta->content)->val;
+			//			min = ((t_numb*)lsta->content)->val;
 			index = i;
 			ind1 = 1;
 		}
@@ -101,7 +101,7 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 	{
 		if(((t_numb*)lsta->content)->val < valpivot)
 		{
-//			min = ((t_numb*)lsta->content)->val;
+			//			min = ((t_numb*)lsta->content)->val;
 			index = i;
 			ind1 = 1;
 		}
@@ -163,7 +163,7 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 
 	lstb = NULL;
 	ind1 = 0;
-		ft_slide_a(&lsta,&lstop);
+	ft_slide_a(&lsta,&lstop);
 	if (ft_checksort(**lsta) == 0)
 	{
 
@@ -178,6 +178,8 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 				index = get_indextopush2(**lsta,valpivot);
 				i = 0;
 				if (nbelema % 2 == 0)
+					ft_quicksort_p1(&lsta, &lstb, &lstop, index);
+				/*
 				{
 					if (index < nbelema / 2)
 					{
@@ -185,7 +187,7 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						{
 							rotate4(&lsta);
 							ft_lstop_add_down2(&lstop,2);
-//							write(1,"ra\n",3);
+							//							write(1,"ra\n",3);
 							i++;
 						}
 					}
@@ -195,15 +197,18 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						{
 							reverse4(&lsta);
 							ft_lstop_add_down2(&lstop,3);
-//							write(1,"rra\n",4);
+							//							write(1,"rra\n",4);
 							i++;
 						}
 					}
 					push1(&lstb,&lsta);
-							ft_lstop_add_down2(&lstop,24);
-//					write(1,"pb\n",3);
+					ft_lstop_add_down2(&lstop,24);
+					//					write(1,"pb\n",3);
 				}
+				*/
 				else if (nbelema % 2 != 0)
+					ft_quicksort_p2(&lsta, &lstb, &lstop, index);
+				/*
 				{
 					if (index <= nbelema / 2)
 					{
@@ -211,7 +216,7 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						{
 							rotate4(&lsta);
 							ft_lstop_add_down2(&lstop,2);
-//							write(1,"ra\n",3);
+							//							write(1,"ra\n",3);
 							i++;
 						}
 					}
@@ -221,18 +226,83 @@ void	ft_quicksort(t_lst ***lsta,t_lst ***lstop)
 						{
 							reverse4(&lsta);
 							ft_lstop_add_down2(&lstop,3);
-//							write(1,"rra\n",4);
+							//							write(1,"rra\n",4);
 							i++;
 						}
 					}
 					push1(&lstb,&lsta);
-							ft_lstop_add_down2(&lstop,24);
-//					write(1,"pb\n",3);
+					ft_lstop_add_down2(&lstop,24);
+					//					write(1,"pb\n",3);
 				}
-//				ft_printlst(**lsta);
+				*/
+				//				ft_printlst(**lsta);
 			}
 		}
-//		ft_printlst(lstb);
+		//		ft_printlst(lstb);
 		ft_insertionsort2(&lsta,&lstb,&lstop);
 	}
+}
+
+void		ft_quicksort_p1(t_lst ****lsta, t_lst **lstb, t_lst ****lstop, int index)
+{
+
+	int		i;
+	int		nbelema;
+
+	nbelema = ft_comptelem(***lsta);
+	i = 0;
+	if (index < nbelema / 2)
+	{
+		while( i < index)
+		{
+			rotate3(&lsta);
+			ft_lstop_add_down1(&lstop,2);
+			i++;
+		}
+	}
+	else if (index >= nbelema / 2)
+	{
+		while( i < nbelema  - index)
+		{
+			reverse3(&lsta);
+			ft_lstop_add_down1(&lstop,3);
+			i++;
+		}
+	}
+	push5(&lstb,&lsta);
+	ft_lstop_add_down1(&lstop,24);
+}
+
+void		ft_quicksort_p2(t_lst ****lsta, t_lst **lstb, t_lst ****lstop, int index)
+{
+
+	int		i;
+	int		nbelema;
+
+	nbelema = ft_comptelem(***lsta);
+	i = 0;
+
+	if (index <= nbelema / 2)
+	{
+		while( i < index)
+		{
+			rotate3(&lsta);
+			ft_lstop_add_down1(&lstop,2);
+			//							write(1,"ra\n",3);
+			i++;
+		}
+	}
+	else if (index > nbelema / 2)
+	{
+		while( i < nbelema  - index)
+		{
+			reverse3(&lsta);
+			ft_lstop_add_down1(&lstop,3);
+			//							write(1,"rra\n",4);
+			i++;
+		}
+	}
+	push5(&lstb,&lsta);
+	ft_lstop_add_down1(&lstop,24);
+	//					write(1,"pb\n",3);
 }
