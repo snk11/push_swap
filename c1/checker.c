@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 20:46:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 21:33:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int main(int ac,char **av)
 	t_lst	*lstmp;
 	t_numb	*e;
 	int		r1;
-	int		indko;
-	int		inderror;
+//	int		indko;
+//	int		inderror;
+	t_read	r;
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
 	*lsta = NULL;
@@ -39,8 +40,8 @@ int main(int ac,char **av)
 	e = NULL;
 	r1 = 0;
 	nbelema = 0;
-	indko = 0;
-	inderror = 0;
+	r.indko = 0;
+	r.inderror = 0;
 
 	if(ac < 2)
 		return (1);
@@ -93,6 +94,8 @@ int main(int ac,char **av)
 	}
 	while (get_next_line(0, &line) > 0)
 	{
+		ft_readline(line, &lsta, &lstb, &r);
+	/*
 		if(ft_checknothing(line))
 		{
 		}
@@ -189,19 +192,20 @@ int main(int ac,char **av)
 		{
 			inderror = 1;
 		}
+		*/
 		if(line)
 		{
 			free(line);
 			line = NULL;
 		}
 	}
-	if (inderror == 1)
+	if (r.inderror == 1)
 	{
 		write(2,"Error\n",6);
 		return (0);
 	}
 	nbelema = ft_comptelem(*lsta);
-	if (ft_comptelem(*lsta) != nbelema || indko == 1)
+	if (ft_comptelem(*lsta) != nbelema || r.indko == 1)
 	{
 		write(1,"KO\n",3);
 		return (0);
