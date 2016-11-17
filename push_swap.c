@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 16:13:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:25:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ int		main(int ac, char **av)
 	if(*lstop)
 		ft_printlst(*lstop);
 	*/
+	/*
 	   while(42)
 	   {
 	   }
+	   */
 	return (0);
 }

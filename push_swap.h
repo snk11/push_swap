@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 16:08:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:24:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,5 +174,6 @@ int		ft_parse1_p1(char *s, int *ind1, int i);
 int		ft_parse1_p2(t_lst ****lsta, int i, char *sbegi);
 int		ft_parse1_p2_p1(t_lst *****lsta, int i, char *s1, t_numb *e);
 int		ft_parse1_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e);
+int			ft_parse1_p3(char **s, int *ind1);
 
 #endif
