@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 17:14:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 17:16:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,28 +41,8 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 	ft_freelst(&lstmp4);
 	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
 		ft_slide_a_p1(&lsta, &lstop, cnt1);
-	/*
-	{
-		while(cnt1 > 0)
-		{
-			reverse3(&lsta);
-			ft_lstop_add_down1(&lstop, 3);
-			cnt1--;
-		}
-	}
-	*/
 	else if (cnt2 > 0 && cnt1 > cnt2)
 		ft_slide_a_p2(&lsta, &lstop, cnt2);
-	/*
-	{
-		while(cnt2 > 0)
-		{
-			rotate3(&lsta);
-			ft_lstop_add_down1(&lstop, 2);
-			cnt2--;
-		}
-	}
-	*/
 }
 
 void		ft_slide_a_p1(t_lst *****lsta, t_lst *****lstop, int cnt1)
