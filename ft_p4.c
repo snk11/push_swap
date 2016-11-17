@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 16:38:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 15:01:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 18:05:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int			ft_p4_p1(t_lst ****lsta,int ac,char **av)
 	if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 		return (0);
 	e->val = ft_atoi(av[ac - 1]);
-	printf("e->val = %d\n", e->val);
 	if (ft_checkdouble(***lsta,e->val) == 0)
 	{
 		write(2, "Error\n", 6);

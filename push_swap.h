@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 17:42:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 18:00:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,8 @@ void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);
 void		ft_sort(t_lst **lsta);
 void	ft_quicksort(t_lst ***lst1,t_lst ***lstop);
+void		ft_quicksort_p1(t_lst ****lsta, t_lst **lstb, t_lst ****lstop, int index);
+void		ft_quicksort_p2(t_lst ****lsta, t_lst **lstb, t_lst ****lstop, int index);
 void	swap(t_lst **lsta);
 int croissant(int a, int b);
 t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
