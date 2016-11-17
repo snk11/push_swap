@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 16:55:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 17:13:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,10 +126,12 @@ int	ft_balance(t_lst **lstmp2,void (*f)(t_lst***));
 int		ft_checkdouble(t_lst *lsta,int d);
 void	ft_printlst(t_lst *lsta);
 void	ft_slide_a(t_lst ****lsta,t_lst ****lstop);
-void	ft_slide_a1(t_lst *****lsta);
-void	ft_slide_a2(t_lst ***lsta);
-void	ft_slide_a2_uns(t_lst ***lsta);
-void	ft_slide_a4_uns(t_lst ****lsta);
+void		ft_slide_a_p1(t_lst *****lsta, t_lst *****lstop, int cnt1);
+void		ft_slide_a_p2(t_lst *****lsta, t_lst *****lstop, int cnt2);
+//void	ft_slide_a1(t_lst *****lsta);
+//void	ft_slide_a2(t_lst ***lsta);
+//void	ft_slide_a2_uns(t_lst ***lsta);
+//void	ft_slide_a4_uns(t_lst ****lsta);
 //void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
 void	ft_freelst4(t_lst ****lst1);
