@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 13:50:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:59:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int		main(int ac, char **av)
 
 	lsta = (t_lst**)malloc(sizeof(t_lst*));
 	lstop = (t_lst**)malloc(sizeof(t_lst*));
-	*lsta = NULL;
-	*lstop = NULL;
+	ft_p6(&lsta, &lstop);
 	if (ac < 2)
 		return (1);
 	if (ac == 2)
@@ -37,11 +36,11 @@ int		main(int ac, char **av)
 			return (0);
 		*lsta = ft_reverse_lst(&lsta);
 	}
-	else if (ac > 2)
-	{
+//	else if (ac > 2)
+//	{
 		if(ft_p4(&lsta, ac, av) == 0)
 			return (0);
-	}
+//	}
 	ft_p3(&lsta, &lstop);
 	if(ft_comptelem(*lsta) > 2)
 		ft_quicksort(&lsta,&lstop);
