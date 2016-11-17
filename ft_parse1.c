@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 15:54:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:00:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,10 +158,11 @@ int		ft_parse1_p2(t_lst ****lsta, int i, char *sbegi)
 	if (!(e = (t_numb*)malloc(sizeof(t_numb))))
 		return (0);
 	e->val = ft_atoi(s1);
-//	if (ft_parse1_p2_p1(&lsta, i, s1, e) == 0)
-//		return (0);
-//	if (ft_parse1_p2_p2(&lsta, i, s1, e) == 0)
-//		return (0);
+	if (ft_parse1_p2_p1(&lsta, i, s1, e) == 0)
+		return (0);
+	if (ft_parse1_p2_p2(&lsta, i, s1, e) == 0)
+		return (0);
+/*
 	if (ft_checkdouble(***lsta,e->val) == 0)
 	{
 		free(s1);
@@ -192,6 +193,7 @@ int		ft_parse1_p2(t_lst ****lsta, int i, char *sbegi)
 		lst_add14(&lsta, lstmp);
 //		ft_freelst(&lstmp);
 	}
+	*/
 	return (1);
 }
 
@@ -224,7 +226,7 @@ int		ft_parse1_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
 		e = NULL;
 		lst_add13(&lsta, lstmp);
 		((t_numb*)((****lsta)->content))->val = 256;
-		ft_freelst(&lstmp);
+//		ft_freelst(&lstmp);
 	}
 	else
 	{
@@ -234,7 +236,7 @@ int		ft_parse1_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
 		free(e);
 		e = NULL;
 		lst_add13(&lsta, lstmp);
-		ft_freelst(&lstmp);
+//		ft_freelst(&lstmp);
 	}
 	return (1);
 }
