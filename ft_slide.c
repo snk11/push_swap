@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 15:14:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 17:01:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	ft_slide_a(t_lst ****lsta,t_lst ****lstop)
 	}
 }
 
+/*
 void	ft_slide_a1(t_lst *****lsta)
 {
 	t_lst	*lstmp;
@@ -268,6 +269,10 @@ void	ft_slide_a4_uns(t_lst ****lsta)
 		}
 	}
 }
+
+*/
+
+
 /*
 void	ft_slide_b(t_lst **lsta)
 {
