@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 16:16:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:12:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ int		ft_parse1(t_lst ***lsta,char *s)
 			s1[j] = 0;
 			if(ft_checkint(s1) == 0)
 			{
+				free(s1);
+				s1 = NULL;
 				write(2, "Error\n", 6);
 				return (0);
 			}
@@ -78,11 +80,17 @@ int		ft_parse1(t_lst ***lsta,char *s)
 			e->val = ft_atoi(s1);
 			if (ft_checkdouble(**lsta,e->val) == 0)
 			{
+				free(s1);
+				s1 = NULL;
+				free(e);
+				e = NULL;
 				write(2, "Error\n", 6);
 				return (0);
 			}
 			if(ft_strcmp(s1,"256") == 0)
 			{
+				free(s1);
+				s1 = NULL;
 				lstmp = create_lst(e);
 				free(e);
 				e = NULL;
@@ -92,6 +100,8 @@ int		ft_parse1(t_lst ***lsta,char *s)
 			}
 			else
 			{
+				free(s1);
+				s1 = NULL;
 				lstmp = create_lst(e);
 				free(e);
 				e = NULL;
@@ -129,6 +139,7 @@ int		ft_parse2(t_lst ****lsta,char *s)
 	s1 = NULL;
 	sbegi = NULL;
 	e = NULL;
+	/*
 	while(ind1 == 0)
 	{
 		while(*s && (*s == ' ' || *s == '\t'))
@@ -163,6 +174,8 @@ int		ft_parse2(t_lst ****lsta,char *s)
 			if(ft_checkint(s1) == 0)
 			{
 				write(2, "Error\n", 6);
+				free(s1);
+				s1 = NULL;
 				return (0);
 			}
 			if (!(e = (t_numb*)malloc(sizeof(t_numb))))
@@ -170,11 +183,17 @@ int		ft_parse2(t_lst ****lsta,char *s)
 			e->val = ft_atoi(s1);
 			if (ft_checkdouble(***lsta,e->val) == 0)
 			{
+				free(s1);
+				s1 = NULL;
+				free(e);
+				e = NULL;
 				write(2, "Error\n", 6);
 				return (0);
 			}
 			if(ft_strcmp(s1,"256") == 0)
 			{
+				free(s1);
+				s1 = NULL;
 				lstmp = create_lst(e);
 				free(e);
 				e = NULL;
@@ -184,6 +203,8 @@ int		ft_parse2(t_lst ****lsta,char *s)
 			}
 			else
 			{
+				free(s1);
+				s1 = NULL;
 				lstmp = create_lst(e);
 				free(e);
 				e = NULL;
@@ -201,5 +222,6 @@ int		ft_parse2(t_lst ****lsta,char *s)
 			return (0);
 		}
 	}
+		*/
 	return (1);
 }

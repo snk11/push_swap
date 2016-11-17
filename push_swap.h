@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/15 16:35:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:29:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,8 @@ t_lst		*sort_list(t_lst *lst, int (*cmp)(int,int));
 int		ft_comptelem(t_lst *lsta);
 int		get_index(t_lst **lstmp, int nbelemc);
 //int		get_indexquick(t_lst *lstmp, int nbelemc, t_lst *lsta2);
-t_lst	*ft_reverse_lst(t_lst *lstmp);
+//t_lst	*ft_reverse_lst(t_lst *lstmp);
+t_lst	*ft_reverse_lst(t_lst ***lstmp);
 int						get_next_line(int const fd, char **line);
 int		ft_checkint(char *s);
 void		lst_add_down2(t_lst **toplist, t_lst *t_lst1);
@@ -116,6 +117,7 @@ void	ft_slide_a2_uns(t_lst ***lsta);
 void	ft_slide_a4_uns(t_lst ****lsta);
 //void	ft_slide_b(t_lst **lsta);
 void	ft_freelst(t_lst **lst1);
+void	ft_freelst4(t_lst ****lst1);
 //void	ft_mergesort1(t_lst ***lsta);
 //void	ft_mergesort(t_lst ***lsta);
 //void	ft_mergesort(t_lst ****lsta, t_lst **lstb);
@@ -153,5 +155,8 @@ int			ft_checkentry(int ac, char **av);
 int			ft_checkdigit(char *s1);
 int			ft_p2(t_lst ***lsta, int ac, char **av);
 void	ft_p3(t_lst ***lsta, t_lst ***lstop);
+int		ft_p4(t_lst ***lsta, int ac, char **av);
+int			ft_p4_p1(t_lst ****lsta,int ac,char **av);
+int		ft_p5(int ac, char **av);
 
 #endif

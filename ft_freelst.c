@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:10:09 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 15:49:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 13:28:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,27 @@ void	ft_freelst(t_lst **lst1)
 		(*lst1)->content = NULL;
 		free(*lst1);
 		*lst1 = NULL;
+	}
+}
+
+void	ft_freelst4(t_lst ****lst1)
+{
+	t_lst	*lstmp;
+	lstmp = NULL;
+	while(***lst1 && (***lst1)->next)
+	{
+		lstmp = ***lst1;
+		(***lst1) = (***lst1)->next;
+		free(lstmp->content);
+		lstmp->content = NULL;
+		free(lstmp);
+		lstmp = NULL;
+	}
+	if(*lst1)
+	{
+		free((***lst1)->content);
+		(***lst1)->content = NULL;
+		free(***lst1);
+		***lst1 = NULL;
 	}
 }
