@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 11:53:11 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 20:36:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 20:37:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,38 +29,10 @@ int		ft_checkint(char *s)
 	s1 = s;
 	if(*s1 == '-' || *s1 == '+')
 		return (ft_checkint_p1(s, s1));
-
-
-
-
-
-
-
-
-
-
-
 	else if (ft_strlen_isdigit(s) == 10)
 		return (ft_checkint_p2(s, s1));
 	else if (ft_strlen_isdigit(s) > 10)
 		return (0);
-	/*
-	while(*s1)
-	{
-		if (!(*s1 >= '0' && *s1 <= '9'))
-		{
-			if(*s1 != ' ' && *s1 != '\t')
-				return (0);
-			while(*s1 && (*s1 == ' ' || *s1 == '\t'))
-					s1++;
-			if(*s1)
-				return (0);
-			else
-				return (1);
-		}
-		s1++;
-	}
-	*/
 	return (1);
 }
 
