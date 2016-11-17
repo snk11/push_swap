@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:20:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 15:16:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/17 16:55:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,38 @@
 
 void		ft_checkdel_op(t_lst ****lstop)
 {
-	int		pos;
-	int		ind;
+	t_op	o;
 	t_lst	*lstopmp;
 
-	ind = 1;
-	while (ind == 1)
+	o.ind = 1;
+	while (o.ind == 1)
 	{
-		ind = 0;
 		lstopmp = ***lstop;
-		pos = 0;
-		while (lstopmp && ind == 0)
+		ft_checkdel_op0(&(o.ind), &(o.pos));
+		while (lstopmp && o.ind == 0)
 		{
 			if(((t_numb*)(lstopmp)->content)->val == 24)
 			{
 				if(ft_checkdel_op1(lstopmp))
 				{
 					lstopmp = NULL;
-					ft_lstdel(&lstop, pos);
-					ft_lstdel(&lstop, pos);
-					ind = 1;
+					ft_lstdel(&lstop, o.pos);
+					ft_lstdel(&lstop, o.pos);
+					o.ind = 1;
 				}
 			}
-			pos++;
+			o.pos++;
 			if(lstopmp)
 				lstopmp = lstopmp->next;
 		}
 	}
 }
 
+void	ft_checkdel_op0(int *ind, int *pos)
+{
+	*ind = 0;
+	*pos = 0;
+}
 int		ft_checkdel_op1(t_lst *lstop)
 {
 	if (lstop && ((t_numb*)(lstop->content))->val == 24)
