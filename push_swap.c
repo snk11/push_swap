@@ -6,18 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:24:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:48:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-
-
-#include <stdio.h>
 int		main(int ac, char **av)
 {
 	t_lst	**lsta;
@@ -42,29 +36,6 @@ int		main(int ac, char **av)
 	ft_p3(&lsta, &lstop);
 	if(ft_comptelem(*lsta) > 2)
 		ft_quicksort(&lsta,&lstop);
-	//	ft_mergesort(&lsta);
-	//	ft_bublesort(&lsta);
-	//	ft_insertionsort(&lsta);
-	/*
-	   while(*lsta)
-	   {
-	   ft_putnbr(((t_numb*)(*lsta)->content)->val);
-	   ft_putstr(" ");
-	   (*lsta) = (*lsta)->next;
-	   }
-	   printf("\n");
-	   */
 	ft_p7(&lstop);
-	/*
-	if(*lstop)
-		ft_checkdel_op(&lstop);
-	if(*lstop)
-		ft_printlst(*lstop);
-	*/
-	/*
-	   while(42)
-	   {
-	   }
-	   */
 	return (0);
 }
