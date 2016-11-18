@@ -6,12 +6,11 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:08:21 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 10:04:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:52:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "push_swap.h"
-
 
 void	swap2(int **tab1)
 {
@@ -34,12 +33,8 @@ void	swap4(t_lst ***lsta)
 	{
 		lstmp = (**lsta)->next;
 		(**lsta)->next = ((**lsta)->next)->next;
-		//		lst_add_del(lsta, &lstmp);
-//		lst_add2(lsta, lstmp);
 		lstmp->next = **lsta;
 		**lsta = lstmp;
-//		ft_freelst(&lstmp);
-		//		ft_putstr("sw\n");
 	}
 }
 
@@ -52,12 +47,8 @@ void	swap3(t_lst *****lsta)
 	{
 		lstmp = (****lsta)->next;
 		(****lsta)->next = ((****lsta)->next)->next;
-		//		lst_add_del(lsta, &lstmp);
-//		lst_add2(lsta, lstmp);
 		lstmp->next = ****lsta;
 		****lsta = lstmp;
-//		ft_freelst(&lstmp);
-		//		ft_putstr("sw\n");
 	}
 }
 
@@ -70,12 +61,8 @@ void	swap1(t_lst ****lsta)
 	{
 		lstmp = (***lsta)->next;
 		(***lsta)->next = ((***lsta)->next)->next;
-		//		lst_add_del(lsta, &lstmp);
-//		lst_add2(lsta, lstmp);
 		lstmp->next = ***lsta;
 		***lsta = lstmp;
-//		ft_freelst(&lstmp);
-		//		ft_putstr("sw\n");
 	}
 }
 void	swap(t_lst **lsta)
@@ -87,12 +74,8 @@ void	swap(t_lst **lsta)
 	{
 		lstmp = (*lsta)->next;
 		(*lsta)->next = ((*lsta)->next)->next;
-		//		lst_add_del(lsta, &lstmp);
-//		lst_add2(lsta, lstmp);
 		lstmp->next = *lsta;
 		*lsta = lstmp;
-//		ft_freelst(&lstmp);
-		//		ft_putstr("sw\n");
 	}
 }
 
@@ -105,11 +88,7 @@ void	swap5(t_lst ******lsta)
 	{
 		lstmp = (*****lsta)->next;
 		(*****lsta)->next = ((*****lsta)->next)->next;
-		//		lst_add_del(lsta, &lstmp);
-//		lst_add2(lsta, lstmp);
 		lstmp->next = *****lsta;
 		*****lsta = lstmp;
-//		ft_freelst(&lstmp);
-		//		ft_putstr("sw\n");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:43:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:49:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void		lst_add(t_lst **toplist, t_lst **t_lst1);
 //void		lst_add_del(t_lst **toplist, t_lst **t_lst1);
 t_lst		*create_lst(void *content);
 void	push(t_lst **lstb, t_lst **lsta);
-void	reverse(t_lst **lsta);
+//void	reverse(t_lst **lsta);
 void	rotate(t_lst **lsta);
 void		ft_sort(t_lst **lsta);
 void	ft_quicksort(t_lst ***lst1,t_lst ***lstop);

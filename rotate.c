@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 14:00:53 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/07 10:02:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:52:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	rotate2(int **tab)
 	int		i;
 
 	nbelem = 0;
-//	nbelem = ft_countelemtab(*tab);
 	w = (*tab)[0];
 	i = nbelem;
 	while(i > 0)
@@ -43,7 +42,6 @@ void	rotate(t_lst **lsta)
 		lstbegi = (*lsta)->next;
 		while ((*lsta)->next)
 			(*lsta) = (*lsta)->next;
-
 		(*lsta)->next = lstmp;
 		lstmp->next = NULL;
 		(*lsta) = lstbegi;
@@ -63,7 +61,6 @@ void	rotate1(t_lst ***lsta)
 		lstbegi = (**lsta)->next;
 		while ((**lsta)->next)
 			(**lsta) = (**lsta)->next;
-
 		(**lsta)->next = lstmp;
 		lstmp->next = NULL;
 		(**lsta) = lstbegi;
@@ -83,7 +80,6 @@ void	rotate3(t_lst *****lsta)
 		lstbegi = (****lsta)->next;
 		while ((****lsta)->next)
 			(****lsta) = (****lsta)->next;
-
 		(****lsta)->next = lstmp;
 		lstmp->next = NULL;
 		(****lsta) = lstbegi;
@@ -103,7 +99,6 @@ void	rotate4(t_lst ****lsta)
 		lstbegi = (***lsta)->next;
 		while ((***lsta)->next)
 			(***lsta) = (***lsta)->next;
-
 		(***lsta)->next = lstmp;
 		lstmp->next = NULL;
 		(***lsta) = lstbegi;
@@ -123,7 +118,6 @@ void	rotate5(t_lst ******lsta)
 		lstbegi = (*****lsta)->next;
 		while ((*****lsta)->next)
 			(*****lsta) = (*****lsta)->next;
-
 		(*****lsta)->next = lstmp;
 		lstmp->next = NULL;
 		(*****lsta) = lstbegi;
