@@ -6,16 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 15:12:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 10:14:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 13:25:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-#include <stdio.h>
 int		ft_checkentry(int ac, char **av)
 {
 	int		fd;

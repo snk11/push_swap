@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 12:14:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 13:43:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,6 @@ int		ft_comparestr(char *line, char *s);
 void	ft_lstop_add3(t_lst ******lstop,int p);
 void	ft_lstop_add2(t_lst ****lstop,int p);
 void	ft_lstop_add1(t_lst *****lstop,int p);
-int			ft_p1(t_lst ***lsta,int ac,char **av);
-int			ft_p2(t_lst ***lsta,int ac,char **av);
 void	rotate1(t_lst ***lsta);
 void	rotate3(t_lst *****lsta);
 void	rotate4(t_lst ****lsta);
@@ -161,9 +159,6 @@ void	ft_freelst4(t_lst ****lst1);
 //void	ft_mergesort(t_lst ***lsta);
 //void	ft_mergesort(t_lst ****lsta, t_lst **lstb);
 void	ft_mergesort(t_lst ****lsta, t_lst **lstb,int nbelema);
-void	ft_bublesort(t_lst ***lstb);
-void	ft_bublesort1_uns(t_lst **lstb);
-void	ft_bublesort3(t_lst **lstb);
 //void		ft_insertionsort(t_lst ***lsta);
 //void		ft_insertionsort_p1(t_lst ****lsta,t_lst **lstb);
 void		ft_insertionsort_p2(t_lst ****lsta,t_lst **lstb);
@@ -181,7 +176,6 @@ int			get_indextopush2(t_lst *lsta,int valpivot);
 int			get_indexpivot(t_lst *lsta,int valpivot);
 int			get_valpivot(t_lst *lsta);
 void	ft_copy_in_tab(t_lst *lsta,int	**tab);
-void	ft_sort_tab(int **tab, int nbelema);
 void		ft_lstdel(t_lst *****toplist, int pos);
 void		ft_checkdel_op(t_lst ****lstop);
 void		ft_checkdel_op0(int *ind, int *pos);
@@ -195,7 +189,6 @@ int			ft_getinxtodel(t_lst *lstop, int pos);
 int			ft_checkentry(int ac, char **av);
 int			ft_checkentryc(int ac, char **av);
 int			ft_checkdigit(char *s1);
-int			ft_p2(t_lst ***lsta, int ac, char **av);
 void	ft_p3(t_lst ***lsta, t_lst ***lstop);
 int		ft_p4(t_lst ***lsta, int ac, char **av);
 int			ft_p4_p1(t_lst ****lsta,int ac,char **av);
