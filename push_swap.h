@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 11:20:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 11:26:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -232,7 +232,7 @@ int		ft_checkint_p2_p2_p42(char *s, char *s1);
 int		ft_checkint_p2_p2_p8(char *s, char *s1);
 int		ft_checkint_p2_p2_p3(char *s, char *s1);
 void		ft_readline(char *line, t_lst ****lsta,t_lst ***lstb, t_read *r);
-void		ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
+int		ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
 int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r);
 int		ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb, t_read *r);
 
