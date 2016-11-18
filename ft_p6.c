@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:56:26 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:21:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 16:07:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void		ft_p6(t_lst ***lsta, t_lst ***lstop)
 	if ((fd = open("error_file", O_RDWR)))
 	{
 		ret = read(fd, line, 5);
-		if(ft_strcmp(line,"Error") == 0)
+		if (ft_strcmp(line, "Error") == 0)
 		{
 			lseek(fd, -6, SEEK_END);
 			write(fd, "     ", 5);
