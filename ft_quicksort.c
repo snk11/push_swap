@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:16:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:25:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,33 +69,10 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 	int		index;
 	int		i;
 	int		ind1;
-	t_lst	*lstabegi;
 
 	index = -1;
 	ind1 = 0;
-	lstabegi = lsta;
-	i = 0;
 	get_indextopush2_p1(lsta, valpivot, &index, &ind1);
-	/*
-	while(lsta && lsta->next && ind1 == 0)
-	{
-		if(((t_numb*)lsta->content)->val < valpivot)
-		{
-			index = i;
-			ind1 = 1;
-		}
-		lsta = lsta->next;
-		i++;
-	}
-	if (ind1 == 0 && lsta)
-	{
-		if(((t_numb*)lsta->content)->val < valpivot)
-		{
-			index = i;
-			ind1 = 1;
-		}
-	}*/
-	lsta = lstabegi;
 	i = 0;
 	while(index == -1 && lsta && lsta->next)
 	{
