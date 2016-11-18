@@ -6,20 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 10:52:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 13:47:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-
-
-
-
-#include <stdio.h>
 int		ft_parse1(t_lst ***lsta,char *s)
 {
 	t_pars		p;

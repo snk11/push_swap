@@ -6,23 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:15:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 14:13:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 13:48:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-void	ft_printlst(t_lst *lst1)
-{
-	while(lst1)
-	{
-		ft_putnbr(((t_numb*)(lst1)->content)->val);
-		ft_putstr("\n");
-		lst1 = lst1->next;
-	}
-}
-*/
 void	ft_printlst(t_lst *lst1)
 {
 	while(lst1)

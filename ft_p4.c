@@ -6,17 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 16:38:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 10:54:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 13:46:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-
-#include <stdio.h>
 int		ft_p4(t_lst ***lsta, int ac, char **av)
 {
 		if (ft_checkentry(ac, av) == 0)
@@ -57,7 +52,6 @@ int			ft_p4_p1(t_lst ****lsta,int ac,char **av)
 		e = NULL;
 		lst_add14(&lsta, lstmp);
 		((t_numb*)((***lsta)->content))->val = 256;
-//		ft_freelst(&lstmp);
 	}
 	else
 	{
@@ -65,7 +59,6 @@ int			ft_p4_p1(t_lst ****lsta,int ac,char **av)
 		free(e);
 		e = NULL;
 		lst_add14(&lsta, lstmp);
-//		ft_freelst(&lstmp);
 	}
 	return (1);
 }
