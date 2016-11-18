@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 11:05:39 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:05:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 18:45:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void		ft_p4c_p1_p1(t_lst *****lsta, t_numb **e)
 {
 	t_lst	*lstmp;
 
-	lstmp = create_lst(e);
-	free(e);
-	e = NULL;
+	lstmp = create_lst(*e);
+	free(*e);
+	*e = NULL;
 	lst_add13(&lsta, lstmp);
 	((t_numb*)((****lsta)->content))->val = 256;
 }
@@ -64,8 +64,8 @@ void		ft_p4c_p1_p2(t_lst *****lsta, t_numb **e)
 {
 	t_lst	*lstmp;
 
-	lstmp = create_lst(e);
-	free(e);
-	e = NULL;
+	lstmp = create_lst(*e);
+	free(*e);
+	*e = NULL;
 	lst_add13(&lsta, lstmp);
 }
