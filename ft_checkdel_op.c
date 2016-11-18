@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:20:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 13:25:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 15:00:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void		ft_checkdel_op(t_lst ****lstop)
 		ft_checkdel_op0(&(o.ind), &(o.pos));
 		while (lstopmp && o.ind == 0)
 		{
-			if(((t_numb*)(lstopmp)->content)->val == 24)
+			if (((t_numb*)(lstopmp)->content)->val == 24)
 			{
-				if(ft_checkdel_op1(lstopmp))
+				if (ft_checkdel_op1(lstopmp))
 				{
 					lstopmp = NULL;
 					ft_lstdel(&lstop, o.pos);
@@ -35,18 +35,19 @@ void		ft_checkdel_op(t_lst ****lstop)
 				}
 			}
 			o.pos++;
-			if(lstopmp)
+			if (lstopmp)
 				lstopmp = lstopmp->next;
 		}
 	}
 }
 
-void	ft_checkdel_op0(int *ind, int *pos)
+void		ft_checkdel_op0(int *ind, int *pos)
 {
 	*ind = 0;
 	*pos = 0;
 }
-int		ft_checkdel_op1(t_lst *lstop)
+
+int			ft_checkdel_op1(t_lst *lstop)
 {
 	if (lstop && ((t_numb*)(lstop->content))->val == 24)
 		lstop = lstop->next;
@@ -55,7 +56,7 @@ int		ft_checkdel_op1(t_lst *lstop)
 	return (0);
 }
 
-int		ft_getinxtodel(t_lst *lstop, int pos)
+int			ft_getinxtodel(t_lst *lstop, int pos)
 {
 	int		pos1;
 
