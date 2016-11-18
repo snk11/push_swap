@@ -6,15 +6,29 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/11 15:35:15 by syusof            #+#    #+#              #
-#    Updated: 2016/11/18 17:07:45 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/18 18:01:40 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ../checker
 
-SRCS = *.c
+SRCS = checker.c ft_checker_p1.c ft_checker_p2.c ft_checknothing.c \
+	   ft_comparestr.c ft_readline.c ft_readline2.c
 
-OFILES = $(SRCS:.c=.o)
+OFILES = checker.o ft_checker_p1.o ft_checker_p2.o ft_checknothing.o \
+		 ft_comparestr.o ft_readline.o ft_readline2.o
+
+OFILESUP = ../get_next_line.o ../reverse.o ../rotate.o ../swap.o ../push.o \
+		   ../function.o ../ft_checkint.o ../ft_checkdouble.o ../ft_freelst.o \
+		   ../ft_parse1.o ../ft_reverse_lst.o ../ft_strlen_isdigit.o \
+		   ../ft_checkentry.o ../ft_checkdigit.o ../ft_p3.o ../ft_p4.o \
+		   ../ft_p5.o ../ft_p6.o ../ft_p7.o ../ft_checkdel_op.o  \
+		   ../ft_lstop_add.o ../ft_printlst.o ../ft_p4c.o ../ft_p5c.o \
+		   ../ft_parse1c.o ../ft_checkentryc.o ../ft_free1.o \
+		   ../ft_checkint1.o ../ft_checkint2.o ../ft_checkint3.o \
+		   ../ft_lstop_add2.o ../ft_parse2.o ../ft_parse2c.o ../function1.o \
+		   ../function2.o ../function3.o ../function4.o ../function5.o \
+		   ../push2.o ../push3.o ../rotate2.o ../swap2.o
 
 FLAGS = -I ../libft/includes/ -c
 
@@ -27,7 +41,7 @@ all: $(NAME)
 $(NAME):
 	make -C ../libft/ re
 	gcc $(FLAGS) $(SRCS)
-	gcc -o $(NAME) $(OFILES) ../get_next_line.o ../reverse.o ../rotate.o ../swap.o ../push.o ../function.o ../ft_checkint.o ../ft_checkdouble.o ../ft_freelst.o ../ft_parse1.o -L ../libft/ ../ft_reverse_lst.o ../ft_strlen_isdigit.o ../ft_checkentry.o ../ft_checkdigit.o ../ft_p3.o ../ft_p4.o ../ft_p5.o ../ft_p6.o ../ft_p7.o ../ft_checkdel_op.o  ../ft_lstop_add.o ../ft_printlst.o ../ft_p4c.o ../ft_p5c.o ../ft_parse1c.o ../ft_checkentryc.o ../ft_free1.o ../ft_checkint1.o ../ft_checkint2.o ../ft_checkint3.o ../ft_lstop_add2.o ../ft_parse2.o ../ft_parse2c.o ../function1.o ../function2.o ../function3.o ../function4.o ../function5.o ../push2.o ../push3.o ../rotate2.o ../swap2.o -lft
+	gcc -o $(NAME) $(OFILES) $(OFILESUP) -L ../libft/ -lft
 
 clean:
 	rm -f $(OFILES)
