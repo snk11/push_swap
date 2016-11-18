@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 15:02:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:25:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 16:33:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_lst	*ft_reverse_lst(t_lst ***lstmp)
 	lstmp2 = NULL;
 	lsta2 = NULL;
 	lstmp1 = **lstmp;
-	while(lstmp1)
+	while (lstmp1)
 	{
 		e = (t_numb*)malloc(sizeof(t_numb));
 		e->val = ((t_numb*)(lstmp1)->content)->val;
@@ -35,6 +35,5 @@ t_lst	*ft_reverse_lst(t_lst ***lstmp)
 		ft_freelst(&lstmp2);
 	}
 	ft_freelst4(&lstmp);
-
-	return lsta2;
+	return (lsta2);
 }
