@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 14:38:21 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 15:12:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 15:26:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_lst	*ft_copylst(t_lst *lstmp)
 
 	lstmp2 = NULL;
 	lsta2 = NULL;
-	while(lstmp)
+	while (lstmp)
 	{
 		e = (t_numb*)malloc(sizeof(t_numb));
 		e->val = ((t_numb*)(lstmp)->content)->val;
@@ -31,5 +31,5 @@ t_lst	*ft_copylst(t_lst *lstmp)
 		e = NULL;
 		ft_freelst(&lstmp2);
 	}
-	return lsta2;
+	return (lsta2);
 }
