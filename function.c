@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:48:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 20:43:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int			ft_comptelem(t_lst *lsta)
 			lsta = lsta->next;
 		}
 	}
+	else
+		return (0);
 	return (nb - 1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 18:30:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 20:12:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct			s_read
 	int					nbelema;
 }						t_read;
 
+int						ft_checkspacestring(char *s);
 int						ft_strlen_isdigit(char *s);
 int						ft_checknothing(char *line);
 int						ft_comparestr(char *line, char *s);

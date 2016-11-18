@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 11:02:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:17:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 20:33:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,29 @@ int			ft_parse1c(t_lst ***lsta, char *s)
 	t_pars		p;
 
 	p.ind1 = 0;
-	while (p.ind1 == 0)
+	while (p.ind1 == 0 && *s)
 	{
 		while (*s && (*s == ' ' || *s == '\t'))
 			s++;
-		p.sbegi = s;
-		p.i = ft_strlen_isdigit(s);
-		p.k = p.i;
-		while (p.k-- > 0)
-			s++;
-		if (ft_parse1c_p1(s, &(p.ind1), p.i) == 0)
-			return (0);
-		if (p.i > 0)
+		if (*s)
 		{
-			if (ft_parse1c_p2(&lsta, p.i, p.sbegi) == 0)
+			p.sbegi = s;
+			p.i = ft_strlen_isdigit(s);
+			p.k = p.i;
+			while (p.k-- > 0)
+				s++;
+			if (ft_parse1c_p1(s, &(p.ind1), p.i) == 0)
+				return (0);
+			if (p.i > 0)
+			{
+				if (ft_parse1c_p2(&lsta, p.i, p.sbegi) == 0)
+					return (0);
+			}
+			while (*s && (*s == ' ' || *s == '\t'))
+				s++;
+			if (ft_parse1c_p3(&s, &(p.ind1)) == 0)
 				return (0);
 		}
-		while (*s && (*s == ' ' || *s == '\t'))
-			s++;
-		if (ft_parse1c_p3(&s, &(p.ind1)) == 0)
-			return (0);
 	}
 	return (1);
 }

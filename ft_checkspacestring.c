@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_p5c.c                                           :+:      :+:    :+:   */
+/*   ft_checkspacestring.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/18 11:01:38 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 20:26:35 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/18 20:10:10 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/18 20:12:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_p5c(int ac, char **av)
+int		ft_checkspacestring(char *s)
 {
-	if(ft_checkspacestring(av[ac - 1]) == 1)
-	{
-		if (ft_checkint(av[ac - 1]) == 0)
-		{
-			write(2, "Error\n", 6);
-			return (0);
-		}
-	}
-	return (1);
+	while (*s && (*s == ' ' || *s == '\t'))
+		s++;
+	if (*s)
+		return (1);
+	return (0);
 }

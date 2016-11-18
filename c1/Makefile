@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/11 15:35:15 by syusof            #+#    #+#              #
-#    Updated: 2016/11/18 18:01:40 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/18 20:16:05 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ OFILESUP = ../get_next_line.o ../reverse.o ../rotate.o ../swap.o ../push.o \
 		   ../ft_checkint1.o ../ft_checkint2.o ../ft_checkint3.o \
 		   ../ft_lstop_add2.o ../ft_parse2.o ../ft_parse2c.o ../function1.o \
 		   ../function2.o ../function3.o ../function4.o ../function5.o \
-		   ../push2.o ../push3.o ../rotate2.o ../swap2.o
+		   ../push2.o ../push3.o ../rotate2.o ../swap2.o \
+		   ../ft_checkspacestring.o
 
 FLAGS = -I ../libft/includes/ -c
 

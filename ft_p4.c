@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 16:38:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 18:45:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 20:24:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ int			ft_p4(t_lst ***lsta, int ac, char **av)
 	{
 		while (ac >= 2)
 		{
-			if (ft_p4_p1(&lsta, ac, av) == 0)
-				return (0);
+			if (ft_checkspacestring(av[ac - 1]) == 1)
+			{
+				if (ft_p4_p1(&lsta, ac, av) == 0)
+					return (0);
+			}
 			ac--;
 		}
 	}

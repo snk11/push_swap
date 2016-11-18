@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:59:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 20:31:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int		main(int ac, char **av)
 			return (0);
 		if (ft_parse1(&lsta, av[ac - 1]) == 0)
 			return (0);
-		*lsta = ft_reverse_lst(&lsta);
+		if(*lsta)
+			*lsta = ft_reverse_lst(&lsta);
 	}
 	else if (ac > 2)
 	{
