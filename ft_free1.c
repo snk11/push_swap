@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 11:39:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 11:40:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 12:27:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_free1(char **line)
 {
-	free(*line);
-	*line = NULL;
+	if(*line)
+	{
+		free(*line);
+		*line = NULL;
+	}
 }
