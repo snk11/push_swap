@@ -6,17 +6,36 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:50:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 22:30:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 10:41:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+
+#include <stdio.h>
 int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r)
 {
 	char	*line;
+	int		fd;
 
 	line = NULL;
+	if ((fd = open("error_file", O_RDWR)))
+	{
+		if (get_next_line(fd, &line) > 0)
+		{
+			if(ft_strcmp(line,"Error") == 0)
+			{
+				lseek(fd, -6, SEEK_END);
+				write(fd, "      ", 6);
+				free(line);
+				line = NULL;
+				return (0);
+			}
+			free(line);
+			line = NULL;
+		}
+	}
 	while (get_next_line(0, &line) > 0)
 	{
 		ft_readline(line, &lsta, &lstb, r);

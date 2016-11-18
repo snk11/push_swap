@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 15:12:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 14:43:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 10:14:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@
 #include <stdio.h>
 int		ft_checkentry(int ac, char **av)
 {
+	int		fd;
 	while (ac >= 2)
 	{
 		if (ft_checkint(av[ac - 1]) == 0)
 		{
 			write(2, "Error\n", 6);
+			if ((fd = open("error_file", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR)))
+				write(fd, "Error\n", 6);
 			return (0);
 		}
 		ac--;
