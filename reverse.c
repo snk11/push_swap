@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 16:11:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:50:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 17:00:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	reverse2(int **tab)
 {
-	int nbelem;
-	int w;
+	int		nbelem;
+	int		w;
 	int		i;
 
 	nbelem = 0;
 	w = (*tab)[nbelem - 1];
 	i = 0;
-	while(i < nbelem - 1)
+	while (i < nbelem - 1)
 	{
 		(*tab)[i + 1] = (*tab)[i];
 		i++;
