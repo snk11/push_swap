@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_p7.c                                            :+:      :+:    :+:   */
+/*   ft_p5c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 15:10:38 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 10:55:08 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/18 11:01:38 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/18 11:16:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-void	ft_p7(t_lst ***lstop)
+int		ft_p5c(int ac, char **av)
 {
-	if(*lstop)
-		ft_checkdel_op(&lstop);
-	if(*lstop)
-		ft_printlst(**lstop);
+
+	if (ft_checkint(av[ac - 1]) == 0)
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 22:17:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 11:20:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,8 +178,6 @@ int			get_indexpivot(t_lst *lsta,int valpivot);
 int			get_valpivot(t_lst *lsta);
 void	ft_copy_in_tab(t_lst *lsta,int	**tab);
 void	ft_sort_tab(int **tab, int nbelema);
-int		ft_parse1(t_lst ***lsta,char *s);
-int		ft_parse1_p1(char *s, int *ind1, int i);
 void		ft_lstdel(t_lst *****toplist, int pos);
 void		ft_checkdel_op(t_lst ****lstop);
 void		ft_checkdel_op0(int *ind, int *pos);
@@ -191,20 +189,32 @@ void		ft_lstop_add_down3(t_lst ******toplist, int p);
 void		ft_lstop_add_down4(t_lst *******toplist, int p);
 int			ft_getinxtodel(t_lst *lstop, int pos);
 int			ft_checkentry(int ac, char **av);
+int			ft_checkentryc(int ac, char **av);
 int			ft_checkdigit(char *s1);
 int			ft_p2(t_lst ***lsta, int ac, char **av);
 void	ft_p3(t_lst ***lsta, t_lst ***lstop);
 int		ft_p4(t_lst ***lsta, int ac, char **av);
 int			ft_p4_p1(t_lst ****lsta,int ac,char **av);
+int		ft_p4c(t_lst ***lsta, int ac, char **av);
+int			ft_p4c_p1(t_lst ****lsta,int ac,char **av);
 int		ft_p5(int ac, char **av);
+int		ft_p5c(int ac, char **av);
 void		ft_p6(t_lst ***lsta, t_lst ***lstop);
 void	ft_p7(t_lst ***lstop);
+int		ft_parse1(t_lst ***lsta,char *s);
 int		ft_parse1_p1(char *s, int *ind1, int i);
 int		ft_parse1_p2(t_lst ****lsta, int i, char *sbegi);
 int		ft_parse1_p2_p1(t_lst *****lsta, int i, char *s1, t_numb *e);
 int		ft_parse1_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e);
 void		ft_parse1_p2_p3(char **s1);
 int			ft_parse1_p3(char **s, int *ind1);
+int		ft_parse1c(t_lst ***lsta,char *s);
+int		ft_parse1c_p1(char *s, int *ind1, int i);
+int		ft_parse1c_p2(t_lst ****lsta, int i, char *sbegi);
+int		ft_parse1c_p2_p1(t_lst *****lsta, int i, char *s1, t_numb *e);
+int		ft_parse1c_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e);
+void		ft_parse1c_p2_p3(char **s1);
+int			ft_parse1c_p3(char **s, int *ind1);
 int		ft_checkint_p1(char *s, char *s1);
 int		ft_checkint_p2(char *s, char *s1);
 int		ft_checkint_p2_p1(char *s, char *s1);
