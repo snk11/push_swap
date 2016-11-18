@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:04:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:06:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,12 @@
 
 int			get_valpivot(t_lst *lsta)
 {
-	int		ref;
-	int		max;
-	int		diff;
-	int		valpivot;
-	t_lst	*lstabegi;
 	int		nbelema;
 	int		*tab;
-	int		i;
-	int		w;
-	int		ind1;
 	int		res;
 
-	lstabegi = lsta;
 	nbelema = ft_comptelem(lsta);
 	tab = (int*)malloc(sizeof(int)*nbelema);
-	i = 0;
 	ft_copy_in_tab(lsta,&tab);
 	get_valpivot_p1(&tab, nbelema);
 	if (nbelema > 36)
