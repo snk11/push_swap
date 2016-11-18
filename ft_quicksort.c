@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:21:40 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:06:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:16:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 	index = -1;
 	ind1 = 0;
 	lstabegi = lsta;
+	i = 0;
+	get_indextopush2_p1(lsta, valpivot, &index, &ind1);
+	/*
 	while(lsta && lsta->next && ind1 == 0)
 	{
 		if(((t_numb*)lsta->content)->val < valpivot)
@@ -91,7 +94,7 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 			index = i;
 			ind1 = 1;
 		}
-	}
+	}*/
 	lsta = lstabegi;
 	i = 0;
 	while(index == -1 && lsta && lsta->next)
@@ -107,6 +110,31 @@ int			get_indextopush2(t_lst *lsta,int valpivot)
 			index = i;
 	}
 	return (index);
+}
+
+void	get_indextopush2_p1(t_lst *lsta, int valpivot, int *index, int *ind1)
+{
+	int		i;
+
+	i = 0;
+	while(lsta && lsta->next && *ind1 == 0)
+	{
+		if(((t_numb*)lsta->content)->val < valpivot)
+		{
+			*index = i;
+			*ind1 = 1;
+		}
+		lsta = lsta->next;
+		i++;
+	}
+	if (*ind1 == 0 && lsta)
+	{
+		if(((t_numb*)lsta->content)->val < valpivot)
+		{
+			*index = i;
+			*ind1 = 1;
+		}
+	}
 }
 
 int			get_indexpivot(t_lst *lsta,int valpivot)
