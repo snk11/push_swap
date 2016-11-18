@@ -6,15 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 20:53:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 12:15:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:55:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-
-#include <stdio.h>
 void		ft_readline(char *line, t_lst ****lsta,t_lst ***lstb, t_read *r)
 {
 		if(ft_checknothing(line))
@@ -40,7 +37,6 @@ void		ft_readline(char *line, t_lst ****lsta,t_lst ***lstb, t_read *r)
 		}
 }
 
-
 int		ft_readline_p1(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"pa") == 1)
@@ -62,7 +58,6 @@ int		ft_readline_p1(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 		return (0);
 }
 
-
 int		ft_readline_p2(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"ra") == 1)
@@ -83,6 +78,7 @@ int		ft_readline_p2(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 		}
 		return (0);
 }
+
 int		ft_readline_p3(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"rrb") == 1)
@@ -103,6 +99,7 @@ int		ft_readline_p3(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 		}
 		return (0);
 }
+
 int		ft_readline_p4(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"sb") == 1)
@@ -123,6 +120,7 @@ int		ft_readline_p4(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 		}
 		return (0);
 }
+
 int		ft_readline_p5(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"ss") == 1)
@@ -151,6 +149,7 @@ int		ft_readline_p5(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 		}
 		return (0);
 }
+
 int		ft_readline_p6(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 		if(ft_comparestr(line,"rrr") == 1)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 20:42:31 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 21:19:29 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:54:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int		ft_comparestr(char *line, char *s)
 {
-
 	while (*line && (*line == ' ' || *line == '\t'))
 		line++;
 	while (*line && *s)

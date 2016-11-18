@@ -6,14 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:50:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 13:18:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 14:54:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-#include <stdio.h>
 int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r)
 {
 	char	*line;
