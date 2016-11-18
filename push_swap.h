@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 14:49:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 15:57:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,8 @@ int			ft_checkdigit(char *s1);
 void	ft_p3(t_lst ***lsta, t_lst ***lstop);
 int		ft_p4(t_lst ***lsta, int ac, char **av);
 int			ft_p4_p1(t_lst ****lsta,int ac,char **av);
+void	ft_p4_p1_p1(t_lst *****lsta, t_numb **e);
+void	ft_p4_p1_p2(t_lst *****lsta, t_numb **e);
 int		ft_p4c(t_lst ***lsta, int ac, char **av);
 int			ft_p4c_p1(t_lst ****lsta,int ac,char **av);
 int		ft_p5(int ac, char **av);
