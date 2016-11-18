@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:50:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 11:25:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 11:44:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,6 @@ int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r)
 	}
 	if(ft_checker_p2_p1(&lsta, &lstb, r) == 0)
 		return (0);
-	/*
-	r->nbelema = ft_comptelem(*lsta);
-	if (ft_comptelem(*lsta) != r->nbelema || r->indko == 1)
-	{
-		write(1,"KO\n",3);
-		return (0);
-	}
-	lstmp = *lsta;
-	while(lstmp && lstmp->next)
-	{
-		if(((t_numb*)(lstmp->content))->val > ((t_numb*)((lstmp->next)->content))->val)
-		{
-			write(1,"KO\n",3);
-			return (0);
-		}
-		lstmp = lstmp->next;
-	}
-	*/
 	write(1,"OK\n",3);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:39:02 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 11:30:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 11:43:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int		ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r)
 			{
 				lseek(fd, -6, SEEK_END);
 				write(fd, "      ", 6);
-				free(line);
-				line = NULL;
+				ft_free1(&line);
 				return (0);
 			}
 			free(line);

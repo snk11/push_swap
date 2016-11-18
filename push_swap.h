@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 11:26:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 12:14:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	swap5(t_lst ******lsta);
 void	swap4(t_lst ***lsta);
 void	swap3(t_lst *****lsta);
 void	swap1(t_lst ****lsta);
+void		lst_add22(t_lst ******toplist, t_lst *******lst1);
+void		lst_add21(t_lst *******toplist, t_lst ******lst1);
 void		lst_add20(t_lst *****toplist, t_lst ******lst1);
 void		lst_add19(t_lst ******toplist, t_lst *****lst1);
 void		lst_add18(t_lst ****toplist, t_lst *****lst1);
@@ -104,6 +106,8 @@ void		lst_add5(t_lst **toplist, t_lst *t_lst1);
 void		lst_add4(t_lst *****toplist, t_lst **lst1);
 void		lst_add6(t_lst *****toplist, t_lst ***lst1);
 void		lst_add2(t_lst ***toplist, t_lst *t_lst1);
+void	push14(t_lst *****lstb, t_lst ******lsta);
+void	push13(t_lst ******lstb, t_lst *****lsta);
 void	push12(t_lst ****lstb, t_lst *****lsta);
 void	push11(t_lst *****lstb, t_lst ****lsta);
 void	push10(t_lst ***lstb, t_lst ****lsta);
@@ -235,5 +239,12 @@ void		ft_readline(char *line, t_lst ****lsta,t_lst ***lstb, t_read *r);
 int		ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
 int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r);
 int		ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb, t_read *r);
+void	ft_free1(char **line);
+int		ft_readline_p1(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
+int		ft_readline_p2(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
+int		ft_readline_p3(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
+int		ft_readline_p4(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
+int		ft_readline_p5(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
+int		ft_readline_p6(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line);
 
 #endif

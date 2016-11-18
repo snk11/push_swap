@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 22:16:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 12:18:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -281,7 +281,7 @@ void	push12(t_lst ****lstb, t_lst *****lsta)
 {
 	t_lst	*lstmp;
 
-	if (***lsta)
+	if (****lsta)
 	{
 
 		if(!(***lstb))
@@ -293,6 +293,46 @@ void	push12(t_lst ****lstb, t_lst *****lsta)
 		else
 		{
 			lst_add20(&lstb,&lsta);
+		}
+	}
+}
+
+void	push13(t_lst ******lstb, t_lst *****lsta)
+{
+	t_lst	*lstmp;
+
+	if (****lsta)
+	{
+
+		if(!(*****lstb))
+		{
+			*****lstb = ****lsta;
+			****lsta = (****lsta)->next;
+			(*****lstb)->next = NULL;
+		}
+		else
+		{
+			lst_add21(&lstb,&lsta);
+		}
+	}
+}
+
+void	push14(t_lst *****lstb, t_lst ******lsta)
+{
+	t_lst	*lstmp;
+
+	if (*****lsta)
+	{
+
+		if(!(****lstb))
+		{
+			****lstb = *****lsta;
+			*****lsta = (*****lsta)->next;
+			(****lstb)->next = NULL;
+		}
+		else
+		{
+			lst_add22(&lstb,&lsta);
 		}
 	}
 }
