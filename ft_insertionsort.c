@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/17 17:44:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 15:34:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		get_indexinsert2(t_lst *lstmp,int limit)
+int			get_indexinsert2(t_lst *lstmp, int limit)
 {
 	int		index;
 	int		max;
@@ -23,7 +23,7 @@ int		get_indexinsert2(t_lst *lstmp,int limit)
 	i = 0;
 	while (i < limit)
 	{
-		if(((t_numb*)(lstmp)->content)->val > max)
+		if (((t_numb*)(lstmp)->content)->val > max)
 		{
 			index = i;
 			max = ((t_numb*)lstmp->content)->val;
@@ -34,7 +34,7 @@ int		get_indexinsert2(t_lst *lstmp,int limit)
 	return (index);
 }
 
-void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb,t_lst ****lstop)
+void		ft_insertionsort2(t_lst ****lsta, t_lst **lstb, t_lst ****lstop)
 {
 	int		index;
 	int		i;
@@ -46,11 +46,12 @@ void		ft_insertionsort2(t_lst ****lsta,t_lst **lstb,t_lst ****lstop)
 	if (ft_checksort(*lstb) == 0)
 	{
 		j = 0;
-		ft_insertionsort_p21(&lsta,&lstb,&lstop);
+		ft_insertionsort_p21(&lsta, &lstb, &lstop);
 	}
 }
 
-void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
+void		ft_insertionsort_p21(t_lst *****lsta, t_lst ***lstb,
+		t_lst *****lstop)
 {
 	int		i;
 	int		j;
@@ -60,10 +61,10 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 
 	nbelemf = ft_comptelem(**lstb);
 	j = 0;
-	while(j < nbelemf)
+	while (j < nbelemf)
 	{
 		nbelema = ft_comptelem(**lstb);
-		index = get_indexinsert2(**lstb,nbelema);
+		index = get_indexinsert2(**lstb, nbelema);
 		i = 0;
 		if (nbelema % 2 == 0)
 			ft_insertionsort_p21_p1(&lsta, &lstb, &lstop, index);
@@ -73,61 +74,62 @@ void		ft_insertionsort_p21(t_lst *****lsta,t_lst ***lstb,t_lst *****lstop)
 	}
 }
 
-void		ft_insertionsort_p21_p1(t_lst ******lsta, t_lst ****lstb, t_lst ******lstop, int index)
+void		ft_insertionsort_p21_p1(t_lst ******lsta, t_lst ****lstb,
+		t_lst ******lstop, int index)
 {
 	int		i;
 	int		nbelema;
 
 	nbelema = ft_comptelem(***lstb);
 	i = 0;
-			if (index < nbelema / 2)
-			{
-				while( i < index)
-				{
-					rotate3(&lstb);
-					ft_lstop_add_down4(&lstop,22);
-					i++;
-				}
-			}
-			else if (index >= nbelema / 2)
-			{
-				while( i < nbelema  - index)
-				{
-					reverse3(&lstb);
-					ft_lstop_add_down4(&lstop,23);
-					i++;
-				}
-			}
-			push8(&lsta,&lstb);
-			ft_lstop_add_down4(&lstop,4);
+	if (index < nbelema / 2)
+	{
+		while (i < index)
+		{
+			rotate3(&lstb);
+			ft_lstop_add_down4(&lstop, 22);
+			i++;
+		}
+	}
+	else if (index >= nbelema / 2)
+	{
+		while (i < nbelema - index)
+		{
+			reverse3(&lstb);
+			ft_lstop_add_down4(&lstop, 23);
+			i++;
+		}
+	}
+	push8(&lsta, &lstb);
+	ft_lstop_add_down4(&lstop, 4);
 }
 
-
-void		ft_insertionsort_p21_p2(t_lst ******lsta, t_lst ****lstb, t_lst ******lstop, int index)
+void		ft_insertionsort_p21_p2(t_lst ******lsta, t_lst ****lstb,
+		t_lst ******lstop, int index)
 {
 	int		i;
 	int		nbelema;
 
 	nbelema = ft_comptelem(***lstb);
 	i = 0;
-			if (index <= nbelema / 2)
-			{
-				while( i < index)
-				{
-					rotate3(&lstb);
-					ft_lstop_add_down4(&lstop,22);
-					i++;
-				}
-			}
-			else if (index > nbelema / 2)
-			{
-				while( i < nbelema  - index)
-				{
-					reverse3(&lstb);
-					ft_lstop_add_down4(&lstop,23);
-					i++;
-				}
-			}
-			push8(&lsta,&lstb);
-			ft_lstop_add_down4(&lstop,4);
+	if (index <= nbelema / 2)
+	{
+		while (i < index)
+		{
+			rotate3(&lstb);
+			ft_lstop_add_down4(&lstop, 22);
+			i++;
+		}
+	}
+	else if (index > nbelema / 2)
+	{
+		while (i < nbelema - index)
+		{
+			reverse3(&lstb);
+			ft_lstop_add_down4(&lstop, 23);
+			i++;
+		}
+	}
+	push8(&lsta, &lstb);
+	ft_lstop_add_down4(&lstop, 4);
 }
