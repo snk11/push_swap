@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 16:38:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 20:24:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 09:10:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int			ft_p4(t_lst ***lsta, int ac, char **av)
 {
-	if (ft_checkentry(ac, av) == 0)
-		return (0);
-	else
+//	if (ft_checkentry(ac, av) == 0)
+//		return (0);
+//	else
 	{
 		while (ac >= 2)
 		{

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 08:43:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 09:47:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,8 @@ int		ft_parse1(t_lst ***lsta, char *s)
 			p.k = p.i;
 			while (p.k-- > 0)
 				s++;
-			if (ft_parse1_p1(s, &(p.ind1), p.i) == 0)
+			if (ft_parse1_p10(&lsta, s, &p) == 0)
 				return (0);
-			if (p.i > 0)
-			{
-				if (ft_parse1_p2(&lsta, p.i, p.sbegi) == 0)
-					return (0);
-			}
 			while (*s && (*s == ' ' || *s == '\t'))
 				s++;
 			if (ft_parse1_p3(s, &(p.ind1)) == 0)
@@ -42,6 +37,18 @@ int		ft_parse1(t_lst ***lsta, char *s)
 		}
 	}
 	return (1);
+}
+
+int		ft_parse1_p10(t_lst ****lsta, char *s, t_pars *p)
+{
+			if (ft_parse1_p1(s, &(p->ind1), p->i) == 0)
+				return (0);
+			if (p->i > 0)
+			{
+				if (ft_parse1_p2(&lsta, p->i, p->sbegi) == 0)
+					return (0);
+			}
+			return (1);
 }
 
 int		ft_parse1_p1(char *s, int *ind1, int i)
@@ -62,7 +69,7 @@ int		ft_parse1_p1(char *s, int *ind1, int i)
 	return (1);
 }
 
-int		ft_parse1_p2(t_lst ****lsta, int i, char *sbegi)
+int		ft_parse1_p2(t_lst *****lsta, int i, char *sbegi)
 {
 	char	*s1;
 	int		j;
@@ -102,11 +109,11 @@ void	ft_parse1_p2_p3(char **s1)
 		write(fd, "Error\n", 6);
 }
 
-int		ft_parse1_p2_p1(t_lst *****lsta, int i, char *s1, t_numb *e)
+int		ft_parse1_p2_p1(t_lst ******lsta, int i, char *s1, t_numb *e)
 {
 	int		fd;
 
-	if (ft_checkdouble(****lsta, e->val) == 0)
+	if (ft_checkdouble(*****lsta, e->val) == 0)
 	{
 		free(s1);
 		s1 = NULL;
