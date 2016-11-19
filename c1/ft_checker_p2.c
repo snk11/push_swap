@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:50:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 21:01:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:13:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ int		ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb, t_read *r)
 	t_lst		*lstmp;
 
 	if (ft_comptelem(***lsta) != r->nbelema || r->indko == 1)
+	{
+		write(1, "KO\n", 3);
+		return (0);
+	}
+	else if (ft_comptelem(***lsta) == 0 && r->indko == 1)
 	{
 		write(1, "KO\n", 3);
 		return (0);

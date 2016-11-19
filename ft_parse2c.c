@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:16:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 08:42:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 09:59:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int			ft_parse1c_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
+int			ft_parse1c_p2_p2(t_lst ******lsta, int i, char *s1, t_numb *e)
 {
 	t_lst		*lstmp;
 
@@ -23,8 +23,8 @@ int			ft_parse1c_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
 		lstmp = create_lst(e);
 		free(e);
 		e = NULL;
-		lst_add13(&lsta, lstmp);
-		((t_numb*)((****lsta)->content))->val = 256;
+		lst_add15(&lsta, lstmp);
+		((t_numb*)((*****lsta)->content))->val = 256;
 	}
 	else
 	{
@@ -33,7 +33,7 @@ int			ft_parse1c_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
 		lstmp = create_lst(e);
 		free(e);
 		e = NULL;
-		lst_add13(&lsta, lstmp);
+		lst_add15(&lsta, lstmp);
 	}
 	return (1);
 }
