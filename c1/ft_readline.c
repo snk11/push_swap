@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 20:53:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 20:57:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 07:07:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_readline_p1(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 	}
 	else if (ft_comparestr(line, "rra") == 1)
 	{
-		if (****lsta)
+		if (****lsta && ft_comptelem(****lsta) > 1)
 			reverse5(&lsta);
 		else
 			r->indko = 1;
@@ -66,7 +66,7 @@ int		ft_readline_p2(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 	if (ft_comparestr(line, "ra") == 1)
 	{
-		if (****lsta)
+		if (****lsta && ft_comptelem(****lsta) > 1)
 			rotate5(&lsta);
 		else
 			r->indko = 1;
@@ -74,7 +74,7 @@ int		ft_readline_p2(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 	}
 	else if (ft_comparestr(line, "sa") == 1)
 	{
-		if (****lsta)
+		if (****lsta && ft_comptelem(****lsta) > 1)
 			swap5(&lsta);
 		else
 			r->indko = 1;
@@ -87,7 +87,7 @@ int		ft_readline_p3(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 	if (ft_comparestr(line, "rrb") == 1)
 	{
-		if (***lstb)
+		if (***lstb && ft_comptelem(***lstb) > 1)
 			reverse3(&lstb);
 		else
 			r->indko = 1;
@@ -108,7 +108,7 @@ int		ft_readline_p4(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
 {
 	if (ft_comparestr(line, "sb") == 1)
 	{
-		if (***lstb)
+		if (***lstb && ft_comptelem(***lstb) > 1)
 			swap3(&lstb);
 		else
 			r->indko = 1;
