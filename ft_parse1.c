@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 09:59:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:35:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_parse1(t_lst ***lsta, char *s)
 	{
 		while (*s && (*s == ' ' || *s == '\t'))
 			s++;
-		if(*s)
+		if (*s)
 		{
 			p.sbegi = s;
 			p.i = ft_strlen_isdigit(s);
@@ -41,14 +41,14 @@ int		ft_parse1(t_lst ***lsta, char *s)
 
 int		ft_parse1_p10(t_lst ****lsta, char *s, t_pars *p)
 {
-			if (ft_parse1_p1(s, &(p->ind1), p->i) == 0)
-				return (0);
-			if (p->i > 0)
-			{
-				if (ft_parse1_p2(&lsta, p->i, p->sbegi) == 0)
-					return (0);
-			}
-			return (1);
+	if (ft_parse1_p1(s, &(p->ind1), p->i) == 0)
+		return (0);
+	if (p->i > 0)
+	{
+		if (ft_parse1_p2(&lsta, p->i, p->sbegi) == 0)
+			return (0);
+	}
+	return (1);
 }
 
 int		ft_parse1_p1(char *s, int *ind1, int i)
@@ -107,22 +107,4 @@ void	ft_parse1_p2_p3(char **s1)
 	write(2, "Error\n", 6);
 	if ((fd = open("error_file", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR)))
 		write(fd, "Error\n", 6);
-}
-
-int		ft_parse1_p2_p1(t_lst ******lsta, int i, char *s1, t_numb *e)
-{
-	int		fd;
-
-	if (ft_checkdouble(*****lsta, e->val) == 0)
-	{
-		free(s1);
-		s1 = NULL;
-		free(e);
-		e = NULL;
-		write(2, "Error\n", 6);
-		if ((fd = open("error_file", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR)))
-			write(fd, "Error\n", 6);
-		return (0);
-	}
-	return (1);
 }

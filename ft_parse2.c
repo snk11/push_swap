@@ -6,11 +6,29 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:15:48 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 09:58:54 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:33:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		ft_parse1_p2_p1(t_lst ******lsta, int i, char *s1, t_numb *e)
+{
+	int		fd;
+
+	if (ft_checkdouble(*****lsta, e->val) == 0)
+	{
+		free(s1);
+		s1 = NULL;
+		free(e);
+		e = NULL;
+		write(2, "Error\n", 6);
+		if ((fd = open("error_file", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR)))
+			write(fd, "Error\n", 6);
+		return (0);
+	}
+	return (1);
+}
 
 int		ft_parse1_p2_p2(t_lst ******lsta, int i, char *s1, t_numb *e)
 {

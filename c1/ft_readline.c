@@ -6,16 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 20:53:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 07:07:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:30:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
-
-
-#include <stdio.h>
 void	ft_readline(char *line, t_lst ****lsta, t_lst ***lstb, t_read *r)
 {
 	if (ft_checknothing(line))

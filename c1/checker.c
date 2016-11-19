@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:12:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:32:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int ac, char **av)
 		return (0);
 	if (ft_checkentryc(ac, av) == 0)
 		return (0);
-//	if (ac < 2)
-//		return (1);
 	i = 2;
 	while (i <= ac)
 	{
@@ -32,7 +30,7 @@ int	main(int ac, char **av)
 			return (0);
 		i++;
 	}
-	if(*lsta)
+	if (*lsta)
 		*lsta = ft_reverse_lst(&lsta);
 	if (ft_checker_p2(&lsta, &lstb, &r) == 0)
 		return (0);

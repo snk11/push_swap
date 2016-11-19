@@ -6,16 +6,12 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 09:47:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:36:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-
-#include <stdio.h>
 int		main(int ac, char **av)
 {
 	t_lst	**lsta;
@@ -33,7 +29,7 @@ int		main(int ac, char **av)
 			return (0);
 		i++;
 	}
-	if(*lsta)
+	if (*lsta)
 		*lsta = ft_reverse_lst(&lsta);
 	ft_p3(&lsta, &lstop);
 	if (ft_comptelem(*lsta) > 2)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 11:15:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 20:18:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:29:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_checkentryc(int ac, char **av)
 {
 	while (ac >= 2)
 	{
-		if(ft_checkspacestring(av[ac - 1]) == 1)
+		if (ft_checkspacestring(av[ac - 1]) == 1)
 		{
 			if (ft_checkint(av[ac - 1]) == 0)
 			{

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 11:01:38 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 20:26:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 10:32:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_p5c(int ac, char **av)
 {
-	if(ft_checkspacestring(av[ac - 1]) == 1)
+	if (ft_checkspacestring(av[ac - 1]) == 1)
 	{
 		if (ft_checkint(av[ac - 1]) == 0)
 		{
