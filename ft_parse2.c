@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:15:48 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:17:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/19 08:42:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_parse1_p2_p2(t_lst *****lsta, int i, char *s1, t_numb *e)
 	return (1);
 }
 
-int		ft_parse1_p3(char **s, int *ind1)
+int		ft_parse1_p3(char *s, int *ind1)
 {
 	int		fd;
 
