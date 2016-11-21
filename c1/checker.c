@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/11 14:14:49 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:32:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 15:52:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int ac, char **av)
 	t_read	r;
 	int		i;
 
+	if (ac < 2)
+		return (1);
 	if (ft_checker_p1(&lsta, &lstb, &r) == 0)
 		return (0);
 	if (ft_checkentryc(ac, av) == 0)
