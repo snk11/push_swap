@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:55:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 17:18:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,19 +230,16 @@ void					ft_readline(char *line, t_lst ****lsta,
 		t_lst ***lstb, t_read *r);
 int						ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
 int						ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r);
-int						ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb,
-		t_read *r);
+int						ft_checker_p2_p1(t_lst ****lsta, t_read *r);
 void					ft_free1(char **line);
 int						ft_readline_p1(t_lst *****lsta, t_lst ****lstb,
-		t_read *r, char *line);
-int						ft_readline_p2(t_lst *****lsta, t_lst ****lstb,
-		t_read *r, char *line);
-int						ft_readline_p3(t_lst *****lsta, t_lst ****lstb,
-		t_read *r, char *line);
+		char *line);
+int						ft_readline_p2(t_lst *****lsta, char *line);
+int						ft_readline_p3(t_lst ****lstb, char *line);
 int						ft_readline_p4(t_lst *****lsta, t_lst ****lstb,
-		t_read *r, char *line);
+		char *line);
 int						ft_readline_p5(t_lst *****lsta, t_lst ****lstb,
-		t_read *r, char *line);
+		char *line);
 int						ft_readline_p6(t_lst *****lsta, t_lst ****lstb,
 		t_read *r, char *line);
 

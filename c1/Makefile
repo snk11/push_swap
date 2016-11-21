@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/10/11 15:35:15 by syusof            #+#    #+#              #
-#    Updated: 2016/11/21 16:29:23 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/21 17:00:23 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OFILESUP = ../get_next_line.o ../reverse.o ../rotate.o ../swap.o ../push.o \
 		   ../push2.o ../push3.o ../rotate2.o ../swap2.o \
 		   ../ft_checkspacestring.o ../function6.o
 
-FLAGS = -I ../libft/includes/ -c
+FLAGS = -Wall -Werror -Wextra -I ../libft/includes/ -c
 
 MAIN = checker.c
 

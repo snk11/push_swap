@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 17:15:38 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 15:48:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 17:18:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int		ft_readline_p5(t_lst *****lsta, t_lst ****lstb, t_read *r, char *line)
+int		ft_readline_p5(t_lst *****lsta, t_lst ****lstb, char *line)
 {
 	if (ft_strcmp(line, "ss") == 0)
 	{

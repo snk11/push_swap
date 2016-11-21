@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 21:50:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:28:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 17:18:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int		ft_checker_p2(t_lst ***lsta, t_lst **lstb, t_read *r)
 		write(2, "Error\n", 6);
 		return (0);
 	}
-	if (ft_checker_p2_p1(&lsta, &lstb, r) == 0)
+	if (ft_checker_p2_p1(&lsta, r) == 0)
 		return (0);
 	if (**lsta)
 		write(1, "OK\n", 3);
 	return (1);
 }
 
-int		ft_checker_p2_p1(t_lst ****lsta, t_lst ***lstb, t_read *r)
+int		ft_checker_p2_p1(t_lst ****lsta, t_read *r)
 {
 	t_lst		*lstmp;
 
