@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/01 13:33:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:57:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:58:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	push(t_lst **lstb, t_lst **lsta)
 {
-	t_lst	*lstmp;
-
 	if (*lsta)
 	{
 		if (!(*lstb))
@@ -33,8 +31,6 @@ void	push(t_lst **lstb, t_lst **lsta)
 
 void	push1(t_lst **lstb, t_lst ****lsta)
 {
-	t_lst	*lstmp;
-
 	if (***lsta)
 	{
 		if (!(*lstb))
@@ -52,8 +48,6 @@ void	push1(t_lst **lstb, t_lst ****lsta)
 
 void	push2(t_lst ****lstb, t_lst **lsta)
 {
-	t_lst	*lstmp;
-
 	if (*lsta)
 	{
 		if (!(***lstb))
@@ -71,8 +65,6 @@ void	push2(t_lst ****lstb, t_lst **lsta)
 
 void	push3(t_lst ***lstb, t_lst **lsta)
 {
-	t_lst	*lstmp;
-
 	if (*lsta)
 	{
 		if (!(**lstb))
@@ -90,8 +82,6 @@ void	push3(t_lst ***lstb, t_lst **lsta)
 
 void	push4(t_lst **lstb, t_lst ***lsta)
 {
-	t_lst	*lstmp;
-
 	if (**lsta)
 	{
 		if (!(*lstb))

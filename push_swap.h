@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:49:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:55:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,20 +198,16 @@ int						ft_parse1(t_lst ***lsta, char *s);
 int						ft_parse1_p1(char *s, int *ind1, int i);
 int						ft_parse1_p10(t_lst ****lsta, char *s, t_pars *p);
 int						ft_parse1_p2(t_lst *****lsta, int i, char *sbegi);
-int						ft_parse1_p2_p1(t_lst ******lsta, int i, char *s1,
-		t_numb *e);
-int						ft_parse1_p2_p2(t_lst ******lsta, int i, char *s1,
-		t_numb *e);
+int						ft_parse1_p2_p1(t_lst ******lsta, char *s1, t_numb *e);
+int						ft_parse1_p2_p2(t_lst ******lsta, char *s1, t_numb *e);
 void					ft_parse1_p2_p3(char **s1);
 int						ft_parse1_p3(char *s, int *ind1);
 int						ft_parse1c(t_lst ***lsta, char *s);
 int						ft_parse1c_p1(char *s, int *ind1, int i);
 int						ft_parse1c_p10(t_lst ****lsta, char *s, t_pars *p);
 int						ft_parse1c_p2(t_lst *****lsta, int i, char *sbegi);
-int						ft_parse1c_p2_p1(t_lst ******lsta, int i,
-		char *s1, t_numb *e);
-int						ft_parse1c_p2_p2(t_lst ******lsta, int i,
-		char *s1, t_numb *e);
+int						ft_parse1c_p2_p1(t_lst ******lsta, char *s1, t_numb *e);
+int						ft_parse1c_p2_p2(t_lst ******lsta, char *s1, t_numb *e);
 void					ft_parse1c_p2_p3(char **s1);
 int						ft_parse1c_p3(char *s, int *ind1);
 int						ft_checkint_p1(char *s1);

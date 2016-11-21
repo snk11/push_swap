@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 16:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:35:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:56:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ int		ft_parse1_p2(t_lst *****lsta, int i, char *sbegi)
 	char	*s1;
 	int		j;
 	t_numb	*e;
-	t_lst	*lstmp;
 
 	s1 = ft_strnew(i);
 	j = 0;
@@ -91,9 +90,9 @@ int		ft_parse1_p2(t_lst *****lsta, int i, char *sbegi)
 	}
 	e = (t_numb*)malloc(sizeof(t_numb));
 	e->val = ft_atoi(s1);
-	if (ft_parse1_p2_p1(&lsta, i, s1, e) == 0)
+	if (ft_parse1_p2_p1(&lsta, s1, e) == 0)
 		return (0);
-	if (ft_parse1_p2_p2(&lsta, i, s1, e) == 0)
+	if (ft_parse1_p2_p2(&lsta, s1, e) == 0)
 		return (0);
 	return (1);
 }

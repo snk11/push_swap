@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:08:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 15:34:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:52:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ int			get_indexinsert2(t_lst *lstmp, int limit)
 
 void		ft_insertionsort2(t_lst ****lsta, t_lst **lstb, t_lst ****lstop)
 {
-	int		index;
-	int		i;
 	int		j;
-	int		nbelema;
 	int		nbelemf;
 
 	nbelemf = ft_comptelem(*lstb);

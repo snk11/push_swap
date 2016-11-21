@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/31 19:17:09 by syusof            #+#    #+#              #
-#    Updated: 2016/11/21 16:25:46 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/21 16:51:04 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ OFILES = ft_balance.o ft_checkdel_op.o ft_checkdigit.o ft_checkdouble.o \
 		 get_next_line.o push.o push2.o push3.o push_swap.o reverse.o \
 		 rotate.o rotate2.o swap.o swap2.o ft_checkspacestring.o function6.o \
 
-FLAGS = -I libft/includes/ -c
+FLAGS = -Wall -Werror -Wextra -I libft/includes/ -c
 
 MAIN = push_swap.c
 

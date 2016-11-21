@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:54:48 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:58:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:58:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	push5(t_lst ***lstb, t_lst *****lsta)
 {
-	t_lst	*lstmp;
-
 	if (****lsta)
 	{
 		if (!(**lstb))
@@ -33,8 +31,6 @@ void	push5(t_lst ***lstb, t_lst *****lsta)
 
 void	push6(t_lst *****lstb, t_lst ***lsta)
 {
-	t_lst	*lstmp;
-
 	if (**lsta)
 	{
 		if (!(****lstb))
@@ -52,8 +48,6 @@ void	push6(t_lst *****lstb, t_lst ***lsta)
 
 void	push7(t_lst ******lstb, t_lst ****lsta)
 {
-	t_lst	*lstmp;
-
 	if (***lsta)
 	{
 		if (!(*****lstb))
@@ -71,8 +65,6 @@ void	push7(t_lst ******lstb, t_lst ****lsta)
 
 void	push8(t_lst *******lstb, t_lst *****lsta)
 {
-	t_lst	*lstmp;
-
 	if (****lsta)
 	{
 		if (!(******lstb))
@@ -90,8 +82,6 @@ void	push8(t_lst *******lstb, t_lst *****lsta)
 
 void	push9(t_lst ****lstb, t_lst ***lsta)
 {
-	t_lst	*lstmp;
-
 	if (**lsta)
 	{
 		if (!(***lstb))
