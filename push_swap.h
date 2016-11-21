@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:04:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:21:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ void					ft_slide_a_p1(t_lst *****lsta, t_lst *****lstop,
 void					ft_slide_a_p2(t_lst *****lsta, t_lst *****lstop,
 		int cnt2);
 void					ft_slide_a_p3(t_lst *****lsta, t_lst *****lstop);
+void					ft_slide_a_p4(t_lst *****lsta, t_lst *****lstop);
 void					ft_freelst(t_lst **lst1);
 void					ft_freelst4(t_lst ****lst1);
 void					ft_mergesort(t_lst ****lsta, t_lst **lstb, int nbelema);
@@ -173,6 +174,9 @@ void					ft_copy_in_tab(t_lst *lsta, int	**tab);
 void					ft_lstdel(t_lst *****toplist, int pos);
 void					ft_lstdel_p1(t_lst **lstmp, t_lst **lstmp2);
 void					ft_lstdel_p2(t_lst ******toplist, t_lst **lstmp);
+void					ft_lstdel2(t_lst ******toplist, int pos);
+void					ft_lstdel2_p1(t_lst **lstmp, t_lst **lstmp2);
+void					ft_lstdel2_p2(t_lst *******toplist, t_lst **lstmp);
 void					ft_checkdel_op(t_lst ****lstop);
 void					ft_checkdel_op0(int *ind, int *pos);
 int						ft_checkdel_op1(t_lst *lstop);

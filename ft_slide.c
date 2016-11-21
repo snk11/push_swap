@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:03:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:31:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void		ft_slide_a(t_lst ****lsta, t_lst ****lstop)
 	cnt2 = ft_balance(&lstmp4, rotate1);
 	ft_freelst(&lstmp);
 	ft_freelst(&lstmp4);
-	if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
+	if (cnt1 == 0 && cnt2 == 0)
+		ft_slide_a_p4(&lsta, &lstop);
+	else if ((cnt1 > 0 && cnt1 < cnt2) || (cnt1 > 0 && cnt1 == cnt2))
 		ft_slide_a_p1(&lsta, &lstop, cnt1);
 	else if (cnt2 > 0 && cnt1 > cnt2)
 		ft_slide_a_p2(&lsta, &lstop, cnt2);
@@ -62,4 +64,16 @@ void		ft_slide_a_p3(t_lst *****lsta, t_lst *****lstop)
 {
 		swap5(&lsta);
 		ft_lstop_add_down3(&lstop, 1);
+}
+
+void		ft_slide_a_p4(t_lst *****lsta, t_lst *****lstop)
+{
+	int		pos;
+
+	pos = ft_comptelem(****lstop);
+	if (pos > 0)
+	{
+		swap5(&lsta);
+		ft_lstdel2(&lstop, pos - 1);
+	}
 }
