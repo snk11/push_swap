@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 15:18:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 15:19:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:48:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_checkint_p2_p2_p3(char *s, char *s1)
+int		ft_checkint_p2_p2_p3(char *s1)
 {
 	s1++;
 	if (*s1 == '3')
@@ -41,10 +41,10 @@ int		ft_checkint_p2_p2_p3(char *s, char *s1)
 	return (1);
 }
 
-int		ft_checkint_p2(char *s, char *s1)
+int		ft_checkint_p2(char *s1)
 {
 	if (*s1 == '2')
-		return (ft_checkint_p2_p2_p1(s, s1));
+		return (ft_checkint_p2_p2_p1(s1));
 	else if (*s1 > '2')
 		return (0);
 	return (1);

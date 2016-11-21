@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:21:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:49:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -214,22 +214,22 @@ int						ft_parse1c_p2_p2(t_lst ******lsta, int i,
 		char *s1, t_numb *e);
 void					ft_parse1c_p2_p3(char **s1);
 int						ft_parse1c_p3(char *s, int *ind1);
-int						ft_checkint_p1(char *s, char *s1);
-int						ft_checkint_p2(char *s, char *s1);
-int						ft_checkint_p2_p1(char *s, char *s1);
-int						ft_checkint_p2_p1_p1(char *s, char *s1);
-int						ft_checkint_p2_p1_p4(char *s, char *s1);
-int						ft_checkint_p2_p1_p7(char *s, char *s1);
-int						ft_checkint_p2_p1_p42(char *s, char *s1);
-int						ft_checkint_p2_p1_p8(char *s, char *s1);
-int						ft_checkint_p2_p1_p3(char *s, char *s1);
-int						ft_checkint_p2_p2(char *s, char *s1);
-int						ft_checkint_p2_p2_p1(char *s, char *s1);
-int						ft_checkint_p2_p2_p4(char *s, char *s1);
-int						ft_checkint_p2_p2_p7(char *s, char *s1);
-int						ft_checkint_p2_p2_p42(char *s, char *s1);
-int						ft_checkint_p2_p2_p8(char *s, char *s1);
-int						ft_checkint_p2_p2_p3(char *s, char *s1);
+int						ft_checkint_p1(char *s1);
+int						ft_checkint_p2(char *s1);
+int						ft_checkint_p2_p1(char *s1);
+int						ft_checkint_p2_p1_p1(char *s1);
+int						ft_checkint_p2_p1_p4(char *s1);
+int						ft_checkint_p2_p1_p7(char *s1);
+int						ft_checkint_p2_p1_p42(char *s1);
+int						ft_checkint_p2_p1_p8(char *s1);
+int						ft_checkint_p2_p1_p3(char *s1);
+int						ft_checkint_p2_p2(char *s1);
+int						ft_checkint_p2_p2_p1(char *s1);
+int						ft_checkint_p2_p2_p4(char *s1);
+int						ft_checkint_p2_p2_p7(char *s1);
+int						ft_checkint_p2_p2_p42(char *s1);
+int						ft_checkint_p2_p2_p8(char *s1);
+int						ft_checkint_p2_p2_p3(char *s1);
 void					ft_readline(char *line, t_lst ****lsta,
 		t_lst ***lstb, t_read *r);
 int						ft_checker_p1(t_lst ***lsta, t_lst **lstb, t_read *r);
