@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/17 14:07:37 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 16:35:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:03:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ void		ft_slide_a(t_lst ****lsta, t_lst ****lstop)
 	cnt2 = 0;
 	if (***lsta && (***lsta)->next && (((t_numb*)(***lsta)->content)->val
 				> ((t_numb*)((***lsta)->next)->content)->val))
-	{
-		swap3(&lsta);
-		ft_lstop_add_down1(&lstop, 1);
-	}
+		ft_slide_a_p3(&lsta, &lstop);
 	lstmp = ft_copylst(***lsta);
 	cnt1 = ft_balance(&lstmp, reverse1);
 	lstmp4 = ft_copylst(***lsta);
@@ -59,4 +56,10 @@ void		ft_slide_a_p2(t_lst *****lsta, t_lst *****lstop, int cnt2)
 		ft_lstop_add_down3(&lstop, 2);
 		cnt2--;
 	}
+}
+
+void		ft_slide_a_p3(t_lst *****lsta, t_lst *****lstop)
+{
+		swap5(&lsta);
+		ft_lstop_add_down3(&lstop, 1);
 }

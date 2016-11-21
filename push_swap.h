@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:21:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/21 16:04:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ void					ft_slide_a_p1(t_lst *****lsta, t_lst *****lstop,
 		int cnt1);
 void					ft_slide_a_p2(t_lst *****lsta, t_lst *****lstop,
 		int cnt2);
+void					ft_slide_a_p3(t_lst *****lsta, t_lst *****lstop);
 void					ft_freelst(t_lst **lst1);
 void					ft_freelst4(t_lst ****lst1);
 void					ft_mergesort(t_lst ****lsta, t_lst **lstb, int nbelema);
