@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 14:53:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 17:28:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 17:55:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 void	ft_init(t_option *option, int ac, char **av)
 {
