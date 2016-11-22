@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:15:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 16:18:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 17:18:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ void	ft_printlstf(t_lst *lsta)
 	int		ind;
 
 	ind = 0;
-	ft_printlst(lsta);
 	while (lsta)
 	{
 		if (ind == 1)
