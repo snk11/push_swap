@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:15:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 12:38:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 14:40:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	ft_printlst(t_lst *lst1)
 
 void	ft_printlstc(t_lst *lst1)
 {
-//	ft_printlstf(lst1);
 	while (lst1 && lst1->next)
 	{
 		if (((t_numb*)(lst1)->content)->val == 1)
@@ -79,16 +78,24 @@ void	ft_printlstc_p1(t_lst *lst1)
 			write(1, "pb\n", 3);
 		lst1 = lst1->next;
 	}
+	write(1, "\033[1;0m", 7);
 }
 
-void	ft_printlstf(t_lst *lst1)
+void	ft_printlstf(t_lst *lsta)
 {
-	int		fd;
-	
-	if ((fd = open("operation_file", O_CREAT | O_WRONLY, S_IRUSR | S_IWUSR)))
+	int		ind;
+
+	ind = 0;
+	while (lsta)
 	{
-		ft_printlstf_p1(lst1, fd);
+		if (ind == 1)
+			ft_putstr(" ");
+		ind = 1;
+		ft_putnbr(((t_numb*)lsta->content)->val);
+		lsta = lsta->next;
 	}
+	if (ind == 1)
+			ft_putstr("\n");
 }
 
 void	ft_printlstf_p1(t_lst *lst1, int fd)

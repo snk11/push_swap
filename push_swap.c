@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/18 17:22:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:35:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 14:31:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ int		main(int ac, char **av)
 	ft_p3(&lsta, &lstop);
 	if (ft_comptelem(*lsta) > 2)
 		ft_quicksort(&lsta, &lstop);
-	ft_p7(&lstop);
+	ft_p7(&lstop,&lsta);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 12:39:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 14:25:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <stdio.h>
 
 # include "libft/libft.h"
 
@@ -197,7 +198,7 @@ void					ft_p3(t_lst ***lsta, t_lst ***lstop);
 int						ft_p5(int ac, char **av);
 int						ft_p5c(int ac, char **av);
 int						ft_p6(t_lst ***lsta, t_lst ***lstop, int ac, char **av);
-void					ft_p7(t_lst ***lstop);
+void					ft_p7(t_lst ***lstop, t_lst ***lsta);
 int						ft_parse1(t_lst ***lsta, char *s);
 int						ft_parse1_p1(char *s, int *ind1, int i);
 int						ft_parse1_p10(t_lst ****lsta, char *s, t_pars *p);
