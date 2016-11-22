@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:15:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 17:18:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 17:44:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,4 +96,11 @@ void	ft_printlstf(t_lst *lsta)
 	}
 	if (ind == 1)
 			ft_putstr("\n");
+}
+
+void	ft_printlstl(t_lst *lstop)
+{
+	ft_putstr("nb operations :  ");
+	ft_putnbr(ft_comptelem(lstop));
+	ft_putstr("\n");
 }

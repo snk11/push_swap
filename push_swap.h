@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 16:01:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 17:37:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct			s_option
 	int					indoption;
 	int					indc;
 	int					indf;
+	int					indl;
 	int					ac;
 	char				**av;
 }						t_option;
@@ -158,7 +159,7 @@ void					ft_printlst(t_lst *lsta);
 void					ft_printlstc(t_lst *lst1);
 void					ft_printlstc_p1(t_lst *lst1);
 void					ft_printlstf(t_lst *lst1);
-void					ft_printlstf_p1(t_lst *lst1, int fd);
+void					ft_printlstl(t_lst *lsta);
 void					ft_slide_a(t_lst ****lsta, t_lst ****lstop);
 void					ft_slide_a_p1(t_lst *****lsta, t_lst *****lstop,
 		int cnt1);
