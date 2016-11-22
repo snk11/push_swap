@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:56:26 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 09:12:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 15:01:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_p6(t_lst ***lsta, t_lst ***lstop, int ac, char **av)
+int		ft_p6(t_lst ***lsta, t_lst ***lstop, t_option *option)
 {
 	int		fd;
 	char	*line;
@@ -34,7 +34,7 @@ int		ft_p6(t_lst ***lsta, t_lst ***lstop, int ac, char **av)
 		}
 		ft_free1(&line);
 	}
-	if (ft_checkentry(ac, av) == 0)
+	if (ft_checkentry(option->ac, option->av) == 0)
 		return (0);
 	return (1);
 }

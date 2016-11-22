@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_p7.c                                            :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 15:10:38 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:02:01 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/22 14:53:50 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/22 14:58:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+# include "push_swap.h"
 
-void	ft_p7(t_lst ***lstop, t_lst ***lsta, t_option *option)
+void	ft_init(t_option *option, int ac, char **av)
 {
-	if (*lstop)
-		ft_checkdel_op(&lstop);
-	if (*lstop)
-		ft_printlstc(**lstop);
-	ft_printlstf(**lsta);
-	option->i = 0;
-	/*
-	if (*lstop)
-		ft_printlst(**lstop);
-	*/
+	option->i = 2;
+	option->ac = ac;
+	option->av = av;
 }
