@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:00:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 15:15:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ typedef struct			s_read
 typedef struct			s_option
 {
 	int					i;
+	int					indoption;
 	int					indc;
 	int					indf;
 	int					ac;
@@ -201,7 +202,7 @@ void					ft_lstop_add_down2(t_lst ****toplist, int p);
 void					ft_lstop_add_down3(t_lst ******toplist, int p);
 void					ft_lstop_add_down4(t_lst *******toplist, int p);
 int						ft_getinxtodel(t_lst *lstop, int pos);
-int						ft_checkentry(int ac, char **av);
+int						ft_checkentry(t_option *option);
 int						ft_checkentryc(int ac, char **av);
 int						ft_checkdigit(char *s1);
 void					ft_p3(t_lst ***lsta, t_lst ***lstop);

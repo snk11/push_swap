@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   ft_checkoption.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 14:53:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:11:39 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/21 17:24:47 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/22 15:08:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
-void	ft_init(t_option *option, int ac, char **av)
+void	ft_checkoption(char *s, t_option *option)
 {
-	option->i = 2;
-	option->ac = ac;
-	option->av = av;
-	option->indoption = 0;
+	while (*s && (*s == ' ' || *s == '\t'))
+		s++;
+	if (s[0] && s[0] == '-' && s[1] && s[1] == 'c' && (!s[2] || (s[2] && (s[2] == ' ' || s[2] == '\t'))))
+		option->indc = 1;
+
 }

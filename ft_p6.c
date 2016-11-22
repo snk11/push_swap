@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 13:56:26 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:01:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 15:16:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		ft_p6(t_lst ***lsta, t_lst ***lstop, t_option *option)
 		}
 		ft_free1(&line);
 	}
-	if (ft_checkentry(option->ac, option->av) == 0)
+	if (ft_checkentry(option) == 0)
 		return (0);
 	return (1);
 }

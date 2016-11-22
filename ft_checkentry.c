@@ -6,21 +6,23 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/15 15:12:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/19 10:30:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 15:15:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		ft_checkentry(int ac, char **av)
+int		ft_checkentry(t_option *option)
 {
 	int		fd;
 
-	while (ac >= 2)
+	while (option->ac >= 2)
 	{
-		if (ft_checkspacestring(av[ac - 1]) == 1)
+		if (option->ac - 1 == 1 && option->indoption == 1)
+			option->av[1] = option->av[1] + 2;
+		if (ft_checkspacestring(option->av[option->ac - 1]) == 1)
 		{
-			if (ft_checkint(av[ac - 1]) == 0)
+			if (ft_checkint(option->av[option->ac - 1]) == 0)
 			{
 				write(2, "Error\n", 6);
 				if ((fd = open("error_file", O_CREAT | O_WRONLY,
@@ -29,7 +31,7 @@ int		ft_checkentry(int ac, char **av)
 				return (0);
 			}
 		}
-		ac--;
+		option->ac--;
 	}
 	return (1);
 }
