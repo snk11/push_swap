@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/14 12:15:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 14:40:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 16:18:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	ft_printlstf(t_lst *lsta)
 	int		ind;
 
 	ind = 0;
+	ft_printlst(lsta);
 	while (lsta)
 	{
 		if (ind == 1)
@@ -96,30 +97,4 @@ void	ft_printlstf(t_lst *lsta)
 	}
 	if (ind == 1)
 			ft_putstr("\n");
-}
-
-void	ft_printlstf_p1(t_lst *lst1, int fd)
-{
-	while (lst1)
-	{
-		if (lst1)
-		{
-			if (((t_numb*)(lst1)->content)->val == 1)
-				write(fd, "sa\n", 3);
-			if (((t_numb*)(lst1)->content)->val == 2)
-				write(fd, "ra\n", 3);
-			if (((t_numb*)(lst1)->content)->val == 3)
-				write(fd, "rra\n", 4);
-			if (((t_numb*)(lst1)->content)->val == 4)
-				write(fd, "pa\n", 3);
-			if (((t_numb*)(lst1)->content)->val == 22)
-				write(fd, "rb\n", 3);
-			if (((t_numb*)(lst1)->content)->val == 23)
-				write(fd, "rrb\n", 4);
-			if (((t_numb*)(lst1)->content)->val == 24)
-				write(fd, "pb\n", 3);
-			lst1 = lst1->next;
-		}
-		lst1 = lst1->next;
-	}
 }

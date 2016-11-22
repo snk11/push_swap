@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 17:57:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:15:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 16:01:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct			s_option
 	char				**av;
 }						t_option;
 
+int						ft_checkoption(char *s, t_option *option);
 void					ft_init(t_option *option, int ac, char **av);
 int						ft_checkspacestring(char *s);
 int						ft_strlen_isdigit(char *s);

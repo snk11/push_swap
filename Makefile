@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/05/31 19:17:09 by syusof            #+#    #+#              #
-#    Updated: 2016/11/22 15:02:45 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/22 16:01:46 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ft_balance.c ft_checkdel_op.c ft_checkdigit.c ft_checkdouble.c \
 	   function1.c function2.c function3.c function4.c function5.c \
 	   get_next_line.c push.c push2.c push3.c push_swap.c reverse.c \
 	   rotate.c rotate2.c swap.c swap2.c ft_checkspacestring.c function6.c \
-	   ft_init.c
+	   ft_init.c ft_checkoption.c
 
 OFILES = ft_balance.o ft_checkdel_op.o ft_checkdigit.o ft_checkdouble.o \
 		 ft_checkentry.o ft_checkentryc.o ft_checkint.o ft_checkint1.o \
@@ -36,7 +36,7 @@ OFILES = ft_balance.o ft_checkdel_op.o ft_checkdigit.o ft_checkdouble.o \
 		 function1.o function2.o function3.o function4.o function5.o \
 		 get_next_line.o push.o push2.o push3.o push_swap.o reverse.o \
 		 rotate.o rotate2.o swap.o swap2.o ft_checkspacestring.o function6.o \
-		 ft_init.o
+		 ft_init.o ft_checkoption.o
 
 FLAGS = -Wall -Werror -Wextra -I libft/includes/ -c
 

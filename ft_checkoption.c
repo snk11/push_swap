@@ -6,17 +6,27 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 17:24:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/22 15:08:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/22 16:15:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_checkoption(char *s, t_option *option)
+int		ft_checkoption(char *s, t_option *option)
 {
+	char	*s1;
+
+	s1 = s;
 	while (*s && (*s == ' ' || *s == '\t'))
 		s++;
 	if (s[0] && s[0] == '-' && s[1] && s[1] == 'c' && (!s[2] || (s[2] && (s[2] == ' ' || s[2] == '\t'))))
 		option->indc = 1;
-
+	s = s1;
+	while (*s && (*s == ' ' || *s == '\t'))
+		s++;
+	if (s[0] && s[0] == '-' && s[1] && s[1] == 'f' && (!s[2] || (s[2] && (s[2] == ' ' || s[2] == '\t'))))
+		option->indf = 1;
+	if (option->indc == 1 || option->indf == 1)
+		return (1);
+	return (0);
 }
