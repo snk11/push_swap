@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/18 16:16:06 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:54:51 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 19:58:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,25 +30,12 @@ int			ft_parse1c_p2_p2(t_lst ******lsta, char *s1, t_numb *e)
 {
 	t_lst		*lstmp;
 
-	if (ft_strcmp(s1, "256") == 0)
-	{
-		free(s1);
-		s1 = NULL;
-		lstmp = create_lst(e);
-		free(e);
-		e = NULL;
-		lst_add15(&lsta, lstmp);
-		((t_numb*)((*****lsta)->content))->val = 256;
-	}
-	else
-	{
-		free(s1);
-		s1 = NULL;
-		lstmp = create_lst(e);
-		free(e);
-		e = NULL;
-		lst_add15(&lsta, lstmp);
-	}
+	free(s1);
+	s1 = NULL;
+	lstmp = create_lst(e);
+	free(e);
+	e = NULL;
+	lst_add15(&lsta, lstmp);
 	return (1);
 }
 
