@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 16:25:57 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/21 16:27:58 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/20 13:34:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,20 @@ void		ft_lstdel2_p2(t_lst *******toplist, t_lst **lstmp)
 	*lstmp = NULL;
 }
 
-t_lst		*create_lst(void *content)
+t_lst		*create_lst(t_numb *e)
 {
 	t_lst	*curlst;
 
 	curlst = NULL;
 	if (!(curlst = (t_lst*)malloc(sizeof(t_lst))))
 		return (NULL);
-	if (content == NULL)
+	if (e == NULL)
 		curlst->content = NULL;
 	else
-		curlst->content = ft_memmove2(content);
+	{
+		curlst->content = (t_numb*)malloc(sizeof(t_numb));
+		((t_numb*)(curlst->content))->val = e->val;
+	}
 	curlst->next = NULL;
 	return (curlst);
 }
