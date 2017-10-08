@@ -2,7 +2,7 @@
 ```
 It's a console application which can sort a list with a minimum of operations.
 The sort is realised by switching elements with only two list (list a an list b), in the beginning the list not sorted is stored in list a, the list b is empty.
-At the end , after the computation, we will have the sorted list in the lis a, le list b must be empty.
+At the end , after the computation, we will have the sorted list in the lis a, the list b must be empty.
 
 the differents operation in the lists are:
 pa : push the head element of list a to the list b in the head position.
